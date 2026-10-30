@@ -330,3 +330,4 @@ details p{margin-top:10px;color:var(--muted)}
   .piece .hot{stroke-dashoffset:0;opacity:1}
   .app .icon,.big-icon,.phone{transform:none}
 }
+.scene-note{margin-top:14px;font-size:13px;color:var(--muted)}
