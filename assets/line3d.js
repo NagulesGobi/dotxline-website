@@ -72,16 +72,19 @@ function start(host) {
   };
   new ResizeObserver(resize).observe(host); resize();
 
-  host.addEventListener('pointermove', e => {
+  // the mark looks toward the pointer wherever it is on the page; dragging still spins it
+  addEventListener('pointermove', e => {
+    if (e.pointerType === 'touch') return;
     const r = host.getBoundingClientRect();
-    target.y = ((e.clientX - r.left) / r.width - 0.5) * 0.9;
-    target.x = ((e.clientY - r.top) / r.height - 0.5) * 0.6;
+    const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+    target.y = Math.max(-0.6, Math.min(0.6, (e.clientX - cx) / innerWidth * 1.4));
+    target.x = Math.max(-0.4, Math.min(0.4, (e.clientY - cy) / innerHeight * 1.0));
     if (dragging) { spinV = (e.clientX - dragX) * 0.012; spin += spinV; dragX = e.clientX; }
-  });
+  }, { passive: true });
   host.addEventListener('pointerdown', e => { dragging = true; dragX = e.clientX; host.setPointerCapture(e.pointerId); host.querySelector('canvas').style.cursor = 'grabbing'; });
   const up = () => { dragging = false; host.querySelector('canvas').style.cursor = ''; };
   host.addEventListener('pointerup', up); host.addEventListener('pointercancel', up);
-  host.addEventListener('pointerleave', () => { target.x = target.y = 0; });
+  document.addEventListener('pointerleave', () => { target.x = target.y = 0; });
 
   let visible = true, raf = 0;
   new IntersectionObserver(([en]) => { visible = en.isIntersecting; if (visible && !raf) raf = requestAnimationFrame(frame); }).observe(host);
