@@ -166,4 +166,43 @@
     const io = new IntersectionObserver(([en]) => { en.isIntersecting ? v.play().catch(() => {}) : v.pause(); }, { threshold: 0.3 });
     io.observe(v);
   });
+
+  // motion layer: a progress line, staggered entrances, icons that draw themselves, magnetic buttons
+  if (!reduce) {
+    const bar = document.createElement('div');
+    bar.className = 'scroll-line'; bar.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(bar);
+    let bt = false;
+    const prog = () => {
+      bt = false;
+      const h = document.documentElement.scrollHeight - innerHeight;
+      bar.style.transform = `scaleX(${h > 0 ? clamp(scrollY / h).toFixed(4) : 0})`;
+    };
+    addEventListener('scroll', () => { if (!bt) { bt = true; requestAnimationFrame(prog); } }, { passive: true });
+    prog();
+
+    const groups = new Map();
+    document.querySelectorAll('.fc, .habit, .group, .privacy-points > div, .spec > div, .feature, .app, .section-head').forEach(el => {
+      const key = el.parentElement;
+      const i = groups.get(key) || 0; groups.set(key, i + 1);
+      el.style.setProperty('--i', Math.min(i, 7));
+      el.classList.add('sx');
+      el.querySelectorAll('.fi svg *').forEach(s => s.setAttribute('pathLength', '1'));
+    });
+    if ('IntersectionObserver' in window) {
+      const so = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); so.unobserve(e.target); } }), { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
+      document.querySelectorAll('.sx').forEach(el => so.observe(el));
+    } else document.querySelectorAll('.sx').forEach(el => el.classList.add('in'));
+
+    if (fine) {
+      document.querySelectorAll('.btn').forEach(b => {
+        b.addEventListener('pointermove', e => {
+          const r = b.getBoundingClientRect();
+          b.style.setProperty('--mx', (((e.clientX - r.left) / r.width - 0.5) * 10).toFixed(1) + 'px');
+          b.style.setProperty('--my', (((e.clientY - r.top) / r.height - 0.5) * 8).toFixed(1) + 'px');
+        });
+        b.addEventListener('pointerleave', () => { b.style.removeProperty('--mx'); b.style.removeProperty('--my'); });
+      });
+    }
+  }
 })();
