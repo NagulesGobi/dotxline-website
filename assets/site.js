@@ -167,6 +167,9 @@
     io.observe(v);
   });
 
+  // the 3D mark's hint goes away once someone has turned it
+  document.querySelectorAll('.stage').forEach(st => st.addEventListener('pointerdown', () => st.classList.add('dragged'), { once: true }));
+
   // motion layer: a progress line, staggered entrances, icons that draw themselves, magnetic buttons
   if (!reduce) {
     const bar = document.createElement('div');

@@ -69,8 +69,11 @@ img,video,svg{display:block;max-width:100%}
 .stage canvas{position:absolute;inset:0;width:100%!important;height:100%!important;cursor:grab}
 .stage .fallback{position:absolute;inset:12%;opacity:1;transition:opacity .4s}
 .stage.is-3d .fallback{opacity:0}
-.stage .hint{position:absolute;bottom:4%;right:4%;font-size:13px;color:rgba(255,255,255,.5);opacity:0;transition:opacity .6s 1.6s}
+.stage .hint{position:absolute;left:50%;bottom:0;translate:-50% 0;display:inline-flex;align-items:center;gap:8px;padding:8px 16px 8px 12px;border-radius:999px;font:500 14px var(--text);color:rgba(255,255,255,.82);background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16);opacity:0;pointer-events:none;white-space:nowrap;transition:opacity .6s 1.4s}
+.stage .hint svg{width:20px;height:20px;color:var(--amber)}
 .stage.is-3d .hint{opacity:1}
+.stage.dragged .hint{opacity:0;transition-delay:0s}
+@media(prefers-reduced-motion:no-preference){.stage.is-3d .hint svg{animation:sway 2.6s ease-in-out infinite}@keyframes sway{0%,100%{transform:rotate(-18deg)}50%{transform:rotate(18deg)}}}
 @media(max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-top:96px}.stage{max-width:420px;justify-self:center;margin-top:-10px}}
 
 /* the scroll film: 0, x, 1 */
