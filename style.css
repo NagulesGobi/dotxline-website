@@ -41,3 +41,30 @@ footer{border-top:1px solid var(--line);margin-top:72px;padding:30px 0 44px;colo
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
 footer a{color:var(--muted);margin-right:18px;text-decoration:none}footer a:hover{color:var(--fg)}
 @media(max-width:640px){.hero{padding:40px 0 56px}.product{grid-template-columns:1fr}nav a{margin:0 16px 0 0}.btn.alt{margin:10px 0 0}}
+/* Tockbee: shown in its own brand colours (Tockbee brand kit, 30 Oct 2026). Text on orange is always Cocoa. */
+.tb{--tb-tangerine:#FF7A2F;--tb-cocoa:#2A1712;--tb-cream:#FFF6E8;--tb-sun:#FFB627;--tb-rust:#C2361F;
+--tb-bg:var(--tb-cream);--tb-fg:var(--tb-cocoa);--tb-card:#fff;--tb-muted:#6E5A4F;--tb-line:#EADFCF;--tb-link:var(--tb-rust)}
+@media(prefers-color-scheme:dark){.tb{--tb-bg:#1F1410;--tb-fg:#FFF6E8;--tb-card:#2A1C16;--tb-muted:#C9B7A8;--tb-line:#3A2A23;--tb-link:#FF9A5C}}
+.tb-name{font-family:Fredoka,ui-rounded,"SF Pro Rounded",system-ui,sans-serif;font-weight:600;letter-spacing:0}
+.badge{display:inline-block;background:#FFB627;color:#2A1712;border-radius:99px;padding:3px 12px;font-size:13px;font-weight:600;vertical-align:middle}
+.product.tb{background:var(--tb-bg);border-color:var(--tb-line);color:var(--tb-fg)}
+.product.tb p,.product.tb .tag{color:var(--tb-muted)}.product.tb .tag{border-color:var(--tb-line)}
+.product.tb a{color:var(--tb-link)}
+.product.tb h3{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:27px}
+/* Tockbee page */
+body.tb{--bg:var(--tb-bg);--fg:var(--tb-fg);--card:var(--tb-card);--muted:var(--tb-muted);--line:var(--tb-line);--link:var(--tb-link);--hero-bg:#2A1712}
+body.tb .hero h1{font-family:Fredoka,ui-rounded,"SF Pro Rounded",system-ui,sans-serif;letter-spacing:-.01em}
+body.tb .hero h1 em{color:#FF7A2F}
+body.tb .btn:not(.alt){background:#FF7A2F;color:#2A1712}
+body.tb .num{color:var(--tb-link)}
+body.tb h2,body.tb .card h3{font-family:Fredoka,ui-rounded,"SF Pro Rounded",system-ui,sans-serif;letter-spacing:0}
+.tb-hero-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;color:var(--hero-muted);font-size:15px;margin-top:6px}
+.screens{display:flex;gap:16px;overflow-x:auto;padding:4px 2px 14px;margin:28px 0 0;scroll-snap-type:x mandatory}
+.screens figure{margin:0;flex:0 0 200px;scroll-snap-align:start}
+.screens img{width:200px;height:auto;display:block;border-radius:22px;border:1px solid var(--line)}
+.screens figcaption{font-size:14px;color:var(--muted);margin-top:8px;text-align:center}
+.note{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin-top:28px}
+.note p{margin:0}.note p+p{margin-top:6px;color:var(--muted);font-size:15px}
+/* Let nav and footer links wrap on narrow screens (the links have no spaces between them) */
+nav{display:flex;flex-wrap:wrap;row-gap:6px}
+footer .wrap>div:last-child{display:flex;flex-wrap:wrap;row-gap:8px}
