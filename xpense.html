@@ -1,28 +1,122 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Xpense by dotXline — Spending, made calm</title><meta name="description" content="Xpense is a calm, native iPhone expense tracker from dotXline. Track spending, set budgets and split costs.">
-<meta property="og:title" content="Xpense by dotXline — Spending, made calm"><meta property="og:description" content="Xpense is a calm, native iPhone expense tracker from dotXline. Track spending, set budgets and split costs."><meta property="og:type" content="website"><meta property="og:image" content="https://dotxline.com/icon-512.png">
+<title>Xpense by dotXline — Every penny, in plain sight</title><meta name="description" content="Xpense is a calm, native iPhone expense tracker from dotXline. Log an expense in one tap, see where your money goes, stay on budget and split costs with friends. Coming soon to iPhone.">
+<meta property="og:title" content="Xpense by dotXline — Every penny, in plain sight"><meta property="og:description" content="Xpense is a calm, native iPhone expense tracker from dotXline. Log an expense in one tap, see where your money goes, stay on budget and split costs with friends. Coming soon to iPhone."><meta property="og:type" content="website"><meta property="og:image" content="https://dotxline.com/icon-512.png">
 <link rel="icon" href="favicon.ico" sizes="48x48"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="manifest" href="site.webmanifest"><meta name="theme-color" content="#0E1512">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<script src="assets/site.js" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="wrap"><a class="brand" href="./" aria-label="dotXline home"><img src="logo-dark.svg" alt="dotXline" width="160" height="27"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button><nav class="menu" id="menu" aria-label="Main"><a href="xpense.html" aria-current=page>Xpense</a><a href="tockbee.html">Tockbee</a><a href="about.html">About</a><a href="support.html">Support</a></nav></div></header>
+<script src="assets/site.js" defer></script></head><body class="xp-page"><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="wrap"><a class="brand" href="./" aria-label="dotXline home"><img src="logo-dark.svg" alt="dotXline" width="160" height="27"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button><nav class="menu" id="menu" aria-label="Main"><a href="xpense.html" aria-current=page>Xpense</a><a href="tockbee.html">Tockbee</a><a href="about.html">About</a><a href="support.html">Support</a></nav></div></header>
 <main id="main">
 <section class="p-hero xp"><div class="wrap">
 <div><img class="icon" src="xpense-icon.png" alt="Xpense app icon" width="96" height="96">
 <h1>Every penny, in plain sight.</h1>
-<p class="lede">Xpense is a calm, native expense tracker for iPhone, made by dotXline.</p>
-<div class="btns"><a class="btn" href="support.html">Get support</a><a class="btn ghost" href="privacy.html">Privacy policy</a></div></div>
-<div data-tilt="18" style="display:grid"><img class="big-icon" data-tilt-target src="xpense-icon.png" alt="" width="360" height="360"></div>
+<p class="lede">A calm, native expense tracker for iPhone. Log it in one tap, see where it goes, and keep a little more each month.</p>
+<div class="btns"><a class="btn" href="#story">See how it works</a><a class="btn ghost" href="#film">Watch the film</a></div>
+<div class="meta-line"><span class="badge">Coming soon to iPhone</span><span>By dotXline</span></div></div>
+<div data-tilt="12" style="display:grid"><div class="phone tall" data-tilt-target><video data-autoplay autoplay muted loop playsinline preload="metadata" poster="assets/xpense/xpense-preview.jpg" aria-label="Xpense app preview: logging an expense, budgets, analysis and splitting"><source src="assets/xpense/xpense-preview.mp4" type="video/mp4"></video></div></div>
 </div></section>
+
+<section class="film xp-film" id="story" aria-label="What the Xpense logo means">
+<div class="film-pin">
+<div class="film-inner">
+<svg class="xp-bars" viewBox="100 230 830 560" aria-hidden="true">
+<path class="ghost-path" d="M252.11 384.82 H771.89"/><path class="ghost-path" d="M252.11 639.18 H771.89"/>
+<path class="draw last" data-step="0" pathLength="1" d="M252.11 384.82 H771.89"/>
+<path class="draw kept" data-step="2" data-to=".85" pathLength="1" d="M429.06 639.18 H771.89"/>
+<path class="draw this" data-step="1" data-to=".85" pathLength="1" d="M252.11 639.18 H550.71"/>
+</svg>
+<div class="film-caps">
+<div class="film-cap on"><p class="sym">Last month</p><h2>Every penny, in plain sight.</h2><p>The faint bar is last month. Every expense in it is there to search, filter by period and category, and read day by day.</p></div>
+<div class="film-cap"><p class="sym">This month</p><h2>Logged in one tap.</h2><p>Quick Add tiles open a new expense with the category already chosen. Your tiles, in your order. Coffee, train, groceries: done before you forget.</p></div>
+<div class="film-cap"><p class="sym">What you kept</p><h2>The gap is what you kept.</h2><p>Spend less than last month and Xpense says so: “Nice, £12 less than September.” Spend more and it stays neutral. Progress gets celebrated. Spending never gets shamed.</p></div>
+</div></div>
+<div class="film-progress" aria-hidden="true"><i></i></div>
+</div></section>
+
 <section class="section"><div class="wrap">
-<div class="section-head"><h2>What Xpense does</h2><p>Everything you need to see where your money goes, and nothing you don’t.</p></div>
-<div class="features">
-<div class="feature"><h3>Track in seconds</h3><p>Log expenses and income fast, with categories and optional receipt photos kept on your device.</p></div>
-<div class="feature"><h3>Budgets and goals</h3><p>Set budgets, recurring items and savings goals, and see where you stand at a glance.</p></div>
-<div class="feature"><h3>Split with friends</h3><p>Create shared groups and settle up without the spreadsheet.</p></div>
-<div class="feature"><h3>Private by design</h3><p>Sign in with Apple. We never sell your data, show ads or track you across apps.</p></div>
+<p class="statement" data-read>Spending isn’t the problem. Not knowing is. Xpense keeps every penny in plain sight, celebrates the months you keep a little more, and never makes you feel bad about the rest.</p>
+</div></section>
+
+<section class="scene" data-scene="5" style="height:500vh" aria-label="Xpense, screen by screen">
+<div class="scene-pin"><div class="wrap scene-grid">
+<div class="panel"><img data-show="0" src="assets/xpense/photo-1.jpg" alt="Overview: spent in October, budget left, Add Expense and Quick Add" width="516" height="1118"><img data-show="1" src="assets/xpense/photo-2.jpg" alt="New Expense: £12.40, category Food, note, date and receipt" width="516" height="1118" loading="lazy"><img data-show="2" src="assets/xpense/photo-3.jpg" alt="History: every expense by day, searchable" width="516" height="1118" loading="lazy"><img data-show="3" src="assets/xpense/photo-4.jpg" alt="Analyze: spending by category and month against month" width="516" height="1118" loading="lazy"><img data-show="4" src="assets/xpense/photo-5.jpg" alt="Shared: a flat group with who owes whom and Settle up" width="516" height="1118" loading="lazy"></div>
+<div>
+<div class="scene-caps">
+<div class="scene-cap on" data-show="0"><p class="kicker">Overview</p><h2>This month, at a glance.</h2><p>What you’ve spent, what’s left of your budget, and your last five expenses. Add Expense and your Quick Add tiles sit right under it.</p></div>
+<div class="scene-cap" data-show="1"><p class="kicker">New expense</p><h2>Amount, category, done.</h2><p>Add a note, change the date, attach a receipt photo that stays on your iPhone, or make it repeat monthly.</p></div>
+<div class="scene-cap" data-show="2"><p class="kicker">History</p><h2>Know what you spent.</h2><p>Every expense, grouped by day. Search it, filter it by period or category, and swipe to edit or delete.</p></div>
+<div class="scene-cap" data-show="3"><p class="kicker">Analyze</p><h2>See where it all goes.</h2><p>Month totals, a category donut, bar charts and month against month, so you can see the trend, not just the total.</p></div>
+<div class="scene-cap" data-show="4"><p class="kicker">Shared</p><h2>Split it. Settle it.</h2><p>Groups for flats and trips. Xpense keeps track of who paid and who owes, and settles up in a tap.</p></div>
+</div>
+<div class="scene-dots" aria-hidden="true"><i data-show="0" class="on"></i><i data-show="1"></i><i data-show="2"></i><i data-show="3"></i><i data-show="4"></i></div>
+</div>
 </div></div></section>
+
+<div class="line-rule" aria-hidden="true"><i></i><svg viewBox="4 3 80 80"><path pathLength="1" d="M63.44 36.56 L38.69 61.31 A16 16 0 1 1 38.69 38.69 L61.31 61.31 A9 9 0 0 0 76.68 54.95 L76.68 20"/></svg></div>
+
+<section class="section" id="features"><div class="wrap">
+<div class="section-head"><h2>Everything it does.</h2><p>Built natively for iPhone, with the calm design of iOS 26. Numbers first, nothing in your way.</p></div>
+<div class="groups">
+<div class="group"><p class="k">Log</p><h3>Faster than forgetting.</h3><ul>
+<li><b>Expenses and income</b> in seconds, with categories and optional receipt photos.</li>
+<li><b>Quick Add</b> tiles in your own order. One tap opens a new expense.</li>
+<li><b>Widgets and Siri.</b> Quick Add and Today on your Home Screen, and an “Add an expense” shortcut. Nothing saves until you confirm.</li>
+<li><b>Reminders</b> if you want them. Local notifications only, off until you switch them on.</li></ul></div>
+<div class="group"><p class="k">Understand</p><h3>See where it went.</h3><ul>
+<li><b>History</b> with search, period and category filters, grouped by day.</li>
+<li><b>Analyze</b> with month stats, donut and bar charts, and month against month.</li>
+<li><b>Spent less?</b> Xpense notices and says so. Spent more? It stays neutral.</li>
+<li><b>Income and net</b> for the month, with your savings rate.</li></ul></div>
+<div class="group"><p class="k">Plan and share</p><h3>Stay on budget, together.</h3><ul>
+<li><b>Budgets</b> for the month and for each category.</li>
+<li><b>Recurring bills</b> and <b>savings goals</b>, with the monthly amount you need to hit a deadline.</li>
+<li><b>Split with friends</b> in shared groups for flats and trips, then settle up.</li>
+<li><b>Works offline</b> and syncs when you’re back. Export to CSV any time.</li></ul></div>
+</div></div></section>
+
+<section class="section" id="film" style="padding-top:0"><div class="wrap split">
+<div data-tilt="10" style="display:grid"><div class="phone tall" data-tilt-target><video id="cup" data-autoplay autoplay muted loop playsinline preload="none" poster="assets/xpense/xpense-cup-ad.jpg" aria-label="Xpense film: one coffee, from logging it to saving more than last month"><source src="assets/xpense/xpense-cup-ad.mp4" type="video/mp4"></video></div></div>
+<div><div class="section-head" style="margin-bottom:24px"><h2>One coffee, start to finish.</h2></div>
+<p class="lead-lg">A £3.40 flat white, logged in one tap. Then where the money goes, £120 less than September, and a bill split with friends. 24 seconds.</p>
+<div class="btns" style="margin-top:28px"><button class="btn ghost" type="button" data-sound="cup" aria-pressed="false">Turn sound on</button></div></div>
+</div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap">
+<div class="section-head"><h2>The whole story.</h2><p>The five App Store photos, end to end. Scroll sideways. Amounts are examples.</p></div>
+<div class="ribbon" data-zoom><img src="assets/xpense/photo-1.jpg" alt="Every penny, in plain sight. Spending, made calm." width="516" height="1118" loading="lazy"><img src="assets/xpense/photo-2.jpg" alt="Log it in one tap. Your tiles, your order." width="516" height="1118" loading="lazy"><img src="assets/xpense/photo-3.jpg" alt="Know what you spent. Every expense, searchable and swipe-to-edit." width="516" height="1118" loading="lazy"><img src="assets/xpense/photo-4.jpg" alt="See where it all goes. Clear charts and month-on-month trends." width="516" height="1118" loading="lazy"><img src="assets/xpense/photo-5.jpg" alt="Split it. Settle it. Shared groups for trips, flats and friends." width="516" height="1118" loading="lazy"></div>
+</div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap split">
+<div><div class="section-head" style="margin-bottom:20px"><h2>Your money is your business.</h2></div>
+<p class="lead-lg">Xpense only uses your data to run Xpense: to sign you in, show your expenses and sync them between your devices. <a href="privacy.html">Read the privacy policy</a>.</p></div>
+<div class="privacy-points">
+<div><b>Sign in your way</b><span>Sign in with Apple, or a one-time code sent to your email.</span></div>
+<div><b>Receipts stay put</b><span>Receipt photos stay on your iPhone and are never uploaded.</span></div>
+<div><b>Only you can see it</b><span>Your data is locked to your account. Shared groups are visible to their members.</span></div>
+<div><b>Delete any time</b><span>Settings, Account, Delete Account removes your account and data from our servers.</span></div>
+<div><b>No ads, ever</b><span>We don’t sell your data or track you across other apps and websites.</span></div>
+<div><b>Take it with you</b><span>Export your expenses as a CSV from Settings.</span></div>
+</div>
+</div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap">
+<div class="section-head"><h2>The details.</h2></div>
+<dl class="spec">
+<div><dt>Device</dt><dd>iPhone</dd></div>
+<div><dt>Design</dt><dd>Native, iOS 26</dd></div>
+<div><dt>Currency</dt><dd>British pounds (£)</dd></div>
+<div><dt>Category</dt><dd>Finance</dd></div>
+<div><dt>Age rating</dt><dd>4+</dd></div>
+<div><dt>Status</dt><dd>Coming soon to the App Store</dd></div>
+</dl>
+</div></section>
+
+<section class="wrap"><div class="band reveal">
+<svg class="bg-line" viewBox="100 230 830 560" aria-hidden="true"><path d="M252.11 384.82 H771.89" stroke="#0F9D7A" stroke-opacity=".5" stroke-width="188" stroke-linecap="round" fill="none"/><path d="M429.06 639.18 H771.89" stroke="#F5A524" stroke-width="188" stroke-linecap="round" fill="none"/><path d="M252.11 639.18 H550.71" stroke="#0F9D7A" stroke-width="188" stroke-linecap="round" fill="none"/></svg>
+<div><h2>Coming soon to iPhone.</h2><p>Questions before launch? We usually reply within 2 business days.</p></div>
+<div class="btns"><a class="btn" href="support.html">Get support</a><a class="btn ghost" href="mailto:hello@dotxline.com">hello@dotxline.com</a></div>
+</div></section>
 </main><footer class="site-foot"><div class="wrap">
 <div><a class="brand" href="./" aria-label="dotXline home"><picture><source srcset="logo-dark.svg" media="(prefers-color-scheme:dark)"><img src="logo-light.svg" alt="dotXline" width="142" height="24"></picture></a>
 <p>Small, exact apps that just work.</p><p style="margin-top:14px">© 2026 dotXline LTD. All rights reserved.<br>37, Morganstown, Cardiff CF15 8FE, United Kingdom</p></div>
