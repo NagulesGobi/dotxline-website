@@ -39,10 +39,10 @@ function start(host) {
   camera.position.set(0, 0, 250);
 
   // three flat tones: shadow, body, light. Toon, so it reads as a drawn line, not a glossy object.
-  const tones = new Uint8Array([150, 225, 255]);
+  const tones = new Uint8Array([215, 245, 255]);
   const grad = new THREE.DataTexture(tones, 3, 1, THREE.RedFormat);
   grad.minFilter = grad.magFilter = THREE.NearestFilter; grad.needsUpdate = true;
-  const mat = new THREE.MeshToonMaterial({ color: 0xF5A524, gradientMap: grad });
+  const mat = new THREE.MeshToonMaterial({ color: 0xFA9A00, gradientMap: grad });
 
   const curve = new THREE.CatmullRomCurve3(pathPoints(), false, 'centripetal');
   const SEG = 600, RAD = 5, RS = 28;
@@ -57,8 +57,8 @@ function start(host) {
   group.scale.setScalar(1.3);
   scene.add(group);
 
-  scene.add(new THREE.AmbientLight(0xffffff, 0.95));
-  const key = new THREE.DirectionalLight(0xffffff, 1.25); key.position.set(-60, 90, 160); scene.add(key);
+  scene.add(new THREE.AmbientLight(0xffffff, 2.45));
+  const key = new THREE.DirectionalLight(0xffffff, 0.75); key.position.set(-60, 90, 160); scene.add(key);
 
   const total = geo.index.count, per = RS * 6;
   let drawn = 0;
