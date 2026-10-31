@@ -130,11 +130,14 @@ img,video,svg{display:block;max-width:100%}
 @media(max-width:760px){.habit{grid-template-columns:1fr;gap:6px}}
 
 /* closing band */
-.band{background:var(--ink);color:#fff;border-radius:40px;padding:72px 56px;display:grid;grid-template-columns:minmax(0,1.3fr) auto;gap:32px;align-items:end;position:relative;overflow:hidden}
+.band{background:var(--ink);color:#fff;border-radius:40px;padding:72px 56px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,.9fr);gap:32px;align-items:center;position:relative;overflow:hidden}
 .band h2{font-size:clamp(38px,5vw,68px)}
 .band p{color:rgba(255,255,255,.7);margin-top:16px;font-size:18px}
-.band .bg-line{position:absolute;right:5%;top:50%;transform:translateY(-50%);height:82%;width:auto;max-width:55%;opacity:.14;pointer-events:none}
-.band>div,.band>.btn,.band>.btns{position:relative;z-index:1}
+.band>div:first-of-type{grid-column:1;grid-row:1;position:relative;z-index:1}
+.band .bg-line{grid-column:2;grid-row:1;justify-self:center;align-self:center;height:clamp(150px,18vw,230px);width:auto;max-width:100%;opacity:.16;pointer-events:none}
+.band>.btn,.band>.btns{grid-column:2;grid-row:1;align-self:center;position:relative;z-index:1;justify-content:center}
+.band>.btn{justify-self:center}
+.band>.btns{justify-self:stretch}
 @media(max-width:760px){.band{grid-template-columns:1fr;padding:48px 28px;border-radius:28px}}
 
 /* product pages */
@@ -161,7 +164,7 @@ img,video,svg{display:block;max-width:100%}
 @media(max-width:760px){.features{grid-template-columns:1fr}}
 
 /* phone with video */
-.phone{justify-self:center;width:min(300px,78vw);max-width:100%;border-radius:48px;padding:10px;background:#0C0705;box-shadow:0 0 0 1.5px rgba(255,255,255,.12),0 60px 90px -40px rgba(0,0,0,.7);transform:perspective(1000px) rotateY(var(--ry,-8deg)) rotateX(var(--rx,4deg));transition:transform .6s var(--ease)}
+.phone{justify-self:center;width:min(300px,78vw);max-width:100%;border-radius:48px;padding:10px;background:#0C0705;box-shadow:0 0 0 1.5px rgba(255,255,255,.12),0 60px 90px -40px rgba(0,0,0,.7);transform:perspective(1000px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .6s var(--ease)}
 .phone video,.phone img{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:38px;background:#1F1410}
 .reel{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:center}
 .reel .phone{transform:none}
@@ -250,7 +253,7 @@ details p{margin-top:10px;color:var(--muted)}
 .scene-dots{display:flex;gap:8px;margin-top:28px}
 .scene-dots i{width:28px;height:4px;border-radius:2px;background:var(--line);transition:background .3s}
 .scene-dots i.on{background:var(--mark)}
-.device{justify-self:center;position:relative;width:min(330px,74vw);border-radius:54px;padding:11px;background:#0E1512;box-shadow:0 0 0 1.5px rgba(127,140,133,.35),0 70px 100px -50px rgba(0,0,0,.55);transform:perspective(1400px) rotateY(calc((var(--p,0) - .5) * -14deg)) rotateX(4deg)}
+.device{justify-self:center;position:relative;width:min(330px,74vw);border-radius:54px;padding:11px;background:#0E1512;box-shadow:0 0 0 1.5px rgba(127,140,133,.35),0 70px 100px -50px rgba(0,0,0,.55);transform:perspective(1400px) rotateY(calc((var(--p,0) - .5) * -5deg))}
 .device .screen{position:relative;width:100%;aspect-ratio:640/1391;border-radius:44px;overflow:hidden;background:#F4F6F3}
 .device img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .55s var(--ease),transform .8s var(--ease)}
 .device img.on{opacity:1;transform:none}
@@ -310,7 +313,7 @@ details p{margin-top:10px;color:var(--muted)}
 
 .phone.tall{width:min(290px,70vw)}
 .phone.tall video,.phone.tall img{aspect-ratio:444/962}
-.panel{justify-self:center;position:relative;width:min(330px,70vw);aspect-ratio:516/1118;border-radius:34px;overflow:hidden;background:#E3F5EE;box-shadow:0 0 0 1px var(--line),0 60px 90px -50px rgba(0,0,0,.45);transform:perspective(1400px) rotateY(calc((var(--p,0) - .5) * -10deg))}
+.panel{justify-self:center;position:relative;width:min(330px,70vw);aspect-ratio:516/1118;border-radius:34px;overflow:hidden;background:#E3F5EE;box-shadow:0 0 0 1px var(--line),0 60px 90px -50px rgba(0,0,0,.45);transform:perspective(1400px) rotateY(calc((var(--p,0) - .5) * -4deg))}
 .panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.05);transition:opacity .55s var(--ease),transform .8s var(--ease)}
 .panel img.on,.panel img:first-child{opacity:1;transform:none}
 @media(max-width:860px){.panel{width:min(196px,50vw)}}
@@ -518,3 +521,12 @@ img{transition:filter .6s var(--ease)}
 .creds li{padding-left:22px;position:relative}
 .creds li::before{content:"";position:absolute;left:0;top:.72em;width:12px;height:4px;border-radius:2px;background:var(--mark)}
 @media(max-width:760px){.person{grid-template-columns:1fr;gap:22px;padding:18px}.person img{max-width:360px}}
+
+@media(max-width:760px){
+  .band>div:first-of-type{grid-column:1;grid-row:1}
+  .band>.btn,.band>.btns{grid-column:1;grid-row:2;justify-self:start}
+  .band .bg-line{position:absolute;right:-6%;top:6%;grid-column:auto;grid-row:auto;height:46%;opacity:.12}
+}
+/* try-it demo: phone and note centred on each other */
+.demo-col{display:grid;justify-items:center;gap:16px}
+.demo-col .dnote{margin:0;width:min(320px,82vw);text-align:center}
