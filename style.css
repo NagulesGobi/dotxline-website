@@ -532,3 +532,7 @@ img{transition:filter .6s var(--ease)}
 /* try-it demo: phone and note centred on each other */
 .demo-col{display:grid;justify-items:center;gap:16px}
 .demo-col .dnote{margin:0;width:min(320px,82vw);text-align:center}
+
+/* Tockbee films are the top of an iPhone screen (9:16), so the phone rises from the bottom edge, cut off and fading, instead of closing into a short squat shape */
+.phone:not(.tall){width:min(320px,78vw);border-radius:52px 52px 0 0;padding:11px 11px 0;-webkit-mask-image:linear-gradient(#000 91%,transparent 100%);mask-image:linear-gradient(#000 91%,transparent 100%)}
+.phone:not(.tall) video,.phone:not(.tall) img{border-radius:42px 42px 0 0}
