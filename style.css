@@ -549,4 +549,7 @@ img{transition:filter .6s var(--ease)}
 }
 
 /* the dynamic island stays put like a screen recording: drawn over the film at exactly the spot it sits in the app scenes, so zooms and slides in the film never move it */
-.phone:not(.tall) .pscreen::after{content:"";position:absolute;z-index:2;left:34.41%;top:1.6%;width:31.18%;height:4.2%;border-radius:999px;background:#000;pointer-events:none}
+.phone:not(.tall) .pscreen::after{content:"";position:absolute;z-index:2;left:34.41%;top:1.6%;width:31.18%;height:4.2%;border-radius:999px;background:#0E1512;pointer-events:none}
+
+/* the screen-by-screen phone: the same fixed island on every screen, matched to the one in the first three screenshots, so the last two get it too */
+.device .screen::after{content:"";position:absolute;z-index:2;left:36.25%;top:1.65%;width:27.5%;height:4.17%;border-radius:999px;background:#0E1512;pointer-events:none}
