@@ -539,3 +539,11 @@ img{transition:filter .6s var(--ease)}
 .pscreen .pmain{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;border-radius:0}
 .film-sound{display:flex;justify-content:center;margin-top:22px}
 .film-sound .btn{min-height:44px;padding:0 20px;font-size:15px}
+
+/* phones fit the screen: sized from the viewport height so the phone and its button always sit between the menu bar and the bottom edge */
+@media(min-width:861px){
+  :root{--pw:min(300px,calc((100svh - 215px) * .46 + 22px))}
+  .phone:not(.tall),.device{width:var(--pw)}
+  .phone.tall{width:calc(var(--pw) - 10px)}
+  .panel{width:min(330px,calc((100svh - 190px) * .4615))}
+}
