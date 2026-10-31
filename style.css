@@ -547,3 +547,6 @@ img{transition:filter .6s var(--ease)}
   .phone.tall{width:calc(var(--pw) - 10px)}
   .panel{width:min(330px,calc((100svh - 190px) * .4615))}
 }
+
+/* the dynamic island stays put like a screen recording: drawn over the film at exactly the spot it sits in the app scenes, so zooms and slides in the film never move it */
+.phone:not(.tall) .pscreen::after{content:"";position:absolute;z-index:2;left:34.41%;top:1.6%;width:31.18%;height:4.2%;border-radius:999px;background:#000;pointer-events:none}
