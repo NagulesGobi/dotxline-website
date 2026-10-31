@@ -544,7 +544,7 @@ img{transition:filter .6s var(--ease)}
 @media(min-width:861px){
   :root{--pw:min(300px,calc((100svh - 215px) * .46 + 22px))}
   .phone:not(.tall),.device{width:var(--pw)}
-  .phone.tall{width:calc(var(--pw) - 10px)}
+  .phone.tall{width:var(--pw)}
   .panel{width:min(330px,calc((100svh - 190px) * .4615))}
 }
 
@@ -553,3 +553,9 @@ img{transition:filter .6s var(--ease)}
 
 /* the screen-by-screen phone: the same fixed island on every screen, matched to the one in the first three screenshots, so the last two get it too */
 .device .screen::after{content:"";position:absolute;z-index:2;left:36.25%;top:1.65%;width:27.5%;height:4.17%;border-radius:999px;background:#0E1512;pointer-events:none}
+
+/* Xpense film phones: same device look, size and fixed island as the Tockbee ones */
+.phone.tall{width:min(300px,74vw);padding:11px;border-radius:54px;background:#0E1512;box-shadow:0 0 0 1.5px rgba(127,140,133,.35),0 70px 100px -50px rgba(0,0,0,.55)}
+.phone.tall .pscreen{position:relative;aspect-ratio:444/962;border-radius:44px;overflow:hidden;background:#0E1512}
+.phone.tall .pscreen video{position:absolute;inset:0;display:block;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;border-radius:0}
+.phone.tall .pscreen::after{content:"";position:absolute;z-index:2;left:34.41%;top:1.6%;width:31.18%;height:4.2%;border-radius:999px;background:#0E1512;pointer-events:none}
