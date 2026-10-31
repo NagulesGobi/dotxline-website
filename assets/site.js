@@ -162,7 +162,7 @@
 
   // videos only play when on screen, and never when motion is reduced
   document.querySelectorAll('video[data-autoplay]').forEach(v => {
-    if (reduce) { v.removeAttribute('autoplay'); v.controls = true; return; }
+    if (reduce) { v.removeAttribute('autoplay'); if (!v.classList.contains('pbg')) v.controls = true; return; }
     const io = new IntersectionObserver(([en]) => { en.isIntersecting ? v.play().catch(() => {}) : v.pause(); }, { threshold: 0.3 });
     io.observe(v);
   });
@@ -382,4 +382,22 @@
     $('.dagain').addEventListener('click', () => { pence = 0; cat = ''; chips.forEach(x => x.setAttribute('aria-pressed', 'false')); refresh(); $('.ddone').hidden = true; $('.dform').hidden = false; });
     refresh();
   });
+
+  // phones lean a few degrees as they scroll through the screen, like the screen-by-screen phone
+  if (!reduce) {
+    const phones = [...document.querySelectorAll('.phone')];
+    if (phones.length) {
+      let pt = false;
+      const lean = () => {
+        pt = false;
+        phones.forEach(p => {
+          const r = p.getBoundingClientRect();
+          p.style.setProperty('--p', clamp((innerHeight - r.top) / (innerHeight + r.height)).toFixed(3));
+        });
+      };
+      addEventListener('scroll', () => { if (!pt) { pt = true; requestAnimationFrame(lean); } }, { passive: true });
+      addEventListener('resize', lean);
+      lean();
+    }
+  }
 })();
