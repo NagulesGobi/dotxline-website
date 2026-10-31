@@ -148,15 +148,23 @@
     els.forEach(el => io.observe(el));
   } else els.forEach(el => el.classList.add('seen'));
 
-  // sound toggles for films that have a soundtrack
-  document.querySelectorAll('[data-sound]').forEach(b => {
+  // sound toggles for films that have a soundtrack. Only one film plays sound at a time.
+  const soundBtns = [...document.querySelectorAll('[data-sound]')];
+  const setSound = (b, on) => {
+    const v = document.getElementById(b.dataset.sound);
+    if (!v) return;
+    v.muted = !on;
+    b.setAttribute('aria-pressed', String(on));
+    b.textContent = on ? 'Turn sound off' : 'Turn sound on';
+  };
+  soundBtns.forEach(b => {
     const v = document.getElementById(b.dataset.sound);
     if (!v) return;
     b.addEventListener('click', () => {
-      v.muted = !v.muted;
-      if (!v.muted) { v.currentTime = 0; v.play().catch(() => {}); }
-      b.setAttribute('aria-pressed', String(!v.muted));
-      b.textContent = v.muted ? 'Turn sound on' : 'Turn sound off';
+      const on = v.muted;
+      soundBtns.forEach(o => { if (o !== b) setSound(o, false); });
+      setSound(b, on);
+      if (on) { v.currentTime = 0; v.play().catch(() => {}); }
     });
   });
 
