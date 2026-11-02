@@ -635,6 +635,8 @@ html .site-head .wrap{position:relative;isolation:isolate;pointer-events:auto;di
 .copy-btn{margin-top:14px;color:var(--link)}
 .film-sound .btn{min-height:48px;padding:0 24px;font-size:16px}
 
-/* the Turn sound on buttons are filled like the page's other main buttons */
-.xp-page .film-sound .btn{background:#0A7D61;color:#fff}
-.tb-page .film-sound .btn{background:#FF7A2F;color:#2A1712}
+/* the Turn sound on buttons: transparent, with the same size, shape, type and depth as the other buttons and an outline in the page's own colour */
+.film-sound .btn{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1.5px var(--mark),0 10px 22px -12px rgba(0,0,0,.4)}
+.film-sound .btn:hover{background:color-mix(in srgb,var(--mark) 14%,transparent);box-shadow:inset 0 0 0 1.5px var(--mark),0 14px 26px -12px rgba(0,0,0,.5)}
+.p-hero.xp .film-sound .btn,.p-hero.tb .film-sound .btn{background:transparent;color:var(--fg)}
+.p-hero.xp .film-sound .btn:hover,.p-hero.tb .film-sound .btn:hover{background:color-mix(in srgb,var(--mark) 14%,transparent)}
