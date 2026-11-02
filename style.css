@@ -603,8 +603,23 @@ html .site-head .wrap{position:relative;isolation:isolate;pointer-events:auto;di
 ::view-transition-old(root){z-index:1}
 ::view-transition-new(root){z-index:2}
 
-/* the top section of every page now follows the theme too, so the whole page changes together */
-.hero,.p-hero.xp,.p-hero.tb{background:var(--bg);color:var(--fg)}
-.hero .lede,.p-hero.xp .lede,.p-hero.tb .lede{color:var(--muted)}
-.stage .hint{color:var(--muted);background:color-mix(in srgb,var(--fg) 7%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--fg) 16%,transparent)}
-.hero .btn.ghost,.p-hero .btn.ghost{color:var(--fg)}
+/* the top section follows the theme with real colour in both: soft tints in light mode, the original deep colours in dark mode */
+.hero{background:#D8E4DC;color:#0E1512}
+.p-hero.xp{background:#CFEFE1;color:#0E1512}
+.p-hero.tb{background:#FFD9B5;color:#2A1712}
+.hero .lede,.p-hero.xp .lede{color:rgba(14,21,18,.7)}
+.p-hero.tb .lede{color:rgba(42,23,18,.74)}
+.stage .hint{color:rgba(14,21,18,.72);background:rgba(14,21,18,.06);box-shadow:inset 0 0 0 1px rgba(14,21,18,.16)}
+.hero .btn.ghost,.p-hero .btn.ghost{color:inherit}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme=light]) .hero,:root:not([data-theme=light]) .p-hero.xp{background:#0E1512;color:#fff}
+  :root:not([data-theme=light]) .p-hero.tb{background:#2A1712;color:#FFF6E8}
+  :root:not([data-theme=light]) .hero .lede,:root:not([data-theme=light]) .p-hero.xp .lede{color:rgba(255,255,255,.72)}
+  :root:not([data-theme=light]) .p-hero.tb .lede{color:rgba(255,246,232,.74)}
+  :root:not([data-theme=light]) .stage .hint{color:rgba(255,255,255,.82);background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)}
+}
+:root[data-theme=dark] .hero,:root[data-theme=dark] .p-hero.xp{background:#0E1512;color:#fff}
+:root[data-theme=dark] .p-hero.tb{background:#2A1712;color:#FFF6E8}
+:root[data-theme=dark] .hero .lede,:root[data-theme=dark] .p-hero.xp .lede{color:rgba(255,255,255,.72)}
+:root[data-theme=dark] .p-hero.tb .lede{color:rgba(255,246,232,.74)}
+:root[data-theme=dark] .stage .hint{color:rgba(255,255,255,.82);background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)}
