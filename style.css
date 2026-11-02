@@ -602,3 +602,9 @@ html .site-head .wrap{position:relative;isolation:isolate;pointer-events:auto;di
 ::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
 ::view-transition-old(root){z-index:1}
 ::view-transition-new(root){z-index:2}
+
+/* the top section of every page now follows the theme too, so the whole page changes together */
+.hero,.p-hero.xp,.p-hero.tb{background:var(--bg);color:var(--fg)}
+.hero .lede,.p-hero.xp .lede,.p-hero.tb .lede{color:var(--muted)}
+.stage .hint{color:var(--muted);background:color-mix(in srgb,var(--fg) 7%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--fg) 16%,transparent)}
+.hero .btn.ghost,.p-hero .btn.ghost{color:var(--fg)}
