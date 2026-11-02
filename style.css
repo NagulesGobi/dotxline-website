@@ -623,3 +623,14 @@ html .site-head .wrap{position:relative;isolation:isolate;pointer-events:auto;di
 :root[data-theme=dark] .hero .lede,:root[data-theme=dark] .p-hero.xp .lede{color:rgba(255,255,255,.72)}
 :root[data-theme=dark] .p-hero.tb .lede{color:rgba(255,246,232,.74)}
 :root[data-theme=dark] .stage .hint{color:rgba(255,255,255,.82);background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)}
+
+/* one button style everywhere: same height, pill shape, type and depth. Colours stay as they are. */
+.btn,.dsave,.dagain,.copy-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;height:auto;padding:0 24px;border-radius:999px;font:600 16px/1 var(--text);text-decoration:none;cursor:pointer;border:0;transition:transform .25s var(--ease),box-shadow .25s,background .25s,opacity .2s,scale .15s}
+.btn:not(.ghost),.dsave{box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -1px 0 rgba(0,0,0,.08),0 10px 22px -12px rgba(0,0,0,.5)}
+.btn:not(.ghost):hover,.dsave:not(:disabled):hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(0,0,0,.08),0 14px 26px -12px rgba(0,0,0,.55)}
+.btn.ghost,.dagain,.copy-btn{background:transparent;box-shadow:inset 0 0 0 1.5px currentColor}
+.dsave{width:100%;margin-top:12px}
+.dsave:disabled{opacity:.35;cursor:not-allowed}
+.dagain{margin-top:6px}
+.copy-btn{margin-top:14px;color:var(--link)}
+.film-sound .btn{min-height:48px;padding:0 24px;font-size:16px}
