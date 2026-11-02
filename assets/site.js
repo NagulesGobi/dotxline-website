@@ -258,11 +258,8 @@
     const parts = () => [...wrap.children].filter(c => c !== dot);
     const measure = () => {
       if (head.classList.contains('collapsed')) return;
-      const keep = wrap.style.cssText;
-      wrap.style.transition = 'none'; wrap.style.width = 'max-content'; wrap.style.marginLeft = '0';
-      const w = Math.ceil(wrap.getBoundingClientRect().width);
-      wrap.style.cssText = keep;
-      wrap.style.setProperty('--pw', Math.min(w, head.clientWidth - 24) + 'px');
+      const pad = parseFloat(getComputedStyle(head).paddingLeft) || 0;
+      wrap.style.setProperty('--pw', Math.round(head.clientWidth - pad * 2) + 'px');
       head.classList.add('ready');
     };
     const setCollapsed = c => {
