@@ -634,3 +634,7 @@ html .site-head .wrap{position:relative;isolation:isolate;pointer-events:auto;di
 .dagain{margin-top:6px}
 .copy-btn{margin-top:14px;color:var(--link)}
 .film-sound .btn{min-height:48px;padding:0 24px;font-size:16px}
+
+/* the Turn sound on buttons are filled like the page's other main buttons */
+.xp-page .film-sound .btn{background:#0A7D61;color:#fff}
+.tb-page .film-sound .btn{background:#FF7A2F;color:#2A1712}
