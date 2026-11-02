@@ -221,7 +221,7 @@
   const root = document.documentElement;
   const effective = () => root.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   const head = document.querySelector('.site-head');
-  const headLogo = head && !head.classList.contains('on-light') ? head.querySelector('.brand img') : null;
+  const headLogo = head && !head.querySelector('.brand picture') ? head.querySelector('.brand img') : null;
   const syncTheme = () => {
     const dark = effective() === 'dark';
     document.querySelectorAll('.theme-btn').forEach(b => {
@@ -229,29 +229,71 @@
       b.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
     });
     document.querySelectorAll('picture source').forEach(s => { s.media = dark ? 'all' : 'not all'; });
-    if (headLogo) headLogo.src = head.classList.contains('stuck') && !dark ? 'logo-light.svg' : 'logo-dark.svg';
+    if (headLogo) headLogo.src = dark ? 'logo-dark.svg' : 'logo-light.svg';
   };
-  const setTheme = t => { root.dataset.theme = t; try { localStorage.setItem('dx-theme', t); } catch (e) {} syncTheme(); };
-  const toggleTheme = () => setTheme(effective() === 'dark' ? 'light' : 'dark');
+  const setTheme = (t, origin) => {
+    const apply = () => { root.dataset.theme = t; try { localStorage.setItem('dx-theme', t); } catch (e) {} syncTheme(); };
+    if (!document.startViewTransition || reduce) { apply(); return; }
+    const r = (origin || document.querySelector('.theme-btn'))?.getBoundingClientRect();
+    const x = r ? r.left + r.width / 2 : innerWidth / 2, y = r ? r.top + r.height / 2 : 36;
+    const rad = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+    const vt = document.startViewTransition(apply);
+    vt.ready.then(() => root.animate(
+      { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${rad}px at ${x}px ${y}px)`] },
+      { duration: 950, easing: 'cubic-bezier(.3,.7,.2,1)', pseudoElement: '::view-transition-new(root)' }
+    )).catch(() => {});
+  };
+  const toggleTheme = e => setTheme(effective() === 'dark' ? 'light' : 'dark', e && e.currentTarget && e.currentTarget.getBoundingClientRect ? e.currentTarget : null);
   document.querySelectorAll('.theme-btn').forEach(b => b.addEventListener('click', toggleTheme));
   matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', syncTheme);
   if (root.dataset.theme) syncTheme(); else syncTheme();
 
-  // header: slim and blurred once you scroll, hides on the way down, returns on the way up
+  // header: a glass pill. Scrolling down tucks it into a circle at the right edge, like the dock; scrolling up, or tapping the circle, opens it again.
   if (head) {
-    let lastY = scrollY, ht = false;
+    const wrap = head.querySelector('.wrap');
+    const dot = document.createElement('button');
+    dot.className = 'dock-dot'; dot.type = 'button'; dot.setAttribute('aria-label', 'Open the menu'); dot.setAttribute('aria-expanded', 'false');
+    dot.innerHTML = '<svg viewBox="4 3 80 80" aria-hidden="true"><path d="M63.44 36.56 L38.69 61.31 A16 16 0 1 1 38.69 38.69 L61.31 61.31 A9 9 0 0 0 76.68 54.95 L76.68 20" fill="none" stroke="#F5A524" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    wrap.appendChild(dot);
+    const parts = () => [...wrap.children].filter(c => c !== dot);
+    const measure = () => {
+      if (head.classList.contains('collapsed')) return;
+      const keep = wrap.style.cssText;
+      wrap.style.transition = 'none'; wrap.style.width = 'max-content'; wrap.style.marginLeft = '0';
+      const w = Math.ceil(wrap.getBoundingClientRect().width);
+      wrap.style.cssText = keep;
+      wrap.style.setProperty('--pw', Math.min(w, head.clientWidth - 24) + 'px');
+      head.classList.add('ready');
+    };
+    const setCollapsed = c => {
+      if (c === head.classList.contains('collapsed')) return;
+      head.classList.toggle('collapsed', c);
+      dot.setAttribute('aria-expanded', String(!c));
+      parts().forEach(p => { if (c) p.setAttribute('inert', ''); else p.removeAttribute('inert'); });
+    };
+    let lastY = scrollY, hold = 0, ht = false;
     const onScroll = () => {
       ht = false;
-      const y = scrollY, stuck = y > 80;
-      if (stuck !== head.classList.contains('stuck')) { head.classList.toggle('stuck', stuck); syncTheme(); }
+      const y = scrollY, dy = y - lastY;
       const menuOpen = document.getElementById('menu')?.classList.contains('open');
-      head.classList.toggle('hide', stuck && y > lastY + 4 && y > 400 && !menuOpen);
-      if (y < lastY - 4 || y < 400) head.classList.remove('hide');
-      lastY = y;
+      if (y < 70) setCollapsed(false);
+      else if (dy > 6 && y > 180 && !menuOpen && Date.now() > hold) setCollapsed(true);
+      else if (dy < -6) setCollapsed(false);
+      if (Math.abs(dy) > 6) lastY = y;
     };
     addEventListener('scroll', () => { if (!ht) { ht = true; requestAnimationFrame(onScroll); } }, { passive: true });
-    onScroll();
-    head.addEventListener('focusin', () => head.classList.remove('hide'));
+    dot.addEventListener('click', () => { hold = Date.now() + 2500; lastY = scrollY; setCollapsed(false); });
+    head.addEventListener('focusin', () => setCollapsed(false));
+    // light that follows the pointer across the glass
+    if (fine) wrap.addEventListener('pointermove', e => {
+      const r = wrap.getBoundingClientRect();
+      wrap.style.setProperty('--hx', (e.clientX - r.left) + 'px');
+      wrap.style.setProperty('--hy', (e.clientY - r.top) + 'px');
+    });
+    measure();
+    addEventListener('resize', measure);
+    document.fonts?.ready.then(measure);
+    addEventListener('load', measure);
   }
 
   // phone menu: backdrop for the bottom sheet
