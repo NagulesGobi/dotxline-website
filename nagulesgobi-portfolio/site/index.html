@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script data-intro="1">
+  (function () {
+    var d = document.documentElement, s = document.currentScript; d.classList.add('js');
+    try {
+      var t = localStorage.getItem('ng-theme'); if (t === 'light' || t === 'dark') d.dataset.theme = t;
+      var rm = matchMedia('(prefers-reduced-motion: reduce)').matches, nav = sessionStorage.getItem('ng-nav');
+      if (nav && !rm) { d.classList.add('arriving'); d.dataset.navLabel = nav; sessionStorage.removeItem('ng-nav'); sessionStorage.setItem('ng-intro', '1'); }
+      if (s.dataset.intro && !rm && !sessionStorage.getItem('ng-intro')) d.classList.add('intro');
+    } catch (e) {}
+  })();
+</script>
+<title>Nagules Gobi · Product Designer</title>
+<meta name="description" content="Nagules Gobi is a UK product designer who also builds with code and AI-assisted development, and Director of dotXline LTD.">
+<meta property="og:title" content="Nagules Gobi · Product Designer">
+<meta property="og:description" content="Nagules Gobi is a UK product designer who also builds with code and AI-assisted development, and Director of dotXline LTD.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.nagulesgobi.com/assets/brand/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F2F2F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://www.nagulesgobi.com/">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<script src="assets/js/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="curtain" aria-hidden="true"><span class="curtain-label"></span></div>
+<div class="progress" aria-hidden="true"><i></i></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><div class="cursor-preview"></div><div class="cursor-ring"><span class="cursor-label"></span></div><div class="cursor-dot"></div></div>
+<header class="head">
+  <div class="wrap head-row">
+    <a class="logo" href="index.html" aria-label="Nagules Gobi, home" data-label="Home"><svg class="logo-svg" viewBox="-4 -4 431 76" role="img" aria-label="Nagules Gobi"><defs><radialGradient id="ngg" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="87"><stop offset="0" stop-color="#FF9124"/><stop offset=".3" stop-color="#FF4A2C"/><stop offset=".55" stop-color="#FF2440"/><stop offset="1" stop-color="#FF008E"/></radialGradient></defs><path fill="url(#ngg)" d="M0 0H35.41A24.59 24.59 0 0 1 60 24.59V24.59H49.18V24.59A13.77 13.77 0 0 0 35.41 10.82H18.47L49.18 41.53V35.41H60V67.65L10.82 18.47V35.41A13.77 13.77 0 0 0 24.59 49.18H24.59V60H24.59A24.59 24.59 0 0 1 0 35.41Z"/><path class="wm" d="M101.37 10H106.62Q106.91 10 107.11 10.2Q107.31 10.4 107.31 10.69V49.31Q107.31 49.6 107.11 49.8Q106.91 50 106.62 50H101.08Q100.57 50 100.28 49.49L87.82 23.89Q87.71 23.71 87.6 23.74Q87.48 23.77 87.48 24L87.54 49.31Q87.54 49.6 87.34 49.8Q87.14 50 86.85 50H81.6Q81.31 50 81.11 49.8Q80.91 49.6 80.91 49.31V10.69Q80.91 10.4 81.11 10.2Q81.31 10 81.6 10H87.08Q87.65 10 87.88 10.51L100.4 36.23Q100.51 36.4 100.62 36.37Q100.74 36.34 100.74 36.11L100.68 10.69Q100.68 10.4 100.88 10.2Q101.08 10 101.37 10Z M136.68 49.43 135.2 43.31Q135.14 43.09 134.91 43.09H123.14Q122.91 43.09 122.85 43.31L121.42 49.43Q121.25 50 120.62 50H115.2Q114.45 50 114.62 49.26L125.02 10.57Q125.2 10 125.82 10H132.34Q132.97 10 133.14 10.57L143.54 49.26L143.6 49.49Q143.6 50 142.97 50H137.48Q136.85 50 136.68 49.43ZM124.51 37.89H133.54Q133.65 37.89 133.77 37.8Q133.88 37.71 133.82 37.54L129.14 18.8Q129.08 18.63 128.97 18.63Q128.85 18.63 128.8 18.8L124.22 37.54Q124.17 37.71 124.28 37.8Q124.4 37.89 124.51 37.89Z M150.05 38.51V21.49Q150.05 17.94 151.62 15.23Q153.2 12.51 156.02 11.03Q158.85 9.54 162.57 9.54Q166.28 9.54 169.14 11Q172 12.46 173.57 15.09Q175.14 17.71 175.14 21.09V22.4Q175.14 22.69 174.94 22.89Q174.74 23.09 174.45 23.09H169.2Q168.91 23.09 168.71 22.89Q168.51 22.69 168.51 22.4V21.09Q168.51 18.51 166.88 16.89Q165.25 15.26 162.57 15.26Q159.94 15.26 158.31 16.94Q156.68 18.63 156.68 21.37V38.63Q156.68 41.37 158.37 43.06Q160.05 44.74 162.74 44.74Q165.37 44.74 166.94 43.23Q168.51 41.71 168.51 39.09V34.57Q168.51 34.29 168.22 34.29H163.02Q162.74 34.29 162.54 34.09Q162.34 33.89 162.34 33.6V29.43Q162.34 29.14 162.54 28.94Q162.74 28.74 163.02 28.74H174.45Q174.74 28.74 174.94 28.94Q175.14 29.14 175.14 29.43V38.34Q175.14 44 171.71 47.23Q168.28 50.46 162.57 50.46Q158.85 50.46 156.02 48.97Q153.2 47.49 151.62 44.77Q150.05 42.06 150.05 38.51Z M183.65 38V10.69Q183.65 10.4 183.85 10.2Q184.05 10 184.34 10H189.6Q189.88 10 190.08 10.2Q190.28 10.4 190.28 10.69V38.34Q190.28 41.2 191.91 42.97Q193.54 44.74 196.22 44.74Q198.91 44.74 200.57 42.97Q202.22 41.2 202.22 38.34V10.69Q202.22 10.4 202.42 10.2Q202.62 10 202.91 10H208.17Q208.45 10 208.65 10.2Q208.85 10.4 208.85 10.69V38Q208.85 41.71 207.28 44.54Q205.71 47.37 202.85 48.91Q200 50.46 196.22 50.46Q192.51 50.46 189.65 48.91Q186.8 47.37 185.22 44.54Q183.65 41.71 183.65 38Z M218.22 49.31V10.69Q218.22 10.4 218.42 10.2Q218.62 10 218.91 10H224.17Q224.45 10 224.65 10.2Q224.85 10.4 224.85 10.69V44Q224.85 44.29 225.14 44.29H240.85Q241.14 44.29 241.34 44.49Q241.54 44.69 241.54 44.97V49.31Q241.54 49.6 241.34 49.8Q241.14 50 240.85 50H218.91Q218.62 50 218.42 49.8Q218.22 49.6 218.22 49.31Z M271.6 15.71H255.71Q255.42 15.71 255.42 16V26.74Q255.42 27.03 255.71 27.03H265.88Q266.17 27.03 266.37 27.23Q266.57 27.43 266.57 27.71V32.06Q266.57 32.34 266.37 32.54Q266.17 32.74 265.88 32.74H255.71Q255.42 32.74 255.42 33.03V44Q255.42 44.29 255.71 44.29H271.6Q271.88 44.29 272.08 44.49Q272.28 44.69 272.28 44.97V49.31Q272.28 49.6 272.08 49.8Q271.88 50 271.6 50H249.48Q249.2 50 249 49.8Q248.8 49.6 248.8 49.31V10.69Q248.8 10.4 249 10.2Q249.2 10 249.48 10H271.6Q271.88 10 272.08 10.2Q272.28 10.4 272.28 10.69V15.03Q272.28 15.31 272.08 15.51Q271.88 15.71 271.6 15.71Z M279.02 39.54V38.06Q279.02 37.77 279.22 37.57Q279.42 37.37 279.71 37.37H284.85Q285.14 37.37 285.34 37.57Q285.54 37.77 285.54 38.06V39.2Q285.54 41.66 287.25 43.2Q288.97 44.74 291.88 44.74Q294.57 44.74 296 43.37Q297.42 42 297.42 39.77Q297.42 38.23 296.62 37.11Q295.82 36 294.37 35.06Q292.91 34.11 289.88 32.51Q286.4 30.69 284.28 29.26Q282.17 27.83 280.71 25.6Q279.25 23.37 279.25 20.17Q279.25 15.26 282.54 12.4Q285.82 9.54 291.2 9.54Q294.91 9.54 297.77 10.94Q300.62 12.34 302.17 14.91Q303.71 17.49 303.71 20.8V22Q303.71 22.29 303.51 22.49Q303.31 22.69 303.02 22.69H297.88Q297.6 22.69 297.4 22.49Q297.2 22.29 297.2 22V20.91Q297.2 18.46 295.54 16.86Q293.88 15.26 291.08 15.26Q288.62 15.26 287.2 16.54Q285.77 17.83 285.77 20.11Q285.77 21.66 286.51 22.74Q287.25 23.83 288.77 24.8Q290.28 25.77 293.37 27.31Q297.48 29.66 299.42 30.97Q301.37 32.29 302.71 34.37Q304.05 36.46 304.05 39.49Q304.05 44.51 300.68 47.49Q297.31 50.46 291.65 50.46Q287.88 50.46 285.02 49.11Q282.17 47.77 280.6 45.29Q279.02 42.8 279.02 39.54Z M311.37 38.51V21.49Q311.37 17.94 312.94 15.23Q314.51 12.51 317.34 11.03Q320.17 9.54 323.88 9.54Q327.6 9.54 330.45 11Q333.31 12.46 334.88 15.09Q336.45 17.71 336.45 21.09V22.4Q336.45 22.69 336.25 22.89Q336.05 23.09 335.77 23.09H330.51Q330.22 23.09 330.02 22.89Q329.82 22.69 329.82 22.4V21.09Q329.82 18.51 328.2 16.89Q326.57 15.26 323.88 15.26Q321.25 15.26 319.62 16.94Q318 18.63 318 21.37V38.63Q318 41.37 319.68 43.06Q321.37 44.74 324.05 44.74Q326.68 44.74 328.25 43.23Q329.82 41.71 329.82 39.09V34.57Q329.82 34.29 329.54 34.29H324.34Q324.05 34.29 323.85 34.09Q323.65 33.89 323.65 33.6V29.43Q323.65 29.14 323.85 28.94Q324.05 28.74 324.34 28.74H335.77Q336.05 28.74 336.25 28.94Q336.45 29.14 336.45 29.43V38.34Q336.45 44 333.02 47.23Q329.6 50.46 323.88 50.46Q320.17 50.46 317.34 48.97Q314.51 47.49 312.94 44.77Q311.37 42.06 311.37 38.51Z M344.45 38.06V21.94Q344.45 18.29 346.02 15.46Q347.6 12.63 350.48 11.09Q353.37 9.54 357.14 9.54Q360.97 9.54 363.85 11.09Q366.74 12.63 368.34 15.46Q369.94 18.29 369.94 21.94V38.06Q369.94 41.77 368.34 44.6Q366.74 47.43 363.85 48.97Q360.97 50.51 357.14 50.51Q353.37 50.51 350.48 48.97Q347.6 47.43 346.02 44.6Q344.45 41.77 344.45 38.06ZM363.31 38.34V21.77Q363.31 18.86 361.62 17.06Q359.94 15.26 357.14 15.26Q354.4 15.26 352.74 17.06Q351.08 18.86 351.08 21.77V38.34Q351.08 41.2 352.74 43Q354.4 44.8 357.14 44.8Q359.94 44.8 361.62 43Q363.31 41.2 363.31 38.34Z M391.65 50H379.48Q379.2 50 379 49.8Q378.8 49.6 378.8 49.31V10.69Q378.8 10.4 379 10.2Q379.2 10 379.48 10H390.97Q396.74 10 399.97 12.71Q403.2 15.43 403.2 20.8Q403.2 26.69 398.57 29.14Q398.28 29.31 398.51 29.49Q403.71 32.29 403.71 39.03Q403.71 44.34 400.37 47.17Q397.02 50 391.65 50ZM385.42 16V26.63Q385.42 26.91 385.71 26.91H391.02Q393.71 26.91 395.22 25.46Q396.74 24 396.74 21.37Q396.74 18.69 395.22 17.2Q393.71 15.71 391.02 15.71H385.71Q385.42 15.71 385.42 16ZM397.08 38.17Q397.08 35.31 395.54 33.69Q394 32.06 391.37 32.06H385.71Q385.42 32.06 385.42 32.34V43.94Q385.42 44.23 385.71 44.23H391.42Q394.05 44.23 395.57 42.63Q397.08 41.03 397.08 38.17Z M412.17 49.31V10.69Q412.17 10.4 412.37 10.2Q412.57 10 412.85 10H418.11Q418.4 10 418.6 10.2Q418.8 10.4 418.8 10.69V49.31Q418.8 49.6 418.6 49.8Q418.4 50 418.11 50H412.85Q412.57 50 412.37 49.8Q412.17 49.6 412.17 49.31Z"/></svg></a>
+    <nav class="nav" aria-label="Main"><a href="work.html"><span data-text="Work">Work</span></a><a href="dotxline.html"><span data-text="dotXline">dotXline</span></a><a href="brand.html"><span data-text="Brand">Brand</span></a><a href="about.html"><span data-text="About">About</span></a><a href="contact.html"><span data-text="Contact">Contact</span></a></nav>
+    <button class="theme-btn" type="button" aria-label="Switch between light and dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><circle class="sun" cx="12" cy="12" r="5"/><g class="rays"><path d="M12 1.5v2.2M12 20.3v2.2M1.5 12h2.2M20.3 12h2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></g><circle class="moon-cut" cx="17" cy="7" r="5"/></svg></button>
+    <a class="btn btn-sm hire" href="contact.html" data-magnetic data-label="Contact"><span class="pulse" aria-hidden="true"></span><span>Hire me</span></a>
+    <button class="menu-btn" type="button" aria-label="Open the menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+  </div>
+</header>
+<nav class="menu" id="menu" aria-label="Menu" hidden><a href="index.html" style="--i:0" aria-current="page"><small>01</small><span>Home</span></a><a href="work.html" style="--i:1"><small>02</small><span>Work</span></a><a href="dotxline.html" style="--i:2"><small>03</small><span>dotXline</span></a><a href="brand.html" style="--i:3"><small>04</small><span>Brand</span></a><a href="about.html" style="--i:4"><small>05</small><span>About</span></a><a href="contact.html" style="--i:5"><small>06</small><span>Contact</span></a>
+  <div class="menu-foot"><a class="btn" href="contact.html" style="font-size:17px" data-label="Contact"><span>Hire me</span></a></div>
+</nav>
+<main id="main">
+<div class="intro-screen" aria-hidden="true">
+  <svg class="intro-mark" viewBox="0 0 100 100"><defs><radialGradient id="ngi" gradientUnits="userSpaceOnUse" cx="15" cy="8" r="113"><stop offset="0" stop-color="#FF9124"/><stop offset=".3" stop-color="#FF4A2C"/><stop offset=".55" stop-color="#FF2440"/><stop offset="1" stop-color="#FF008E"/></radialGradient></defs><path pathLength="1" d="M12.75 8H56.72A30.53 30.53 0 0 1 87.25 38.53V38.53H73.82V38.53A17.1 17.1 0 0 0 56.72 21.43H35.68L73.82 59.57V51.97H87.25V92L26.18 30.93V51.97A17.1 17.1 0 0 0 43.28 69.07H43.28V82.5H43.28A30.53 30.53 0 0 1 12.75 51.97Z"/></svg>
+  <div class="intro-count"><span data-intro-count>000</span><i>%</i></div>
+  <div class="intro-name">Nagules Gobi · Product Designer</div>
+</div>
+<section class="hero" id="top">
+  <canvas class="hero-canvas" aria-hidden="true"></canvas>
+  <div class="wrap hero-inner">
+    <p class="me-chip" data-reveal data-hero><img src="assets/img/me/portrait.webp" alt="Portrait of Nagules Gobi" width="720" height="900" decoding="async"><span>Hi, I’m <b>Nagules Gobi</b>. Product designer who also builds. Director of dotXline LTD.</span></p>
+    <h1 data-split data-hero>Product design that people <em>actually</em> enjoy using.</h1>
+    <p class="lede" data-reveal data-hero style="--d:.35s">I design web and mobile products and brand identities, then build them with code and AI-assisted development. I turn complex ideas into clear, intuitive products that real people can use, not just look at.</p>
+    <div class="btns" data-reveal data-hero style="--d:.5s">
+      <a class="btn" href="work.html" data-magnetic data-label="Work"><span>See my work</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="contact.html" data-magnetic data-label="Contact"><span>Hire me</span></a>
+    </div>
+  </div>
+  <div class="wrap hero-foot" data-reveal data-hero style="--d:.7s">
+    <span class="scroll-cue"><i aria-hidden="true"></i>Scroll to explore</span>
+    <span class="hint">Move your cursor over the mark, or click it</span>
+    <span class="clock">London <time data-clock>--:--</time></span>
+  </div>
+</section>
+
+<section class="marquee" aria-label="Disciplines">
+  <div class="marquee-row" data-marquee="1"><div class="marquee-track"><span>Product Design</span><b>✦</b><span>UX/UI</span><b>✦</b><span>Web Design</span><b>✦</b><span>App Design</span><b>✦</b><span>Brand Identity</span><b>✦</b></div></div>
+  <div class="marquee-row outline" data-marquee="-1" aria-hidden="true"><div class="marquee-track"><span>Design Strategy</span><b>✦</b><span>Prototyping in Code</span><b>✦</b><span>AI-Assisted Development</span><b>✦</b><span>Graphic Design</span><b>✦</b></div></div>
+</section>
+
+<section class="stats" aria-label="At a glance">
+  <div class="wrap stats-row">
+    <div data-reveal><strong data-count="30">30</strong><span>projects shipped</span></div>
+    <div data-reveal style="--d:.1s"><strong data-count="3">3</strong><span>countries</span></div>
+    <div data-reveal style="--d:.2s"><strong data-count="6">6</strong><span>years of practice</span></div>
+  </div>
+</section>
+
+<section class="work hwork" id="work" aria-label="Selected work">
+  <div class="work-sticky">
+    <div class="wrap work-head">
+      <div>
+        <p class="kicker" data-reveal>Selected work</p>
+        <h2 data-split>Design that helps users, one product at a time.</h2>
+      </div>
+      <div class="work-meter" aria-hidden="true"><span data-work-index>01</span><i><b data-work-bar></b></i><span>06</span></div>
+    </div>
+    <div class="work-track">
+      <article class="panel" data-cursor="View">
+        <a class="panel-media" href="work/xpense.html" data-tilt data-label="Xpense" aria-label="Xpense case study"><div class="scene app-scene x-scene"><div class="phone-shot"><img src="assets/img/apps/xpense-1.webp" alt="Xpense screen" width="516" height="1118" loading="lazy" decoding="async"></div><div class="phone-shot"><img src="assets/img/apps/xpense-3.webp" alt="Xpense screen" width="516" height="1118" loading="lazy" decoding="async"></div><span class="scene-title">Xpense</span></div><span class="glare" aria-hidden="true"></span></a>
+        <div class="panel-body">
+          <p class="tag"><span>01</span>iPhone app · dotXline</p>
+          <h3>Xpense</h3>
+          <p>A calm, native iPhone expense tracker. Log spending, set budgets and goals, and split costs with friends.</p>
+          <a class="link" href="work/xpense.html" data-label="Xpense">Read the case study <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="panel" data-cursor="View">
+        <a class="panel-media" href="work/tockbee.html" data-tilt data-label="Tockbee" aria-label="Tockbee case study"><div class="scene app-scene t-scene"><div class="phone-shot"><img src="assets/img/apps/tockbee-today.webp" alt="Tockbee screen" width="640" height="1391" loading="lazy" decoding="async"></div><div class="phone-shot"><img src="assets/img/apps/tockbee-pay.webp" alt="Tockbee screen" width="640" height="1391" loading="lazy" decoding="async"></div><span class="scene-title">Tockbee</span></div><span class="glare" aria-hidden="true"></span></a>
+        <div class="panel-body">
+          <p class="tag"><span>02</span>iPhone and Android app · dotXline</p>
+          <h3>Tockbee</h3>
+          <p>A shift and pay tracker for UK hourly workers. It clocks you in at work, works out your pay and checks your payslip.</p>
+          <a class="link" href="work/tockbee.html" data-label="Tockbee">Read the case study <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="panel" data-cursor="View">
+        <a class="panel-media" href="work/chatvertiser.html" data-tilt data-label="Chatvertiser" aria-label="Chatvertiser case study"><div class="scene img-scene"><img src="assets/img/work/chatvertiser.webp" alt="Chatvertiser design preview" width="1080" height="1080" loading="lazy" decoding="async" class="cover"><span class="scene-title">Chatvertiser</span></div><span class="glare" aria-hidden="true"></span></a>
+        <div class="panel-body">
+          <p class="tag"><span>03</span>Web design · Ad tech UX</p>
+          <h3>Chatvertiser</h3>
+          <p>An AI-powered advertising platform that turns conversations into conversion tools.</p>
+          <a class="link" href="work/chatvertiser.html" data-label="Chatvertiser">Read the case study <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="panel" data-cursor="View">
+        <a class="panel-media" href="work/greenlife.html" data-tilt data-label="Greenlife" aria-label="Greenlife case study"><div class="scene img-scene"><img src="assets/img/work/greenlife.webp" alt="Greenlife design preview" width="1080" height="1080" loading="lazy" decoding="async" class="cover"><span class="scene-title">Greenlife</span></div><span class="glare" aria-hidden="true"></span></a>
+        <div class="panel-body">
+          <p class="tag"><span>04</span>App design · Retail</p>
+          <h3>Greenlife</h3>
+          <p>An everyday shopping assistant that makes the trip faster, from building the list to checkout.</p>
+          <a class="link" href="work/greenlife.html" data-label="Greenlife">Read the case study <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="panel" data-cursor="View">
+        <a class="panel-media" href="work/omnigps.html" data-tilt data-label="OmniGPS" aria-label="OmniGPS case study"><div class="scene s1"><div class="mock mock-dash"><div class="mock-bar"><i></i><i></i><i></i></div><div class="mock-body"><div class="map"><span class="route"></span><span class="pin p1"></span><span class="pin p2"></span><span class="pin p3"></span></div><div class="side"><b></b><b></b><b></b><b></b></div></div></div><span class="scene-title">OmniGPS</span></div><span class="glare" aria-hidden="true"></span></a>
+        <div class="panel-body">
+          <p class="tag"><span>05</span>Website design · Logistics</p>
+          <h3>OmniGPS</h3>
+          <p>A precision-driven platform for streamlined, GPS-based fleet management.</p>
+          <a class="link" href="work/omnigps.html" data-label="OmniGPS">Read the case study <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="panel" data-cursor="View">
+        <a class="panel-media" href="work/quantum-vac.html" data-tilt data-label="Quantum Vac" aria-label="Quantum Vac case study"><div class="scene s3"><div class="dial"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50"/><circle class="arc" cx="60" cy="60" r="50" pathLength="100"/></svg><span>72<small>%</small></span></div><div class="chips"><b></b><b></b><b></b></div><span class="scene-title">Quantum Vac</span></div><span class="glare" aria-hidden="true"></span></a>
+        <div class="panel-body">
+          <p class="tag"><span>06</span>Smart product · Interaction design</p>
+          <h3>Quantum Vac</h3>
+          <p>A high-fidelity prototype for a smart vacuum, focused on interaction models and seamless device control.</p>
+          <a class="link" href="work/quantum-vac.html" data-label="Quantum Vac">Read the case study <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker" data-reveal>I also build my own products</p>
+      <h2 data-split>Director of dotXline LTD. Designer of every app it ships.</h2>
+      <p data-reveal>dotXline is my product company in Cardiff. We make everyday money and work feel simple, one carefully built app at a time.</p>
+    </div>
+    <div class="ventures">
+      <a class="venture company" href="dotxline.html" data-reveal data-cursor="Open" data-label="dotXline">
+        <img class="dx" src="assets/img/apps/logo-dark.svg" alt="dotXline" width="240" height="40">
+        <div><h3>Small, exact apps that just work.</h3><p>A product company I direct, from the first idea to the App Store.</p></div>
+        <span class="v-link">About dotXline</span>
+      </a>
+      <a class="venture xp" href="work/xpense.html" data-reveal style="--d:.1s" data-cursor="Open" data-label="Xpense">
+        <div class="v-top"><img src="assets/img/apps/xpense-icon.webp" alt="" width="512" height="512" loading="lazy" decoding="async"><b>Xpense</b></div>
+        <div><h3>Every penny, in plain sight.</h3><p>A calm, native iPhone expense tracker.</p></div>
+        <span class="v-link">Case study</span>
+        <div class="v-shot"><img src="assets/img/apps/xpense-2.webp" alt="Xpense new expense screen" width="516" height="1118" loading="lazy" decoding="async"></div>
+      </a>
+      <a class="venture tb" href="work/tockbee.html" data-reveal style="--d:.2s" data-cursor="Open" data-label="Tockbee">
+        <div class="v-top"><img src="assets/img/apps/tockbee-icon.webp" alt="" width="256" height="256" loading="lazy" decoding="async"><b>Tockbee</b></div>
+        <div><h3>Every hour you work, on the record.</h3><p>A shift and pay tracker for UK hourly workers.</p></div>
+        <span class="v-link">Case study</span>
+        <div class="v-shot"><img src="assets/img/apps/tockbee-today.webp" alt="Tockbee today screen" width="640" height="1391" loading="lazy" decoding="async"></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="logos" aria-label="Brands I have designed for">
+  <div class="wrap"><p class="kicker">Brands I’ve designed identities for</p><a href="brand.html">See all brand work →</a></div>
+  <div class="logo-row" data-marquee="1" data-speed="0.5" data-skew="off"><div class="logo-track"><img class="mono-logo" src="assets/img/brand/logo-hanek.webp" alt="Hanek" width="871" height="146" loading="lazy"><img class="mono-logo" src="assets/img/brand/logo-phinaturals.webp" alt="PhiNaturals" width="900" height="216" loading="lazy"><img class="mono-logo" src="assets/img/brand/logo-nation-insure.webp" alt="Nation Insure" width="646" height="420" loading="lazy"><img class="mono-logo" src="assets/img/brand/logo-mr-physics.webp" alt="Mr Physics" width="900" height="267" loading="lazy"><img class="mono-logo" src="assets/img/brand/logo-chatvertiser-logo.webp" alt="Chatvertiser" width="900" height="148" loading="lazy"><img class="mono-logo" src="assets/img/brand/logo-cupid-theory.webp" alt="Cupid Theory" width="818" height="452" loading="lazy"></div></div>
+</section>
+
+<section class="section alt" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker" data-reveal>What I do</p>
+      <h2 data-split>Clean interfaces that catch the eye and guide users effortlessly.</h2>
+    </div>
+    <div class="services" data-spot>
+      <div class="service" data-reveal><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18" pathLength="1"/><circle cx="24" cy="24" r="10" pathLength="1"/><path d="M24 24 40 8M34 8h6v6" pathLength="1"/></svg><span class="num">Strategy</span><h3>Product design strategy</h3><p>Intuitive, user-focused design strategy rooted in research and aligned with business goals.</p></div>
+      <div class="service" data-reveal style="--d:.08s"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="9" width="30" height="24" rx="3" pathLength="1"/><rect x="30" y="18" width="13" height="22" rx="3" pathLength="1"/><path d="M5 15h30" pathLength="1"/></svg><span class="num">Interfaces</span><h3>Web &amp; app design</h3><p>From first concept to high-fidelity design, turning complex ideas into seamless digital experiences.</p></div>
+      <div class="service" data-reveal style="--d:.16s"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 14h32M8 24h32M8 34h32" pathLength="1"/><circle cx="17" cy="14" r="4" pathLength="1"/><circle cx="31" cy="24" r="4" pathLength="1"/><circle cx="21" cy="34" r="4" pathLength="1"/></svg><span class="num">Usability</span><h3>UI/UX optimisation</h3><p>Better usability and performance through engaging, accessible interfaces.</p></div>
+      <div class="service" data-reveal style="--d:.24s"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5 41 15v18L24 43 7 33V15Z" pathLength="1"/><path d="M24 5v38M7 15l34 18M41 15 7 33" pathLength="1"/></svg><span class="num">Identity</span><h3>Brand identity</h3><p>Helping brands find their visual voice and build a consistent presence that resonates.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker" data-reveal>Why teams hire me</p>
+      <h2 data-split>A designer who has shipped his <em>own</em> products.</h2>
+    </div>
+    <div class="why" data-spot>
+      <div class="why-card" data-reveal><span class="big">2 apps</span><h3>Founder’s view</h3><p>As Director of dotXline LTD, I take Xpense and Tockbee from first idea to finished app, so I design with the whole product in mind.</p></div>
+      <div class="why-card" data-reveal style="--d:.08s"><span class="big">Code</span><h3>Designs and builds</h3><p>I take my own designs into working code with AI-assisted development, and a BSc in Computing means I review what gets built.</p></div>
+      <div class="why-card" data-reveal style="--d:.16s"><span class="big">30+</span><h3>Range</h3><p>Thirty projects across three countries in six years: dashboards, mobile apps, websites, logos, campaigns and print.</p></div>
+      <div class="why-card" data-reveal style="--d:.24s"><span class="big">UX + UI</span><h3>Brand to pixel</h3><p>I can shape the strategy, design the interface and give it a visual identity, so the product feels like one thing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="build">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker" data-reveal>How I build</p>
+      <h2 data-split>From a Figma frame to a <em>working</em> product.</h2>
+      <p data-reveal>I’m a product designer first. I also build, using AI-assisted development to turn designs into real, working software fast, then reviewing and refining the code myself.</p>
+    </div>
+    <ol class="build-steps" data-spot>
+      <li class="why-card" data-reveal><span class="big">Design</span><h3>Research and design</h3><p>User flows, wireframes and high-fidelity UI in Figma, grounded in what people actually need.</p></li>
+      <li class="why-card" data-reveal style="--d:.08s"><span class="big">Prototype</span><h3>Prototype in code</h3><p>Interactive prototypes that behave like the real thing, so ideas get tested with real taps and real data.</p></li>
+      <li class="why-card" data-reveal style="--d:.16s"><span class="big">Build</span><h3>AI-assisted development</h3><p>I build front ends and full apps with AI coding tools, and check every change against the design and the brief.</p></li>
+      <li class="why-card" data-reveal style="--d:.24s"><span class="big">Launch</span><h3>Take it to users</h3><p>At dotXline I take products from idea to launch-ready apps. For teams, I hand over clean code or clean specs.</p></li>
+    </ol>
+    <p class="build-note" data-reveal>This portfolio is an example: designed and built by me with AI-assisted development, including the particle logo, page transitions and every animation.</p>
+  </div>
+</section>
+
+<section class="pitch">
+  <div class="wrap">
+    <p class="kicker" data-reveal>Need a product that looks great and works flawlessly?</p>
+    <p class="scrub" data-scrub>With experience across web, mobile and brand design, I help businesses turn ideas into products people love to use. Whether you’re starting from scratch or refining something that already exists, I bring the clarity and creativity to make it stand out.</p>
+  </div>
+</section>
+
+</main>
+<section class="foot-cta">
+  <div class="wrap">
+    <div class="foot-cta-grid">
+      <div>
+        <p class="kicker" data-reveal>Available for product design roles and freelance projects</p>
+        <h2 data-split>Have a product people should love? Let’s build it.</h2>
+        <a class="mail" href="mailto:contact@nagulesgobi.com" data-reveal><span data-text="contact@nagulesgobi.com">contact@nagulesgobi.com</span></a>
+      </div>
+      <a class="orb" href="contact.html" data-magnetic aria-label="Hire me" data-label="Contact">
+        <svg class="orb-ring" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="orb-c" d="M100 100m-78 0a78 78 0 1 1 156 0a78 78 0 1 1-156 0"/></defs><text><textPath href="#orb-c" textLength="488" lengthAdjust="spacing">HIRE ME · LET'S TALK · HIRE ME · LET'S TALK · </textPath></text></svg>
+        <span class="orb-core"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+<footer class="foot">
+  <div class="wrap">
+    <svg class="giant" viewBox="-4 -4 871 112" aria-hidden="true"><defs><linearGradient id="gw" x1="0" x2="1"><stop offset="0" stop-color="#FF9124"/><stop offset=".35" stop-color="#FF4A2C"/><stop offset=".6" stop-color="#FF2440"/><stop offset="1" stop-color="#FF008E"/></linearGradient></defs><path d="M60.1 0H73.3Q74 0 74.5 0.5Q75 1 75 1.7V98.3Q75 99 74.5 99.5Q74 100 73.3 100H59.4Q58.1 100 57.4 98.7L26.3 34.7Q26 34.3 25.7 34.4Q25.4 34.4 25.4 35L25.6 98.3Q25.6 99 25.1 99.5Q24.6 100 23.9 100H10.7Q10 100 9.5 99.5Q9 99 9 98.3V1.7Q9 1 9.5 0.5Q10 0 10.7 0H24.4Q25.9 0 26.4 1.3L57.7 65.6Q58 66 58.3 65.9Q58.6 65.9 58.6 65.3L58.4 1.7Q58.4 1 58.9 0.5Q59.4 0 60.1 0Z M148.4 98.6 144.7 83.3Q144.6 82.7 144 82.7H114.6Q114 82.7 113.9 83.3L110.3 98.6Q109.9 100 108.3 100H94.7Q92.9 100 93.3 98.1L119.3 1.4Q119.7 0 121.3 0H137.6Q139.1 0 139.6 1.4L165.6 98.1L165.7 98.7Q165.7 100 164.1 100H150.4Q148.9 100 148.4 98.6ZM118 69.7H140.6Q140.9 69.7 141.1 69.5Q141.4 69.3 141.3 68.9L129.6 22Q129.4 21.6 129.1 21.6Q128.9 21.6 128.7 22L117.3 68.9Q117.1 69.3 117.4 69.5Q117.7 69.7 118 69.7Z M181.9 71.3V28.7Q181.9 19.9 185.8 13.1Q189.7 6.3 196.8 2.6Q203.9 -1.1 213.1 -1.1Q222.4 -1.1 229.6 2.5Q236.7 6.1 240.6 12.7Q244.6 19.3 244.6 27.7V31Q244.6 31.7 244.1 32.2Q243.6 32.7 242.9 32.7H229.7Q229 32.7 228.5 32.2Q228 31.7 228 31V27.7Q228 21.3 223.9 17.2Q219.9 13.1 213.1 13.1Q206.6 13.1 202.5 17.4Q198.4 21.6 198.4 28.4V71.6Q198.4 78.4 202.6 82.6Q206.9 86.9 213.6 86.9Q220.1 86.9 224.1 83.1Q228 79.3 228 72.7V61.4Q228 60.7 227.3 60.7H214.3Q213.6 60.7 213.1 60.2Q212.6 59.7 212.6 59V48.6Q212.6 47.9 213.1 47.4Q213.6 46.9 214.3 46.9H242.9Q243.6 46.9 244.1 47.4Q244.6 47.9 244.6 48.6V70.9Q244.6 85 236 93.1Q227.4 101.1 213.1 101.1Q203.9 101.1 196.8 97.4Q189.7 93.7 185.8 86.9Q181.9 80.1 181.9 71.3Z M265.9 70V1.7Q265.9 1 266.4 0.5Q266.9 0 267.6 0H280.7Q281.4 0 281.9 0.5Q282.4 1 282.4 1.7V70.9Q282.4 78 286.5 82.4Q290.6 86.9 297.3 86.9Q304 86.9 308.1 82.4Q312.3 78 312.3 70.9V1.7Q312.3 1 312.8 0.5Q313.3 0 314 0H327.1Q327.9 0 328.4 0.5Q328.9 1 328.9 1.7V70Q328.9 79.3 324.9 86.4Q321 93.4 313.9 97.3Q306.7 101.1 297.3 101.1Q288 101.1 280.9 97.3Q273.7 93.4 269.8 86.4Q265.9 79.3 265.9 70Z M352.3 98.3V1.7Q352.3 1 352.8 0.5Q353.3 0 354 0H367.1Q367.9 0 368.4 0.5Q368.9 1 368.9 1.7V85Q368.9 85.7 369.6 85.7H408.9Q409.6 85.7 410.1 86.2Q410.6 86.7 410.6 87.4V98.3Q410.6 99 410.1 99.5Q409.6 100 408.9 100H354Q353.3 100 352.8 99.5Q352.3 99 352.3 98.3Z M485.7 14.3H446Q445.3 14.3 445.3 15V41.9Q445.3 42.6 446 42.6H471.4Q472.1 42.6 472.6 43.1Q473.1 43.6 473.1 44.3V55.1Q473.1 55.9 472.6 56.4Q472.1 56.9 471.4 56.9H446Q445.3 56.9 445.3 57.6V85Q445.3 85.7 446 85.7H485.7Q486.4 85.7 486.9 86.2Q487.4 86.7 487.4 87.4V98.3Q487.4 99 486.9 99.5Q486.4 100 485.7 100H430.4Q429.7 100 429.2 99.5Q428.7 99 428.7 98.3V1.7Q428.7 1 429.2 0.5Q429.7 0 430.4 0H485.7Q486.4 0 486.9 0.5Q487.4 1 487.4 1.7V12.6Q487.4 13.3 486.9 13.8Q486.4 14.3 485.7 14.3Z M504.3 73.9V70.1Q504.3 69.4 504.8 68.9Q505.3 68.4 506 68.4H518.9Q519.6 68.4 520.1 68.9Q520.6 69.4 520.6 70.1V73Q520.6 79.1 524.9 83Q529.1 86.9 536.4 86.9Q543.1 86.9 546.7 83.4Q550.3 80 550.3 74.4Q550.3 70.6 548.3 67.8Q546.3 65 542.6 62.6Q539 60.3 531.4 56.3Q522.7 51.7 517.4 48.1Q512.1 44.6 508.5 39Q504.9 33.4 504.9 25.4Q504.9 13.1 513.1 6Q521.3 -1.1 534.7 -1.1Q544 -1.1 551.1 2.4Q558.3 5.9 562.1 12.3Q566 18.7 566 27V30Q566 30.7 565.5 31.2Q565 31.7 564.3 31.7H551.4Q550.7 31.7 550.2 31.2Q549.7 30.7 549.7 30V27.3Q549.7 21.1 545.6 17.1Q541.4 13.1 534.4 13.1Q528.3 13.1 524.7 16.4Q521.1 19.6 521.1 25.3Q521.1 29.1 523 31.9Q524.9 34.6 528.6 37Q532.4 39.4 540.1 43.3Q550.4 49.1 555.3 52.4Q560.1 55.7 563.5 60.9Q566.9 66.1 566.9 73.7Q566.9 86.3 558.4 93.7Q550 101.1 535.9 101.1Q526.4 101.1 519.3 97.8Q512.1 94.4 508.2 88.2Q504.3 82 504.3 73.9Z M585.1 71.3V28.7Q585.1 19.9 589.1 13.1Q593 6.3 600.1 2.6Q607.1 -1.1 616.4 -1.1Q625.7 -1.1 632.9 2.5Q640 6.1 643.9 12.7Q647.9 19.3 647.9 27.7V31Q647.9 31.7 647.4 32.2Q646.9 32.7 646.1 32.7H633Q632.3 32.7 631.8 32.2Q631.3 31.7 631.3 31V27.7Q631.3 21.3 627.2 17.2Q623.1 13.1 616.4 13.1Q609.9 13.1 605.8 17.4Q601.7 21.6 601.7 28.4V71.6Q601.7 78.4 605.9 82.6Q610.1 86.9 616.9 86.9Q623.4 86.9 627.4 83.1Q631.3 79.3 631.3 72.7V61.4Q631.3 60.7 630.6 60.7H617.6Q616.9 60.7 616.4 60.2Q615.9 59.7 615.9 59V48.6Q615.9 47.9 616.4 47.4Q616.9 46.9 617.6 46.9H646.1Q646.9 46.9 647.4 47.4Q647.9 47.9 647.9 48.6V70.9Q647.9 85 639.3 93.1Q630.7 101.1 616.4 101.1Q607.1 101.1 600.1 97.4Q593 93.7 589.1 86.9Q585.1 80.1 585.1 71.3Z M667.9 70.1V29.9Q667.9 20.7 671.8 13.6Q675.7 6.6 682.9 2.7Q690.1 -1.1 699.6 -1.1Q709.1 -1.1 716.4 2.7Q723.6 6.6 727.6 13.6Q731.6 20.7 731.6 29.9V70.1Q731.6 79.4 727.6 86.5Q723.6 93.6 716.4 97.4Q709.1 101.3 699.6 101.3Q690.1 101.3 682.9 97.4Q675.7 93.6 671.8 86.5Q667.9 79.4 667.9 70.1ZM715 70.9V29.4Q715 22.1 710.8 17.6Q706.6 13.1 699.6 13.1Q692.7 13.1 688.6 17.6Q684.4 22.1 684.4 29.4V70.9Q684.4 78 688.6 82.5Q692.7 87 699.6 87Q706.6 87 710.8 82.5Q715 78 715 70.9Z M785.9 100H755.4Q754.7 100 754.2 99.5Q753.7 99 753.7 98.3V1.7Q753.7 1 754.2 0.5Q754.7 0 755.4 0H784.1Q798.6 0 806.6 6.8Q814.7 13.6 814.7 27Q814.7 41.7 803.1 47.9Q802.4 48.3 803 48.7Q816 55.7 816 72.6Q816 85.9 807.6 92.9Q799.3 100 785.9 100ZM770.3 15V41.6Q770.3 42.3 771 42.3H784.3Q791 42.3 794.8 38.6Q798.6 35 798.6 28.4Q798.6 21.7 794.8 18Q791 14.3 784.3 14.3H771Q770.3 14.3 770.3 15ZM799.4 70.4Q799.4 63.3 795.6 59.2Q791.7 55.1 785.1 55.1H771Q770.3 55.1 770.3 55.9V84.9Q770.3 85.6 771 85.6H785.3Q791.9 85.6 795.6 81.6Q799.4 77.6 799.4 70.4Z M837.1 98.3V1.7Q837.1 1 837.6 0.5Q838.1 0 838.9 0H852Q852.7 0 853.2 0.5Q853.7 1 853.7 1.7V98.3Q853.7 99 853.2 99.5Q852.7 100 852 100H838.9Q838.1 100 837.6 99.5Q837.1 99 837.1 98.3Z"/></svg>
+    <div class="foot-cols">
+      <div><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="dotxline.html">dotXline</a></li><li><a href="brand.html">Brand</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Case studies</h4><ul><li><a href="work/xpense.html">Xpense</a></li><li><a href="work/tockbee.html">Tockbee</a></li><li><a href="work/chatvertiser.html">Chatvertiser</a></li><li><a href="work/greenlife.html">Greenlife</a></li><li><a href="work/omnigps.html">OmniGPS</a></li><li><a href="work/quantum-vac.html">Quantum Vac</a></li></ul></div>
+      <div><h4>Elsewhere</h4><ul><li><a href="https://dotxline.com" target="_blank" rel="noopener">dotxline.com ↗</a></li><li><a href="https://www.behance.net/gallery/224174429/Chatvertiser" target="_blank" rel="noopener">Behance ↗</a></li><li><a href="mailto:contact@nagulesgobi.com">Email</a></li><li><span>London <time data-clock>--:--</time></span></li></ul></div>
+    </div>
+    <div class="foot-row">
+      <p>© <span data-year>2026</span> Nagules Gobi · Product designer, United Kingdom</p>
+      <p><a href="#top">Back to top ↑</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
