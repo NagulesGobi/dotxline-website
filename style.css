@@ -120,6 +120,13 @@ img,video,svg{display:block;max-width:100%}
 .app.tb .badge{background:#2A1712;color:#FFF6E8}
 .app.tb h3{font-family:Fredoka,ui-rounded,"SF Pro Rounded",system-ui,sans-serif;letter-spacing:-.01em}
 .badge{display:inline-block;background:#FFB627;color:#2A1712;border-radius:999px;padding:4px 12px;font:600 13px var(--text);vertical-align:middle}
+.app.fb{background:#C8F550;color:#0E1A12;grid-column:1/-1;min-height:0;flex-direction:row;align-items:center;justify-content:flex-start;gap:48px}
+.app.fb .meta span{background:rgba(14,26,18,.1)}
+.app.fb .badge{background:#0E1A12;color:#C8F550}
+.app.fb .bg-line{width:40%;right:-4%;bottom:-34%;opacity:.12}
+.app.fb .icon{flex:none;box-shadow:0 30px 60px -30px rgba(14,26,18,.55)}
+.app.fb p{max-width:34em}
+@media(max-width:860px){.app.fb{flex-direction:column;align-items:flex-start;gap:0}.app.fb .bg-line{width:78%;bottom:-18%}}
 @media(max-width:860px){.apps{grid-template-columns:1fr}.app{min-height:0;padding:32px;border-radius:28px}.app .icon{width:104px;height:104px;border-radius:24px}}
 
 /* habits: three words, set big */

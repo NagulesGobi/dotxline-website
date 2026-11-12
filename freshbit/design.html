@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>try{var t=localStorage.getItem("fb-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Designing FreshBit · Design process</title>
+<meta name="description" content="How FreshBit was designed: the problem, research, information architecture, design system, components, motion and the changes made from testing on a real iPhone.">
+<meta property="og:title" content="Designing FreshBit">
+<meta property="og:description" content="Problem, research, IA, design system, components and motion behind FreshBit, a news app that checks before it publishes.">
+<meta property="og:image" content="https://freshbit.dotxline.com/assets/press/freshbit-screens-dark.jpg">
+<link rel="icon" href="favicon.ico" sizes="48x48"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/fb.css?v=8">
+<script src="assets/fb.js?v=8" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="FreshBit home"><span class="tile"><svg viewBox="15 15 70 70" aria-hidden="true"><path fill="#0E1A12" fill-rule="evenodd" d="M50 20H80V50C80 66.6 66.6 80 50 80H20V50C20 33.4 33.4 20 50 20ZM34.5 61.5L61.5 34.5L66.5 39.5L39.5 66.5Z"/></svg></span>FreshBit</a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="./#how">How it works</a>
+      <a href="./#features">Features</a>
+      <a href="design.html" aria-current="page">Design process</a>
+      <a href="press.html">Press</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <button class="icon-btn theme-btn" type="button" aria-label="Switch colour theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg></button>
+    <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg></button>
+    <a class="btn lime small" href="./#test">Join the test</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow"><b>Case study</b><i>/</i>Product and UX/UI design</p>
+    <h1>Designing a news app that <span class="hl">checks first</span>.</h1>
+    <p class="lede">FreshBit went from a written plan to an app on an iPhone in about two days. This is how the problem, the research, the structure, the design system and the motion came together, and what changed after testing on a real phone.</p>
+    <dl class="meta-row">
+      <div><dt>Design and build</dt><dd>Nagules Gobi, with AI-assisted development</dd></div>
+      <div><dt>Platform</dt><dd>iPhone, iPad, Mac</dd></div>
+      <div><dt>Timeline</dt><dd>About two days</dd></div>
+      <div><dt>Status</dt><dd>TestFlight build 11</dd></div>
+      <div><dt>Running cost</dt><dd>$0 a month</dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="wrap cs-grid">
+  <nav class="toc" aria-label="On this page">
+    <a href="#problem">Problem</a><a href="#research">Research</a><a href="#ia">Structure</a><a href="#system">Design system</a><a href="#components">Components</a><a href="#brand">Logo</a><a href="#motion">Motion</a><a href="#iteration">Iteration</a><a href="#build">Build</a>
+  </nav>
+  <div>
+    <section class="chapter" id="problem">
+      <p class="eyebrow"><b>01</b><i>/</i>Problem</p>
+      <h2>Too much news, too little certainty.</h2>
+      <p>Design and dev news is spread across dozens of company blogs, changelogs, press sites and community feeds. Most aggregators show everything at once: rumours next to official announcements, the same story five times, and gossip mixed in with real product news. It’s hard to tell what actually happened.</p>
+      <p class="callout">The goal: one calm feed, refreshed through the day, where every story carries a label that says how sure it is.</p>
+      <h3 style="margin:32px 0 14px">Constraints set on day one</h3>
+      <div class="grid4">
+        <div class="card"><b>Free to run</b><p class="muted" style="font-size:15px;margin-top:6px">No paid AI, no paid servers. It runs for $0 a month.</p></div>
+        <div class="card"><b>No sign-in needed</b><p class="muted" style="font-size:15px;margin-top:6px">Sign in with Apple came later, and only as an option.</p></div>
+        <div class="card"><b>Several updates a day</b><p class="muted" style="font-size:15px;margin-top:6px">Checks every 30 minutes, publishes only when something new passes.</p></div>
+        <div class="card"><b>Easy to spell</b><p class="muted" style="font-size:15px;margin-top:6px">A coined name of 8 letters or fewer, with a free domain.</p></div>
+      </div>
+    </section>
+
+    <section class="chapter prose" id="research">
+      <p class="eyebrow"><b>02</b><i>/</i>Research</p>
+      <h2>What can a phone honestly promise?</h2>
+      <p>The first question wasn’t visual. A news app can’t promise that something is true. It can say who published it and how many independent sources agree. That set the vocabulary for the whole product.</p>
+      <h3>A source audit, tier by tier</h3>
+      <p>Every feed was checked by hand before it was added, and each one got a trust tier. Official sources count as confirmation on their own. Press needs company. Community sites only add weight.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th>Tier</th><th>What it is</th><th>Count</th><th>Examples</th></tr></thead>
+        <tbody>
+          <tr><td>1 · Official</td><td>Company blogs, changelogs, release notes</td><td>30</td><td>OpenAI, Google DeepMind, Figma, Apple Developer, GitHub Changelog, Material Design, WebKit</td></tr>
+          <tr><td>2 · Established</td><td>Press and expert publications</td><td>18</td><td>NN/g, Smashing Magazine, UX Collective, A List Apart, The Verge, InfoQ</td></tr>
+          <tr><td>3 · Community</td><td>Signals only, never published alone</td><td>3</td><td>Hacker News, Lobsters, Product Hunt</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Words matter: “Verified” became “Confirmed”</h3>
+      <p>The first build labelled stories <strong>Verified</strong>. That promised more than any app can check. It was renamed <strong>Confirmed by trusted sources</strong>, which says exactly what happened: trusted sources published it.</p>
+      <h3>Naming, checked live</h3>
+      <p>The brief: a coined word, at most 8 letters, English, feeling “fresh, fast, curious”, with a free .app or .com domain. Two rounds explored compound names and invented words, and every domain was checked live.</p>
+      <div class="names" aria-label="Names explored">
+        <span>Daybit</span><span>Newsbit</span><span class="pick">FreshBit</span><span>Dayzip</span><span>Devpulse</span><span>Daydrop</span><span>Briefday</span><span>Scoopy</span><span>Spryo</span><span>Zinora</span><span>Glimlo</span><span>Kurio</span><span>Lumio</span><span>Nuvra</span><span>Zesti</span>
+      </div>
+      <p><strong>FreshBit</strong> won: fresh news in small bits, with a nod to code. It’s easy to say and spell.</p>
+    </section>
+
+    <section class="chapter prose" id="ia">
+      <p class="eyebrow"><b>03</b><i>/</i>Structure</p>
+      <h2>Four tabs, every screen one tap from a story.</h2>
+      <p>The tab bar holds the four places people return to. Everything else is pushed on top and comes back with the back gesture. Alerts and the widget open straight into a story or the brief.</p>
+      <div class="ia" role="img" aria-label="FreshBit structure: Today, Explore, Saved and Settings tabs, each with the screens it opens.">
+        <span class="ia-root">FreshBit</span>
+        <div class="ia-bus" aria-hidden="true"></div>
+        <div class="ia-tabs">
+          <div class="ia-node"><h4><span data-ico="news"></span>Today</h4><ul><li><b>Story</b> · brief, facts, credibility</li><li><b>Your brief</b> · from the leaf</li><li><b>Search</b></li></ul></div>
+          <div class="ia-node"><h4><span data-ico="compass"></span>Explore</h4><ul><li><b>Topics</b> → Search</li><li><b>Trending tags</b> → Search</li><li><b>Events</b> → Search</li><li><b>This week</b> → Story</li></ul></div>
+          <div class="ia-node"><h4><span data-ico="bm"></span>Saved</h4><ul><li><b>Story</b>, works offline</li></ul></div>
+          <div class="ia-node"><h4><span data-ico="gear"></span>Settings</h4><ul><li><b>Keyword alerts</b></li><li><b>Sources</b> · mute any of 51</li><li><b>Hidden stories</b></li></ul></div>
+        </div>
+        <p class="muted" style="font-size:14px;text-align:center">Entry points from outside: top story, keyword and follow alerts open a <b>Story</b>; the morning brief alert opens <b>Your brief</b>.</p>
+      </div>
+    </section>
+
+    <section class="chapter prose" id="system">
+      <p class="eyebrow"><b>04</b><i>/</i>Design system</p>
+      <h2>Swiss minimal, with one loud colour.</h2>
+      <p>Content first: system type, a quiet green-grey palette, and lime saved for “fresh” moments like the Confirmed badge, the active filter and the brand mark. Every text pair passes WCAG AA in light and dark.</p>
+      <div class="tokens">
+        <div class="token"><i><u style="background:#C8F550"></u></i><div><b>Brand lime</b>#C8F550<br>Fills only</div></div>
+        <div class="token"><i><u style="background:#0E1A12"></u></i><div><b>Ink</b>#0E1A12<br>Text 16.7:1</div></div>
+        <div class="token"><i><u style="background:#F6F8F3"></u><u style="background:#0B120D"></u></i><div><b>Background</b>#F6F8F3 / #0B120D</div></div>
+        <div class="token"><i><u style="background:#4B5A50"></u><u style="background:#A3B2A7"></u></i><div><b>Text 2</b>7.3:1 / 7.8:1</div></div>
+        <div class="token"><i><u style="background:#3D6600"></u><u style="background:#C8F550"></u></i><div><b>Link</b>#3D6600 · 6.8:1</div></div>
+        <div class="token"><i><u style="background:#FFE9B8"></u><u style="background:#3A2D0F"></u></i><div><b>Reported</b>7.1:1 / 9.4:1</div></div>
+        <div class="token"><i><u style="background:#7C5CFF"></u><u style="background:#E8578A"></u><u style="background:#2F7BF6"></u><u style="background:#F2802F"></u></i><div><b>Categories</b>Design · UX/UI · AI · Dev</div></div>
+      </div>
+      <h3>Type</h3>
+      <div class="type-scale">
+        <div><small>Screen title<br>Montserrat 34/700</small><span style="font:800 34px/1 var(--display);letter-spacing:-.03em">Today</span></div>
+        <div><small>Hero headline<br>title2 22/700</small><span style="font:700 22px/1.2 var(--sys)">Introducing Gemini 4 Hydrogen</span></div>
+        <div><small>Card headline<br>headline 17/600</small><span style="font:600 17px/1.3 var(--sys)">Why are we cloning Photoshop?</span></div>
+        <div><small>Summary<br>body 17/400</small><span style="font:400 17px/1.4 var(--sys)">Swipe a story left to hide it.</span></div>
+        <div><small>Meta<br>footnote 13/500</small><span style="font:500 13px/1 var(--sys);color:var(--text2)">Google DeepMind · 19h ago · 3 sources</span></div>
+      </div>
+      <p>Reading text uses SF Pro with Dynamic Type, so it follows the size each person sets on their iPhone. Montserrat appears only in the brand title and the large “Today”.</p>
+      <h3>Spacing, radius, elevation</h3>
+      <ul>
+        <li>Spacing scale 4, 8, 12, 16, 20, 24, 32 pt. A 16 pt screen gutter and 12 pt between cards.</li>
+        <li>Corner radius: card 20, image 14, chips and badges fully rounded.</li>
+        <li>No shadows in dark mode. In light mode, a 0.5 pt hairline and the softest shadow.</li>
+        <li>Touch targets at least 44 × 44 pt.</li>
+      </ul>
+      <h3>Three rules</h3>
+      <ul>
+        <li>Never use lime for text on a light background, or for large areas.</li>
+        <li>Never show a credibility state with colour alone: always an icon and a label.</li>
+        <li>No emoji as icons. SF Symbols only.</li>
+      </ul>
+      <figure class="figure"><img src="assets/img/design-system-sheet.webp" alt="FreshBit design system sheet: colour tokens, badges, category chips and four early screens." width="1400" height="1183" loading="lazy"><figcaption>The first design system sheet, made before the app. Later builds kept the tokens and moved to Apple’s native tab bar and forms.</figcaption></figure>
+    </section>
+
+    <section class="chapter prose ptok" id="components">
+      <p class="eyebrow"><b>05</b><i>/</i>Components</p>
+      <h2>Small parts that carry trust.</h2>
+      <p>These are working copies of the app’s components, in the page’s current theme.</p>
+      <h3>Credibility badges</h3>
+      <div class="gallery" data-gal="badges"></div>
+      <p>Pill, 12 pt semibold, symbol plus label. Tapping a badge in the app opens the reasons for its score.</p>
+      <h3>Category chips</h3>
+      <div class="gallery"><div class="p-chips" style="margin:0;padding:0;flex-wrap:wrap"><button type="button" class="p-chip" aria-pressed="true">All</button><button type="button" class="p-chip" style="--dot:#7C5CFF" aria-pressed="false"><i></i>Design</button><button type="button" class="p-chip" style="--dot:#E8578A" aria-pressed="false"><i></i>UX/UI</button><button type="button" class="p-chip" style="--dot:#2F7BF6" aria-pressed="false"><i></i>AI</button><button type="button" class="p-chip" style="--dot:#F2802F" aria-pressed="false"><i></i>Dev</button></div></div>
+      <p>The dot is never alone: it always sits next to the topic name. The selected chip turns lime.</p>
+      <h3>Story cards and states</h3>
+      <div class="gallery" data-gal="cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))"></div>
+      <p>Compact card, the same card after it’s been read (dimmed), and the credibility meter from the story screen. Stories without an image get a calm tile in their topic colour with the leaf, never a broken box.</p>
+      <h3>Feed markers</h3>
+      <div class="gallery" style="display:grid;gap:14px">
+        <div class="p-caught" style="width:100%"><span data-ico="checkCircle">You’re caught up · earlier stories</span></div>
+        <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span class="p-src"><span class="fresh"></span>The Verge · 2h ago</span><span class="muted" style="font-size:14px">← fresh dot: new since your last visit</span></div>
+      </div>
+    </section>
+
+    <section class="chapter prose" id="brand">
+      <p class="eyebrow"><b>06</b><i>/</i>Logo</p>
+      <h2>A leaf that is also a slash.</h2>
+      <p>Four icon concepts, each a different construction, all tested at 16 px, in one colour and with no hidden background shape.</p>
+      <div class="concepts">
+        <figure class="pick"><div class="art"><img src="assets/img/concept-1.svg" alt="" width="100" height="100"></div><div class="sizes"><img src="assets/img/concept-1.svg" alt=""><img src="assets/img/concept-1.svg" alt=""><img src="assets/img/concept-1.svg" alt=""></div><figcaption><b>Leaf Bit · chosen</b>A pixel square shaped like a leaf. The cut is the leaf’s vein and the <code>/</code> from code.</figcaption></figure>
+        <figure><div class="art"><img src="assets/img/concept-2.svg" alt="" width="100" height="100"></div><div class="sizes"><img src="assets/img/concept-2.svg" alt=""><img src="assets/img/concept-2.svg" alt=""><img src="assets/img/concept-2.svg" alt=""></div><figcaption><b>New Bit</b>A small square popping out of a big one, like a new story arriving.</figcaption></figure>
+        <figure><div class="art"><img src="assets/img/concept-3.svg" alt="" width="100" height="100"></div><div class="sizes"><img src="assets/img/concept-3.svg" alt=""><img src="assets/img/concept-3.svg" alt=""><img src="assets/img/concept-3.svg" alt=""></div><figcaption><b>The f</b>A lowercase f whose crossbar ends in a separate square.</figcaption></figure>
+        <figure><div class="art"><img src="assets/img/concept-4.svg" alt="" width="100" height="100"></div><div class="sizes"><img src="assets/img/concept-4.svg" alt=""><img src="assets/img/concept-4.svg" alt=""><img src="assets/img/concept-4.svg" alt=""></div><figcaption><b>Rising Dots</b>Three dots growing toward the newest story.</figcaption></figure>
+      </div>
+      <p>Leaf Bit looked most like an app icon and stayed clear at the smallest sizes. It was rebuilt as a layered icon in Apple’s Icon Composer, a leaf layer plus a bit layer, so iOS 26 renders it with Liquid Glass in the default, dark, clear and tinted styles.</p>
+      <figure class="figure"><img src="assets/img/icon-appearances.webp" alt="The FreshBit app icon in four iOS appearances: default lime, dark, clear and tinted purple." width="1400" height="350" loading="lazy"><figcaption>One layered icon, four iOS appearances.</figcaption></figure>
+    </section>
+
+    <section class="chapter prose" id="motion">
+      <p class="eyebrow"><b>07</b><i>/</i>Motion</p>
+      <h2>Movement that explains, then gets out of the way.</h2>
+      <p>Each motion answers a question: did my tap land, where did the header go, what just arrived. With Reduce Motion on, all three turn into short fades.</p>
+      <div class="motion ptok">
+        <div class="card" data-motion="press"><div class="stagebox"><div class="p-card row" data-target style="cursor:default"><span style="display:grid;gap:6px"><span class="meta-l" data-gal="b1"></span><h4>Expo Simulators</h4><span class="p-src">Expo Blog · 2h ago</span></span><span class="thumb" style="--a:#F2802F"></span></div></div><h4>Press feedback</h4><p>Cards scale to 0.98 over 120 ms with an ease-out, plus a light haptic on save. No layout change.</p><button class="btn ghost small replay" type="button">Play</button></div>
+        <div class="card" data-motion="fold"><div class="stagebox" style="place-items:stretch"><div class="p-screen mini-screen folded" style="border-radius:14px"><div class="lines" aria-hidden="true"><i></i><i style="width:70%"></i><i></i><i style="width:55%"></i></div><button class="p-glassmark" type="button" aria-label="Show the bar" data-target onclick="this.parentNode.classList.add('pinned')"><svg viewBox="15 15 70 70" aria-hidden="true"><path fill-rule="evenodd" d="M50 20H80V50C80 66.6 66.6 80 50 80H20V50C20 33.4 33.4 20 50 20ZM34.5 61.5L61.5 34.5L66.5 39.5L39.5 66.5Z"/></svg></button><div class="p-bar"><div class="row1"><span class="m"><svg viewBox="15 15 70 70" aria-hidden="true"><path fill-rule="evenodd" d="M50 20H80V50C80 66.6 66.6 80 50 80H20V50C20 33.4 33.4 20 50 20ZM34.5 61.5L61.5 34.5L66.5 39.5L39.5 66.5Z"/></svg></span><div><b>Today</b><small>Thu 12 Nov · 48 confirmed</small></div></div></div></div></div><h4>The folding header</h4><p>The title folds into a Liquid Glass leaf. Tap it and it morphs into a compact bar. In the app, SwiftUI draws the morph, so it follows Apple’s own springs.</p><button class="btn ghost small replay" type="button">Morph</button></div>
+        <div class="card" data-motion="pill"><div class="stagebox"><button class="p-newpill show" type="button" data-target tabindex="-1"><span data-ico="arrowUp"></span>2 new stories</button><div class="lines" style="position:absolute;inset:70px 18px 0;display:grid;gap:8px;align-content:start" aria-hidden="true"><i style="height:10px;border-radius:5px;background:var(--surface)"></i><i style="height:10px;border-radius:5px;background:var(--surface);width:70%"></i></div></div><h4>New stories arrive</h4><p>A pill slides down from the top. Tapping it scrolls up and shows them. The feed never jumps on its own.</p><button class="btn ghost small replay" type="button">Play</button></div>
+      </div>
+    </section>
+
+    <section class="chapter prose" id="iteration">
+      <p class="eyebrow"><b>08</b><i>/</i>Iteration</p>
+      <h2>Tested on a real iPhone, fixed from screen recordings.</h2>
+      <p>The app was installed through TestFlight and reviewed from screen recordings of real use. FreshBit went through 11 TestFlight builds during the project. The biggest changes:</p>
+      <ol class="timeline">
+        <li><b>The folding header went native.</b><span>It started as a bouncing custom animation. It now uses Apple’s Liquid Glass morph, so it feels like the system.</span></li>
+        <li><b>The tab bar shrinks to the corner.</b><span>The feed was rebuilt so iOS can follow its scrolling and minimise the tab bar like Apple’s own apps.</span></li>
+        <li><b>Settings rows line up like iOS Settings.</b><span>Pickers were moved to SwiftUI’s own labelled rows: label on the left, choice on the right.</span></li>
+        <li><b>“Verified” became “Confirmed by trusted sources”.</b><span>To be precise about what the app can and can’t promise.</span></li>
+        <li><b>Lime stopped being text on glass.</b><span>Lime on the light tab bar measured about 1.2:1. Light mode now tints the selected tab in the dark brand green (6.8:1).</span></li>
+      </ol>
+    </section>
+
+    <section class="chapter prose" id="build">
+      <p class="eyebrow"><b>09</b><i>/</i>Build</p>
+      <h2>Designed and built end to end.</h2>
+      <p>FreshBit was built with AI-assisted development, starting from a written plan with a zero-cost version, then in phases: brand, logo, design system, backend, app, then feedback rounds.</p>
+      <div class="grid3">
+        <div class="card"><b>App</b><p class="muted" style="font-size:15px;margin-top:6px">Expo SDK 58, React Native, Expo Router with native tabs, and native SwiftUI components through @expo/ui.</p></div>
+        <div class="card"><b>Backend</b><p class="muted" style="font-size:15px;margin-top:6px">Supabase on the free plan: Postgres with row-level security, Edge Functions and scheduled jobs.</p></div>
+        <div class="card"><b>Matching</b><p class="muted" style="font-size:15px;margin-top:6px">Rare-word matching plus free meaning search with vector embeddings. No paid AI anywhere.</p></div>
+      </div>
+      <p style="margin-top:24px">Also built: a branded share card, haptics throughout, offline saved stories, iPad and Mac layouts with a comfortable reading width, and a Home Screen and Lock Screen widget that arrives in the next build.</p>
+      <div class="btn-row" style="margin-top:28px"><a class="btn lime" href="./#test">Try the TestFlight build</a><a class="btn ghost" href="./#how">See the scoring</a></div>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="./" aria-label="FreshBit home"><span class="tile"><svg viewBox="15 15 70 70" aria-hidden="true"><path fill="#0E1A12" fill-rule="evenodd" d="M50 20H80V50C80 66.6 66.6 80 50 80H20V50C20 33.4 33.4 20 50 20ZM34.5 61.5L61.5 34.5L66.5 39.5L39.5 66.5Z"/></svg></span>FreshBit</a>
+      <p>Confirmed news for designers and developers. An app by <a href="https://dotxline.com/" style="display:inline;padding:0;text-decoration:underline">dotXline</a>.</p>
+    </div>
+    <div><h4>FreshBit</h4><a href="./#how">How it works</a><a href="./#features">Features</a><a href="design.html">Design process</a><a href="./#faq">FAQ</a></div>
+    <div><h4>Help</h4><a href="support.html">Support</a><a href="privacy.html">Privacy policy</a><a href="press.html">Press kit</a></div>
+    <div><h4>dotXline</h4><a href="https://dotxline.com/">dotxline.com</a><a href="https://dotxline.com/xpense.html">Xpense</a><a href="https://dotxline.com/tockbee.html">Tockbee</a><a href="mailto:hello@dotxline.com">hello@dotxline.com</a></div>
+    <div class="legal"><span>© 2026 dotXline LTD · Cardiff, United Kingdom</span><span>Headlines in the demos are from the app on 12 November 2026 and belong to their publishers.</span></div>
+  </div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var U=window.FBUI, I=window.FBI; if(!U) return;
+  document.querySelectorAll('[data-ico]').forEach(function(e){var k=e.getAttribute('data-ico');e.insertAdjacentHTML('afterbegin',I[k]||'');});
+  var g=document.querySelector('[data-gal=badges]'); g.innerHTML=U.badge('verified')+U.badge('reported')+U.badge('developing');
+  document.querySelector('[data-gal=b1]').innerHTML=U.badge('verified')+U.cat('dev');
+  var leaf='<svg class="leafi" viewBox="15 15 70 70" aria-hidden="true"><path fill="rgba(14,26,18,.9)" fill-rule="evenodd" d="M50 20H80V50C80 66.6 66.6 80 50 80H20V50C20 33.4 33.4 20 50 20ZM34.5 61.5L61.5 34.5L66.5 39.5L39.5 66.5Z"/></svg>';
+  function card(st,c,t,src,col,read){return '<div class="p-card row'+(read?' read':'')+'" style="cursor:default"><span style="display:grid;gap:6px"><span class="meta-l">'+U.badge(st)+U.cat(c)+'</span><h4>'+t+'</h4><span class="p-src">'+src+'</span></span><span class="thumb" style="--a:'+col+'">'+leaf+'</span></div>';}
+  document.querySelector('[data-gal=cards]').innerHTML=
+    card('developing','design','Why are we cloning Photoshop?','UX Collective · 11h ago','#7C5CFF')+
+    card('verified','ai','Gilbert + Tobin rethinks the business of law with AI','OpenAI · 10h ago','#2F7BF6',true)+
+    '<div class="p-box p-cred" style="max-width:360px"><h5>Credibility<span>100 / 100</span></h5><span class="bar"><i style="width:100%;background:#C8F550"></i></span><span class="srcrow"><span>Vercel</span><span>Official source</span></span><span class="srcrow"><span>Google DeepMind</span><span>Official source</span></span><span class="srcrow"><span>9to5Mac</span><span>Established outlet</span></span><span class="why">Why this score ›</span></div>';
+  document.querySelectorAll('[data-motion=fold] .replay').forEach(function(b){b.textContent='Morph';});
+});
+</script>
+</body>
+</html>
