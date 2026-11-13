@@ -18,6 +18,8 @@
 # One-time setup (done by you, not this script):
 #   - A "Developer ID Application" certificate in your keychain
 #     (Xcode › Settings › Accounts › Manage Certificates › + › Developer ID Application).
+#   - A Developer ID provisioning profile named "FreshBit Mac Developer ID" for
+#     com.nagulesgobi.freshbit.mac that includes Sign in with Apple, installed in Xcode.
 #   - Notarization credentials saved under the profile name "freshbit":
 #       xcrun notarytool store-credentials freshbit --apple-id <your Apple ID> --team-id B7WQQB5K9P
 #     (it asks for an app-specific password from account.apple.com; it is stored in your keychain).
@@ -26,6 +28,7 @@ set -euo pipefail
 PROJ="${1:-$HOME/Apps/Designer News/mac}"
 TEAM="${TEAM_ID:-B7WQQB5K9P}"
 PROFILE="${NOTARY_PROFILE:-freshbit}"
+PROV="${PROVISIONING_PROFILE:-FreshBit Mac Developer ID}"   # Developer ID profile with Sign in with Apple
 REPO="NagulesGobi/freshbit-website"
 SITE_A="$HOME/Apps/freshbit-website"
 SITE_B="$HOME/Apps/dotxline-website/freshbit"
@@ -52,7 +55,7 @@ say "2/6 Archiving a Release build"
 xcodebuild -project "$PROJ/FreshBit.xcodeproj" -scheme FreshBit -configuration Release \
   -archivePath "$WORK/FreshBit.xcarchive" -destination 'generic/platform=macOS' \
   DEVELOPMENT_TEAM="$TEAM" CODE_SIGN_STYLE=Manual CODE_SIGN_IDENTITY="Developer ID Application" \
-  archive -quiet
+  PROVISIONING_PROFILE_SPECIFIER="$PROV" archive -quiet
 cat > "$WORK/export.plist" <<PLIST
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -61,6 +64,7 @@ cat > "$WORK/export.plist" <<PLIST
   <key>teamID</key><string>$TEAM</string>
   <key>signingStyle</key><string>manual</string>
   <key>signingCertificate</key><string>Developer ID Application</string>
+  <key>provisioningProfiles</key><dict><key>com.nagulesgobi.freshbit.mac</key><string>$PROV</string></dict>
 </dict></plist>
 PLIST
 xcodebuild -exportArchive -archivePath "$WORK/FreshBit.xcarchive" -exportOptionsPlist "$WORK/export.plist" \
