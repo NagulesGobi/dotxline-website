@@ -8,12 +8,12 @@
 <meta name="description" content="How FreshBit was designed: the problem, research, information architecture, design system, components, motion and the changes made from testing on a real iPhone.">
 <meta property="og:title" content="Designing FreshBit">
 <meta property="og:description" content="Problem, research, IA, design system, components and motion behind FreshBit, a news app that checks before it publishes.">
-<meta property="og:image" content="https://freshbit.dotxline.com/assets/press/freshbit-screens-dark.jpg">
+<meta property="og:image" content="https://freshbit.dotxline.com/icon-512.png">
 <link rel="icon" href="favicon.ico" sizes="48x48"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/fb.css?v=11">
-<script src="assets/fb.js?v=11" defer></script>
+<link rel="stylesheet" href="assets/fb.css?v=14">
+<script src="assets/fb.js?v=13" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -43,7 +43,7 @@
       <div><dt>Design and build</dt><dd>Nagules Gobi, with AI-assisted development</dd></div>
       <div><dt>Platform</dt><dd>iPhone, iPad, Mac</dd></div>
       <div><dt>Timeline</dt><dd>About two days</dd></div>
-      <div><dt>Status</dt><dd>TestFlight build 11</dd></div>
+      <div><dt>Status</dt><dd>iPhone in TestFlight testing</dd></div>
       <div><dt>Running cost</dt><dd>$0 a month</dd></div>
     </dl>
   </div>
@@ -62,7 +62,7 @@
       <h3 style="margin:32px 0 14px">Constraints set on day one</h3>
       <div class="grid4">
         <div class="card"><b>Free to run</b><p class="muted" style="font-size:15px;margin-top:6px">No paid AI, no paid servers. It runs for $0 a month.</p></div>
-        <div class="card"><b>No sign-in needed</b><p class="muted" style="font-size:15px;margin-top:6px">Sign in with Apple came later, and only as an option.</p></div>
+        <div class="card"><b>No passwords</b><p class="muted" style="font-size:15px;margin-top:6px">It started with no sign-in. Sign in with Apple came later, so saved stories follow you to iPad and Mac.</p></div>
         <div class="card"><b>Several updates a day</b><p class="muted" style="font-size:15px;margin-top:6px">Checks every 30 minutes, publishes only when something new passes.</p></div>
         <div class="card"><b>Easy to spell</b><p class="muted" style="font-size:15px;margin-top:6px">A coined name of 8 letters or fewer, with a free domain.</p></div>
       </div>
@@ -103,9 +103,9 @@
           <div class="ia-node"><h4><span data-ico="news"></span>Today</h4><ul><li><b>Story</b> · brief, facts, credibility</li><li><b>Your brief</b> · from the leaf</li><li><b>Search</b></li></ul></div>
           <div class="ia-node"><h4><span data-ico="compass"></span>Explore</h4><ul><li><b>Topics</b> → Search</li><li><b>Trending tags</b> → Search</li><li><b>Events</b> → Search</li><li><b>This week</b> → Story</li></ul></div>
           <div class="ia-node"><h4><span data-ico="bm"></span>Saved</h4><ul><li><b>Story</b>, works offline</li></ul></div>
-          <div class="ia-node"><h4><span data-ico="gear"></span>Settings</h4><ul><li><b>Keyword alerts</b></li><li><b>Sources</b> · mute any of 51</li><li><b>Hidden stories</b></li></ul></div>
+          <div class="ia-node"><h4><span data-ico="gear"></span>Settings</h4><ul><li><b>Keyword alerts</b></li><li><b>Sources</b> · mute any of 51</li><li><b>Hidden stories</b></li><li><b>Terms, Privacy, Copyright &amp; Sources</b></li></ul></div>
         </div>
-        <p class="muted" style="font-size:14px;text-align:center">Entry points from outside: top story, keyword and follow alerts open a <b>Story</b>; the morning brief alert opens <b>Your brief</b>.</p>
+        <p class="muted" style="font-size:14px;text-align:center">Before the tabs: a one-step welcome that signs you in with Apple. Entry points from outside: top story, keyword and follow alerts open a <b>Story</b>; the morning brief alert opens <b>Your brief</b>.</p>
       </div>
     </section>
 
@@ -125,8 +125,8 @@
       <h3>Type</h3>
       <div class="type-scale">
         <div><small>Screen title<br>Montserrat 34/700</small><span style="font:800 34px/1 var(--display);letter-spacing:-.03em">Today</span></div>
-        <div><small>Hero headline<br>title2 22/700</small><span style="font:700 22px/1.2 var(--sys)">Introducing Gemini 4 Hydrogen</span></div>
-        <div><small>Card headline<br>headline 17/600</small><span style="font:600 17px/1.3 var(--sys)">Why are we cloning Photoshop?</span></div>
+        <div><small>Hero headline<br>title2 22/700</small><span style="font:700 22px/1.2 var(--sys)">Google DeepMind introduces Gemini 4 Hydrogen model</span></div>
+        <div><small>Card headline<br>headline 17/600</small><span style="font:600 17px/1.3 var(--sys)">Figma introduces native 3D design tools</span></div>
         <div><small>Summary<br>body 17/400</small><span style="font:400 17px/1.4 var(--sys)">Swipe a story left to hide it.</span></div>
         <div><small>Meta<br>footnote 13/500</small><span style="font:500 13px/1 var(--sys);color:var(--text2)">Google DeepMind · 19h ago · 3 sources</span></div>
       </div>
@@ -202,6 +202,8 @@
         <li><b>Settings rows line up like iOS Settings.</b><span>Pickers were moved to SwiftUI’s own labelled rows: label on the left, choice on the right.</span></li>
         <li><b>“Verified” became “Confirmed by trusted sources”.</b><span>To be precise about what the app can and can’t promise.</span></li>
         <li><b>Lime stopped being text on glass.</b><span>Lime on the light tab bar measured about 1.2:1. Light mode now tints the selected tab in the dark brand green (6.8:1).</span></li>
+        <li><b>Own words, by design.</b><span>In the UK even a headline can be protected by copyright, and photos are not covered by the news-reporting exception. So FreshBit now writes every headline, summary and brief itself, shows only images a publisher offers in its feed or that carry an open licence, with a credit, and otherwise draws its own cover with the story’s subject in the brand font.</span></li>
+        <li><b>Widgets and a Mac app.</b><span>A Home Screen and Lock Screen widget with the most-confirmed stories, and a native Mac app with the top stories in the menu bar.</span></li>
       </ol>
     </section>
 
@@ -214,7 +216,7 @@
         <div class="card"><b>Backend</b><p class="muted" style="font-size:15px;margin-top:6px">Supabase on the free plan: Postgres with row-level security, Edge Functions and scheduled jobs.</p></div>
         <div class="card"><b>Matching</b><p class="muted" style="font-size:15px;margin-top:6px">Rare-word matching plus free meaning search with vector embeddings. No paid AI anywhere.</p></div>
       </div>
-      <p style="margin-top:24px">Also built: a branded share card, haptics throughout, offline saved stories, iPad and Mac layouts with a comfortable reading width, and a Home Screen and Lock Screen widget that arrives in the next build.</p>
+      <p style="margin-top:24px">Also built: a branded share card, haptics throughout, offline saved stories, iPad and Mac layouts with a comfortable reading width, a Home Screen and Lock Screen widget, and a native Mac app with a menu bar view of the top stories.</p>
       <div class="btn-row" style="margin-top:28px"><a class="btn lime" href="./#test">Try the TestFlight build</a><a class="btn ghost" href="./#how">See the scoring</a></div>
     </section>
   </div>
@@ -228,7 +230,7 @@
       <p>Confirmed news for designers and developers. An app by <a href="https://dotxline.com/" style="display:inline;padding:0;text-decoration:underline">dotXline</a>.</p>
     </div>
     <div><h4>FreshBit</h4><a href="./#how">How it works</a><a href="./#features">Features</a><a href="design.html">Design process</a><a href="./#faq">FAQ</a><a href="https://github.com/NagulesGobi/freshbit-website/releases/latest/download/FreshBit.dmg" data-mac data-mac-href>Download for Mac</a></div>
-    <div><h4>Help</h4><a href="support.html">Support</a><a href="privacy.html">Privacy policy</a><a href="press.html">Press kit</a></div>
+    <div><h4>Help</h4><a href="support.html">Support</a><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of Use</a><a href="sources.html">Copyright &amp; Sources</a><a href="press.html">Press kit</a></div>
     <div><h4>dotXline</h4><a href="https://dotxline.com/">dotxline.com</a><a href="https://dotxline.com/xpense.html">Xpense</a><a href="https://dotxline.com/tockbee.html">Tockbee</a><a href="mailto:hello@dotxline.com">hello@dotxline.com</a></div>
     <div class="legal"><span>© 2026 dotXline LTD · Cardiff, United Kingdom</span><span>Headlines in the demos are from the app on 12 November 2026 and belong to their publishers.</span></div>
   </div>
@@ -242,8 +244,8 @@ document.addEventListener('DOMContentLoaded',function(){
   var leaf='<svg class="leafi" viewBox="15 15 70 70" aria-hidden="true"><path fill="rgba(14,26,18,.9)" fill-rule="evenodd" d="M50 20H80V50C80 66.6 66.6 80 50 80H20V50C20 33.4 33.4 20 50 20ZM34.5 61.5L61.5 34.5L66.5 39.5L39.5 66.5Z"/></svg>';
   function card(st,c,t,src,col,read){return '<div class="p-card row'+(read?' read':'')+'" style="cursor:default"><span style="display:grid;gap:6px"><span class="meta-l">'+U.badge(st)+U.cat(c)+'</span><h4>'+t+'</h4><span class="p-src">'+src+'</span></span><span class="thumb" style="--a:'+col+'">'+leaf+'</span></div>';}
   document.querySelector('[data-gal=cards]').innerHTML=
-    card('developing','design','Why are we cloning Photoshop?','UX Collective · 11h ago','#7C5CFF')+
-    card('verified','ai','Gilbert + Tobin rethinks the business of law with AI','OpenAI · 10h ago','#2F7BF6',true)+
+    card('reported','design','Why the term design system matters more than its parts','Sidebar · 2d ago · 2 sources','#7C5CFF')+
+    card('verified','ai','Law firm adopts machine learning for business operations','OpenAI · 23h ago','#2F7BF6',true)+
     '<div class="p-box p-cred" style="max-width:360px"><h5>Credibility<span>100 / 100</span></h5><span class="bar"><i style="width:100%;background:#C8F550"></i></span><span class="srcrow"><span>Vercel</span><span>Official source</span></span><span class="srcrow"><span>Google DeepMind</span><span>Official source</span></span><span class="srcrow"><span>9to5Mac</span><span>Established outlet</span></span><span class="why">Why this score ›</span></div>';
   document.querySelectorAll('[data-motion=fold] .replay').forEach(function(b){b.textContent='Morph';});
 });

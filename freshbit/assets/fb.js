@@ -68,25 +68,28 @@
   window.FB_SOURCES = SOURCES;
   function tierOf(name) { return SOURCES[1].indexOf(name) > -1 ? 1 : SOURCES[2].indexOf(name) > -1 ? 2 : 3; }
 
-  // [id, headline, source, age, category, extra sources]
+  // [id, headline, source, age, category, extra sources]. Headlines and summaries are FreshBit's own
+  // words (display_title), exactly as the app shows them; the app never shows a publisher's headline.
   var RAW = [
-    [1, 'Introducing Gemini 4 Hydrogen', 'Google DeepMind', '19h ago', 'ai', [['Vercel', '19h ago'], ['Google DeepMind', '56m ago'], ['9to5Mac', '36m ago']]],
-    [2, 'Google Search gets a major upgrade with Gemini 4 Hydrogen', 'Google AI', '55m ago', 'ai'],
-    [3, 'Google built an AI model that can’t write a sentence — and that’s the point', 'The New Stack', '2h ago', 'ai'],
-    [7, 'Introducing Expo Simulators: cloud simulators built for agents', 'Expo Blog', '2h ago', 'dev'],
-    [4, 'SoftBank’s billion-dollar loss may have put a cap on AI’s natural gas ambitions', 'TechCrunch AI', '2h ago', 'ai'],
-    [8, 'LinkedIn Replaces Argo CD with a Custom GitOps Engine for Kubernetes Deployments', 'InfoQ', '2h ago', 'dev'],
-    [5, 'Phota Labs uses AI to turn everyday photos into professional-looking shots', 'TechCrunch AI', '2h ago', 'ai'],
-    [6, 'More game developers are starting to use generative AI', 'The Verge', '2h ago', 'ai'],
-    [9, 'The toy company Tomy has a new logo, and people are baffled', 'Creative Bloq', '3h ago', 'design'],
-    [11, 'Gilbert + Tobin rethinks the business of law with AI', 'OpenAI', '10h ago', 'ai'],
-    [10, 'Why are we cloning Photoshop?', 'UX Collective', '11h ago', 'design'],
-    [12, 'Every click has a price now. Who designs how that “feels”?', 'UX Collective', '12h ago', 'ai']
+    [547, 'Google DeepMind introduces Gemini 4 Hydrogen model', 'Google DeepMind', '23h ago', 'ai', [['Vercel', '23h ago'], ['Google DeepMind', '5h ago'], ['Hacker News', '5h ago'], ['9to5Mac', '5h ago'], ['Product Hunt', '4h ago']]],
+    [654, 'Google launches Gemini 4 with dynamic mid-task model switching', 'The New Stack', '2h ago', 'ai'],
+    [655, 'Coding agents evolve to support parallel swarms and multiplayer setups', 'The New Stack', '2h ago', 'dev'],
+    [651, 'Opera One brings Data Saver to iOS and cuts bandwidth usage', '9to5Mac', '2h ago', 'dev'],
+    [548, 'Google updates Search globally with new Gemini 4 Hydrogen model', 'Google AI', '5h ago', 'ai', [['Google AI', '5h ago'], ['Hacker News', '4h ago'], ['TechCrunch AI', '4h ago'], ['The Verge', '1h ago']]],
+    [545, 'Expo launches cloud simulators and emulators for coding agents', 'Expo Blog', '6h ago', 'dev', [['Expo Blog', '6h ago'], ['Product Hunt', '4h ago']]],
+    [333, 'Figma details workflow behind its 3D transform launch video', 'Figma', '9h ago', 'design'],
+    [536, 'Figma introduces native 3D design tools and direct code output', 'Figma Release Notes', '23h ago', 'design'],
+    [10, 'Law firm adopts machine learning for business operations', 'OpenAI', '23h ago', 'ai'],
+    [118, 'Airlines restrict autonomous software from booking tickets', 'The Verge', '1d ago', 'ai', [['Hacker News', '2d ago'], ['The Verge', '1d ago'], ['TechCrunch AI', '6h ago']]],
+    [96, 'Amazon Web Services introduces local testing clone', 'The New Stack', '1d ago', 'dev', [['The New Stack', '1d ago'], ['Hacker News', '1d ago'], ['Simon Willison', '1d ago']]],
+    [75, 'Why the term design system matters more than its parts', 'Sidebar', '2d ago', 'design', [['Sidebar', '2d ago'], ['UX Collective', '1d ago']]],
+    [99, 'Anthropic reveals multi-chip AI strategy', 'Simon Willison', '2d ago', 'ai', [['Simon Willison', '2d ago'], ['Hacker News', '11h ago']]]
   ];
+  var ORG = { 'Google DeepMind': 'google', 'Google AI': 'google' };
   var STORIES = RAW.map(function (r) {
     var list = r[5] ? r[5].map(function (x) { return { name: x[0], tier: tierOf(x[0]), ago: x[1] }; }) : [{ name: r[2], tier: tierOf(r[2]), ago: r[3] }];
     var orgs = {};
-    list.forEach(function (x) { orgs[x.name === 'Google DeepMind' || x.name === 'Google AI' ? 'google' : x.name] = x.tier; });
+    list.forEach(function (x) { orgs[ORG[x.name] || x.name] = x.tier; });
     var best = Math.min.apply(null, list.map(function (x) { return x.tier; }));
     var est = Object.keys(orgs).filter(function (k) { return orgs[k] <= 2; }).length;
     var all = Object.keys(orgs).length;
@@ -94,12 +97,29 @@
     return { id: r[0], t: r[1], src: r[2], ago: r[3], cat: r[4], sources: list, n: all, best: best, established: est, score: sc.total, st: sc.status };
   });
   var BY = {}; STORIES.forEach(function (x) { BY[x.id] = x; });
-  // The Gemini story is the one the screenshots open, so it carries its brief and facts.
-  BY[1].brief = 'Google DeepMind introduced Gemini 4 Hydrogen, aimed at speed and efficiency for everyday coding and agentic work. It is priced flat across its entire 1 million-token context window.';
-  BY[1].facts = ['Gemini 4 Hydrogen', '1 million-token context', 'Flat price'];
-  BY[1].when = 'Thu, 12 November 2026 · 18:00';
-  BY[1].by = 'Koray Kavukcuoglu, Google DeepMind';
-  BY[1].art = 'gemini';
+  // The Gemini story is the one the screenshots open, so it carries its brief and facts (from the app).
+  BY[547].brief = 'Google DeepMind announced Gemini 4 Hydrogen, a model built for fast execution in everyday coding and agentic workflows. Hydrogen surpasses previous models on intelligence indices while maintaining flat pricing across its one million-token context window.';
+  BY[547].facts = ['Gemini 4 Hydrogen', '1 million-token context', 'Flat pricing'];
+  BY[547].when = 'Thu, 12 November 2026 · 18:00';
+  BY[547].by = 'Koray Kavukcuoglu, Google DeepMind';
+  BY[333].event = 'Figma Config 2026';
+  // The subject of a FreshBit headline, shown on the designed cover when a story has no allowed image.
+  // Same rules as the app (lib/subject.ts).
+  var SMALL = {};
+  ('a an the and or but for with from into on in at to of by as is are was were be its it this that new now how why what who your our we you more most just adds add gets get here meet see i my best top inside when where after following across using launches launch introduces releases release unveils ships report reports').split(' ').forEach(function (w) { SMALL[w] = 1; });
+  function subjectOf(x) {
+    var words = x.t.replace(/[“”"'’:|–—]/g, ' ').split(/\s+/).filter(Boolean).map(function (w) { return w.replace(/[.,!?]+$/, ''); });
+    var best = [], cur = [], start = 0, bestStart = 0;
+    words.forEach(function (w, i) {
+      var proper = /^[A-Z0-9]/.test(w) && !SMALL[w.toLowerCase()];
+      if (proper || (cur.length && /^\d/.test(w))) { if (!cur.length) start = i; cur.push(w); }
+      else { if (cur.length > best.length) { best = cur; bestStart = start; } cur = []; }
+    });
+    if (cur.length > best.length) { best = cur; bestStart = start; }
+    if (best.length === 1 && bestStart === 0 && !/[A-Z0-9]/.test(best[0].slice(1))) best = [];
+    var t = best.slice(0, 3).join(' ');
+    return t.length >= 2 ? t : x.src.replace(/\s+(Blog|Changelog|News|Engineering|Developers?)$/, '');
+  }
   var COUNTS = { design: 25, ux: 6, ai: 78, dev: 41 };
   var TRENDING = [['ios', 5], ['gemini', 4], ['android', 3], ['openai', 3], ['anthropic', 3], ['open-source', 3], ['adobe', 3], ['claude', 2], ['figma', 2]];
   var EVENTS = [['Adobe MAX 2026', 7], ['Disrupt conference', 1]];
@@ -360,7 +380,7 @@
   function Phone(el) {
     this.el = el;
     this.opts = { screen: el.getAttribute('data-screen') || 'today', scheme: el.getAttribute('data-scheme') || 'auto', story: Number(el.getAttribute('data-story') || 1), fixed: el.hasAttribute('data-static') };
-    this.s = { tab: 'today', filter: 'all', topics: { design: true, ux: true, ai: true, dev: true }, showReported: true, saved: [11], read: [], hidden: [], appearance: 'system', notify: true, briefHour: 2, keywords: ['Gemini'], hiddenSources: [], follows: [] };
+    this.s = { tab: 'today', filter: 'all', topics: { design: true, ux: true, ai: true, dev: true }, showReported: true, saved: [10], read: [], hidden: [], appearance: 'system', notify: true, briefHour: 2, keywords: ['Gemini'], hiddenSources: [], follows: [] };
     this.build();
   }
   Phone.prototype.build = function () {
@@ -371,7 +391,7 @@
       '<div class="p-screen">' +
       '<div class="p-island"></div>' +
       '<div class="p-status" aria-hidden="true"><span>09:41</span><span class="r">' + P.sig + P.wifi + P.batt + '</span></div>' +
-      (o.screen === 'lock' ? this.lockHTML() :
+      (o.screen === 'lock' ? this.lockHTML() : o.screen === 'home' ? this.homeHTML() :
         '<div class="p-view" data-v="today"></div><div class="p-view" data-v="explore" hidden></div><div class="p-view" data-v="saved" hidden></div><div class="p-view" data-v="settings" hidden></div>' +
         '<div class="p-scrim"></div>' +
         '<button class="p-glassmark" type="button" aria-label="Show the Today bar">' + leafSvg() + '</button>' +
@@ -386,9 +406,10 @@
     this.applyScheme();
     onTheme(function () { me.applyScheme(); });
     if (o.screen === 'lock') { this.lockAnimate(); return; }
+    if (o.screen === 'home') return;
     this.renderAll();
     this.bind();
-    if (o.screen === 'story') this.openStory(o.story, true);
+    if (o.screen === 'story') this.openStory(BY[o.story] ? o.story : 547, true);
     else if (o.screen === 'brief') this.openBrief(true);
     else if (o.screen !== 'today') this.go(o.screen);
   };
@@ -417,9 +438,11 @@
     list.forEach(function (x) { var r = x.n * 20 + x.score; if (!lead || r > lead.n * 20 + lead.score) lead = x; });
     return lead ? [lead].concat(list.filter(function (x) { return x !== lead; })) : list;
   };
+  // No allowed image: the app's designed cover, the topic colour fading to lime, with the story's
+  // subject in the brand font and a large faint leaf (components/ui.tsx Placeholder).
   function thumb(x, big) {
-    if (x.art === 'gemini') return '<div class="art gemini"><span class="lbl">Gemini 4 Hydrogen</span><span class="orb"></span></div>';
-    return '<div class="' + (big ? 'art' : 'thumb') + '" style="--a:' + COL[x.cat] + '"><svg class="leafi" viewBox="15 15 70 70" aria-hidden="true"><path fill="rgba(14,26,18,.9)" fill-rule="evenodd" d="' + LEAF + '"/></svg></div>';
+    return '<div class="' + (big ? 'art' : 'thumb') + ' cover" style="--a:' + COL[x.cat] + '"><svg class="wm" viewBox="15 15 70 70" aria-hidden="true"><path fill-rule="evenodd" d="' + LEAF + '"/></svg>' +
+      (big ? '<small>' + CAT[x.cat].toUpperCase() + '</small>' : '') + '<b>' + esc(subjectOf(x)) + '</b></div>';
   }
   Phone.prototype.card = function (x, hero) {
     var read = this.s.read.indexOf(x.id) > -1;
@@ -550,7 +573,7 @@
     if (s.read.indexOf(id) < 0) s.read.push(id);
     this.cur = x;
     var saved = s.saved.indexOf(id) > -1, follow = s.follows.indexOf(id) > -1, canFollow = x.st !== 'verified';
-    var facts = (x.when ? fact(P.cal, 'When', x.when) : '') + fact(P.news, 'Reported by', x.by || x.src) + fact(P.seal, 'Confirmed by', x.n + ' independent source' + (x.n === 1 ? '' : 's'));
+    var facts = (x.when ? fact(P.cal, 'When', x.when) : '') + (x.event ? fact(P.pin, 'Where', x.event) : '') + fact(P.news, 'Reported by', x.by || x.src) + fact(P.seal, 'Confirmed by', x.n + ' independent source' + (x.n === 1 ? '' : 's'));
     var barCol = x.st === 'verified' ? '#C8F550' : x.st === 'reported' ? '#F2B53A' : 'var(--p-text2)';
     var html = navbar('', '<span class="grp">' + (canFollow ? '<button type="button" data-act="follow" aria-label="Follow">' + (follow ? P.bellFill : P.bell) + '</button>' : '') +
       '<button type="button" data-act="toast" data-msg="Shares a branded card: headline, status and how many sources confirm it." aria-label="Share">' + P.share + '</button>' +
@@ -559,7 +582,7 @@
       '<div class="meta-l" style="display:flex;gap:7px;align-items:center"><button type="button" data-act="sheet" style="border:0;background:none;padding:0;cursor:pointer" aria-label="' + LABEL[x.st] + '. Show credibility details">' + badge(x.st) + '</button>' + cat(x.cat) + '</div>' +
       '<h3>' + esc(x.t) + '</h3><span class="src">' + esc(x.src) + ' · ' + x.ago + '</span>' +
       (canFollow ? '<button type="button" class="p-follow" data-act="follow" aria-pressed="' + follow + '">' + (follow ? P.bellFill + 'Following: you will get an alert when it is confirmed' : P.bell + 'Follow: alert me when trusted sources confirm it') + '</button>' : '') +
-      '<div class="p-box"><h5>Brief' + (x.brief ? '<span class="ondev">' + P.apple.replace('<svg', '<svg width="9" height="9"') + 'On-device</span>' : '') + '</h5>' +
+      '<div class="p-box"><h5>Brief' + (x.brief ? '<span class="ondev">Own words</span>' : '') + '</h5>' +
       (x.brief ? '<p>' + esc(x.brief) + '</p><div class="p-kf">' + x.facts.map(function (k) { return '<span>' + esc(k) + '</span>'; }).join('') + '</div>' : '<p style="color:var(--p-text2)">No details yet. FreshBit reads the full article shortly after a story is published.</p>') + '</div>' +
       '<div class="p-box" style="gap:0"><h5 style="margin-bottom:6px">The facts</h5>' + facts + '</div>' +
       '<button type="button" class="p-box p-cred" data-act="sheet" aria-label="Credibility ' + x.score + ' of 100. Show details"><h5>Credibility<span>' + x.score + ' / 100</span></h5><span class="bar"><i style="--w:' + x.score + '%;background:' + barCol + '"></i></span>' +
@@ -578,7 +601,7 @@
     var me = this, list = STORIES.filter(function (x) { return x.st === 'verified'; }).sort(function (a, b) { return b.n - a.n || b.score - a.score; });
     var html = navbar('') + '<div style="display:grid;gap:4px;margin:6px 0 12px"><span style="font:600 10.5px/1 var(--sys);letter-spacing:.06em;color:var(--p-text2)">THURSDAY 12 NOVEMBER</span>' +
       '<h3 class="p-title" style="font-size:30px">Your brief</h3><p class="p-pulse">12 stories confirmed by trusted sources in the last 24 hours.</p></div><div class="p-feed">' +
-      list.map(function (x, i) { return me.card(x, i === 0); }).join('') + '<p class="p-pulse" style="text-align:center;margin-top:6px">This demo carries 4 of the 12.</p></div>';
+      list.map(function (x, i) { return me.card(x, i === 0); }).join('') + '<p class="p-pulse" style="text-align:center;margin-top:6px">This demo carries ' + list.length + ' of the 12.</p></div>';
     var p = this.push(1, html);
     if (instant) { p.style.transition = 'none'; p.classList.add('open'); p.offsetWidth; p.style.transition = ''; }
   };
@@ -720,13 +743,35 @@
   /* lock screen with FreshBit alerts, written with the app's own alert templates (fb-push) */
   Phone.prototype.lockHTML = function () {
     var notes = [
-      ['Top story', 'AI · Confirmed by 3 trusted sources', 'Introducing Gemini 4 Hydrogen', 'now'],
-      ['Keyword', '“Gemini” · Confirmed', 'Google Search gets a major upgrade with Gemini 4 Hydrogen', '1m ago'],
-      ['Morning brief', 'Your FreshBit brief · 12 confirmed stories', 'Top: Introducing Gemini 4 Hydrogen', '8:00']
+      ['Top story', 'AI · Confirmed by 5 trusted sources', 'Google DeepMind introduces Gemini 4 Hydrogen model', 'now'],
+      ['Keyword', '“Gemini” · Confirmed', 'Google updates Search globally with new Gemini 4 Hydrogen model', '1m ago'],
+      ['Morning brief', 'Your FreshBit brief · 12 confirmed stories', 'Top: Google DeepMind introduces Gemini 4 Hydrogen model', '8:00']
     ];
-    return '<div class="p-lock"><span style="opacity:.85">' + P.lock.replace('<svg', '<svg width="14" height="14"') + '</span><span class="date">Thursday 12 November</span><span class="clock">9:41</span><div class="p-notes">' +
+    return '<div class="p-lock"><span style="opacity:.85">' + P.lock.replace('<svg', '<svg width="14" height="14"') + '</span><span class="date">Thu 12 · FreshBit · 48 confirmed today</span><span class="clock">9:41</span>' +
+      '<div class="lk-rect"><b>FRESHBIT</b><span>' + esc(widgetStories()[0].t) + '</span></div><div class="p-notes">' +
       notes.map(function (n) { return '<div class="p-note"><span class="ic">' + P.leafInk + '</span><div><span class="ntop"><span>' + n[1] + '</span><em>' + n[3] + '</em></span><p>' + n[2] + '</p></div></div>'; }).join('') +
       '</div><span class="flash l">' + P.flash + '</span><span class="flash r">' + P.camera + '</span><span class="home"></span></div>';
+  };
+  // The FreshBit widget (widgets/top-stories.tsx): the most-confirmed stories that aren't Developing,
+  // ranked by independent sources and then by score. Lime in light mode, ink in dark mode.
+  function widgetStories() {
+    return STORIES.filter(function (x) { return x.st !== 'developing'; })
+      .sort(function (a, b) { return (b.n * 20 + b.score) - (a.n * 20 + a.score); });
+  }
+  function wLabel(x) { return x.st === 'verified' ? 'Confirmed · ' + x.n + ' source' + (x.n === 1 ? '' : 's') : 'Reported'; }
+  Phone.prototype.homeHTML = function () {
+    var w = widgetStories();
+    var head = '<span class="wh"><b>FRESHBIT</b><em>48 confirmed</em></span>';
+    var medium = '<div class="wd wd-m">' + head + w.slice(0, 3).map(function (x, i) {
+      return '<span class="wr' + (i === 0 ? ' first' : '') + '"><b>' + esc(x.t) + '</b><em>' + esc(x.src) + ' · ' + wLabel(x) + '</em></span>';
+    }).join('') + '</div>';
+    var small = '<div class="wd wd-s">' + head + '<span class="sp"></span><b class="st">' + esc(w[0].t) + '</b><em>' + wLabel(w[0]) + '</em></div>';
+    var icon = '<span class="ai"><i></i></span>';
+    var fb = '<span class="ai fb"><i>' + P.leafInk + '</i><small>FreshBit</small></span>';
+    return '<div class="p-home">' + medium + '<span class="wcap">FreshBit</span>' +
+      '<div class="hrow">' + small + '<div class="apps4">' + fb + icon + icon + icon + '</div></div>' +
+      '<span class="wcap">FreshBit</span>' +
+      '<div class="dock">' + icon + icon + icon + icon + '</div><span class="home"></span></div>';
   };
   Phone.prototype.lockAnimate = function () {
     var notes = this.el.querySelectorAll('.p-note');
