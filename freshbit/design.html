@@ -8,12 +8,12 @@
 <meta name="description" content="How FreshBit was designed: the problem, research, information architecture, design system, components, motion and the changes made from testing on a real iPhone.">
 <meta property="og:title" content="Designing FreshBit">
 <meta property="og:description" content="Problem, research, IA, design system, components and motion behind FreshBit, a news app that checks before it publishes.">
-<meta property="og:image" content="https://freshbit.dotxline.com/icon-512.png">
+<meta property="og:image" content="https://freshbit.dotxline.com/assets/press/screens/freshbit-showcase-dark.jpg">
 <link rel="icon" href="favicon.ico" sizes="48x48"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/fb.css?v=14">
-<script src="assets/fb.js?v=13" defer></script>
+<link rel="stylesheet" href="assets/fb.css?v=18">
+<script src="assets/fb.js?v=18" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -144,7 +144,10 @@
         <li>Never show a credibility state with colour alone: always an icon and a label.</li>
         <li>No emoji as icons. SF Symbols only.</li>
       </ul>
-      <figure class="figure"><img src="assets/img/design-system-sheet.webp" alt="FreshBit design system sheet: colour tokens, badges, category chips and four early screens." width="1400" height="1183" loading="lazy"><figcaption>The first design system sheet, made before the app. Later builds kept the tokens and moved to Apple’s native tab bar and forms.</figcaption></figure>
+      <div class="sheet">
+        <div class="sheet-head"><div><b>The system, running</b><span>Four screens built from these tokens and components.</span></div><span class="seg" data-scheme-switch="#sheet-phones" role="group" aria-label="Appearance"><button type="button" data-set="light" aria-pressed="true">Light</button><button type="button" data-set="dark" aria-pressed="false">Dark</button></span></div>
+        <div class="sheet-phones" id="sheet-phones" data-set="light"><figure><div class="mini"><div class="phone static" data-phone data-screen="today" data-scheme="light" aria-label="FreshBit Today screen"></div></div><figcaption>Today</figcaption></figure><figure><div class="mini"><div class="phone static" data-phone data-screen="story" data-scheme="light" data-story="547" aria-label="FreshBit Story screen"></div></div><figcaption>Story</figcaption></figure><figure><div class="mini"><div class="phone static" data-phone data-screen="saved" data-scheme="light" aria-label="FreshBit Saved screen"></div></div><figcaption>Saved</figcaption></figure><figure><div class="mini"><div class="phone static" data-phone data-screen="settings" data-scheme="light" aria-label="FreshBit Settings screen"></div></div><figcaption>Settings</figcaption></figure></div>
+      </div>
     </section>
 
     <section class="chapter prose ptok" id="components">
@@ -178,7 +181,40 @@
         <figure><div class="art"><img src="assets/img/concept-4.svg" alt="" width="100" height="100"></div><div class="sizes"><img src="assets/img/concept-4.svg" alt=""><img src="assets/img/concept-4.svg" alt=""><img src="assets/img/concept-4.svg" alt=""></div><figcaption><b>Rising Dots</b>Three dots growing toward the newest story.</figcaption></figure>
       </div>
       <p>Leaf Bit looked most like an app icon and stayed clear at the smallest sizes. It was rebuilt as a layered icon in Apple’s Icon Composer, a leaf layer plus a bit layer, so iOS 26 renders it with Liquid Glass in the default, dark, clear and tinted styles.</p>
-      <figure class="figure"><img src="assets/img/icon-appearances.webp" alt="The FreshBit app icon in four iOS appearances: default lime, dark, clear and tinted purple." width="1400" height="350" loading="lazy"><figcaption>One layered icon, four iOS appearances.</figcaption></figure>
+      <div class="icons"><figure class="ic"><svg viewBox="0 0 1024 1024" role="img" aria-label="FreshBit app icon, default appearance">
+  <defs><linearGradient id="bg-def" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E2FB8E"/><stop offset=".55" stop-color="#C8F550"/><stop offset="1" stop-color="#B2E03A"/></linearGradient>
+  <linearGradient id="sp-def" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".32"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <filter id="sh-def" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity=".28"/></filter></defs>
+  <rect width="1024" height="1024" rx="230" fill="url(#bg-def)"/>
+  <rect x="6" y="6" width="1012" height="1012" rx="225" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="6"/>
+  <g filter="url(#sh-def)"><path fill="#0E1A12" fill-rule="evenodd" d="M512 205H819V512C819 682 682 819 512 819H205V512C205 342 342 205 512 205ZM353 630L630 353L681 404L404 681Z"/><path fill="url(#sp-def)" fill-rule="evenodd" d="M512 205H819V512C819 682 682 819 512 819H205V512C205 342 342 205 512 205ZM353 630L630 353L681 404L404 681Z"/></g>
+  <path d="M392 642L642 392" stroke="rgba(200,245,80,.9)" stroke-width="66" stroke-linecap="round" fill="none"/><path d="M392 642L642 392" stroke="#FFFFFF" stroke-width="50" stroke-linecap="round" fill="none"/>
+</svg><figcaption>Default</figcaption></figure><figure class="ic"><svg viewBox="0 0 1024 1024" role="img" aria-label="FreshBit app icon, dark appearance">
+  <defs><linearGradient id="bg-dark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22362A"/><stop offset=".55" stop-color="#121D16"/><stop offset="1" stop-color="#0B120D"/></linearGradient>
+  <linearGradient id="sp-dark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".32"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <filter id="sh-dark" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity=".28"/></filter></defs>
+  <rect width="1024" height="1024" rx="230" fill="url(#bg-dark)"/>
+  <rect x="6" y="6" width="1012" height="1012" rx="225" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="6"/>
+  <g filter="url(#sh-dark)"><path fill="#C8F550" fill-rule="evenodd" d="M512 205H819V512C819 682 682 819 512 819H205V512C205 342 342 205 512 205ZM353 630L630 353L681 404L404 681Z"/><path fill="url(#sp-dark)" fill-rule="evenodd" d="M512 205H819V512C819 682 682 819 512 819H205V512C205 342 342 205 512 205ZM353 630L630 353L681 404L404 681Z"/></g>
+  <path d="M392 642L642 392" stroke="rgba(14,26,18,.6)" stroke-width="66" stroke-linecap="round" fill="none"/><path d="M392 642L642 392" stroke="#0E1A12" stroke-width="50" stroke-linecap="round" fill="none"/>
+</svg><figcaption>Dark</figcaption></figure><figure class="ic"><svg viewBox="0 0 1024 1024" role="img" aria-label="FreshBit app icon, clear appearance">
+  <defs><linearGradient id="bg-clear" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A4A4C"/><stop offset=".55" stop-color="#2C2C2E"/><stop offset="1" stop-color="#1C1C1E"/></linearGradient>
+  <linearGradient id="sp-clear" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".32"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <filter id="sh-clear" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity=".28"/></filter></defs>
+  <rect width="1024" height="1024" rx="230" fill="url(#bg-clear)"/>
+  <rect x="6" y="6" width="1012" height="1012" rx="225" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="6"/>
+  <g filter="url(#sh-clear)"><path fill="rgba(255,255,255,.16)" fill-rule="evenodd" d="M512 205H819V512C819 682 682 819 512 819H205V512C205 342 342 205 512 205ZM353 630L630 353L681 404L404 681Z"/><path fill="none" stroke="rgba(255,255,255,.55)" stroke-width="6" d="M512 205H819V512C819 682 682 819 512 819H205V512C205 342 342 205 512 205ZM353 630L630 353L681 404L404 681Z"/><path fill="url(#sp-clear)" fill-rule="evenodd" d="M512 205H819V512C819 682 682 819 512 819H205V512C205 342 342 205 512 205ZM353 630L630 353L681 404L404 681Z"/></g>
+  <path d="M392 642L642 392" stroke="rgba(255,255,255,.3)" stroke-width="66" stroke-linecap="round" fill="none"/><path d="M392 642L642 392" stroke="#F2F2F2" stroke-width="50" stroke-linecap="round" fill="none"/>
+</svg><figcaption>Clear</figcaption></figure><figure class="ic"><svg viewBox="0 0 1024 1024" role="img" aria-label="FreshBit app icon, tinted appearance">
+  <defs><linearGradient id="bg-tint" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8C76E8"/><stop offset=".55" stop-color="#6B54CF"/><stop offset="1" stop-color="#5640B8"/></linearGradient>
+  <linearGradient id="sp-tint" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".32"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <filter id="sh-tint" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity=".28"/></filter></defs>
+  <rect width="1024" height="1024" rx="230" fill="url(#bg-tint)"/>
+  <rect x="6" y="6" width="1012" height="1012" rx="225" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="6"/>
+  <g filter="url(#sh-tint)"><path fill="rgba(255,255,255,.2)" fill-rule="evenodd" d="M512 205H819V512C819 682 682 819 512 819H205V512C205 342 342 205 512 205ZM353 630L630 353L681 404L404 681Z"/><path fill="none" stroke="rgba(255,255,255,.5)" stroke-width="6" d="M512 205H819V512C819 682 682 819 512 819H205V512C205 342 342 205 512 205ZM353 630L630 353L681 404L404 681Z"/><path fill="url(#sp-tint)" fill-rule="evenodd" d="M512 205H819V512C819 682 682 819 512 819H205V512C205 342 342 205 512 205ZM353 630L630 353L681 404L404 681Z"/></g>
+  <path d="M392 642L642 392" stroke="rgba(255,255,255,.35)" stroke-width="66" stroke-linecap="round" fill="none"/><path d="M392 642L642 392" stroke="#EDE8FF" stroke-width="50" stroke-linecap="round" fill="none"/>
+</svg><figcaption>Tinted</figcaption></figure></div>
+      <p class="muted" style="font-size:14px;margin-top:-6px">Drawn here from the two Icon Composer layers: the leaf with its vein cut, and the bit that sits in it.</p>
     </section>
 
     <section class="chapter prose" id="motion">

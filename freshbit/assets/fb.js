@@ -379,6 +379,7 @@
      ====================================================================== */
   function Phone(el) {
     this.el = el;
+    el._fb = this; // lets a page switch the scheme later (design page light/dark switch)
     this.opts = { screen: el.getAttribute('data-screen') || 'today', scheme: el.getAttribute('data-scheme') || 'auto', story: Number(el.getAttribute('data-story') || 1), fixed: el.hasAttribute('data-static') };
     this.s = { tab: 'today', filter: 'all', topics: { design: true, ux: true, ai: true, dev: true }, showReported: true, saved: [10], read: [], hidden: [], appearance: 'system', notify: true, briefHour: 2, keywords: ['Gemini'], hiddenSources: [], follows: [] };
     this.build();
@@ -511,8 +512,11 @@
     var s = this.s, on = Object.keys(s.topics).filter(function (k) { return s.topics[k]; });
     var names = { design: 'Product design', ux: 'UX/UI design', ai: 'AI development', dev: 'Software, web & apps' };
     var h = '<div class="p-head"><h3 class="p-title">Settings</h3></div>' +
-      '<div class="p-group"><small>Account</small><div class="p-rows"><button type="button" class="p-row apple" data-act="toast" data-msg="Signs in with Apple. Optional: it only keeps your saved stories and settings in a private account.">' + P.apple + 'Sign in with Apple</button></div>' +
-      '<p>Optional. Keeps your saved stories, hidden stories and settings in a private account, so they come back after a reinstall and on your iPad and Mac.</p></div>' +
+      '<div class="p-group"><small>Account</small><div class="p-rows"><div class="p-row" style="cursor:default">Signed in with Apple</div>' +
+      '<button type="button" class="p-row apple" data-act="toast" data-msg="Synced. Saved stories and settings are backed up.">Sync now</button>' +
+      '<button type="button" class="p-row apple" data-act="toast" data-msg="Sign out keeps your saved stories and settings on this device.">Sign out</button>' +
+      '<button type="button" class="p-row" style="color:#FF453A" data-act="toast" data-msg="Delete account removes your account and its synced data straight away.">Delete account</button></div>' +
+      '<p>Saved stories and settings are backed up.</p></div>' +
       '<div class="p-group"><small>Topics</small><div class="p-rows">' + Object.keys(names).map(function (k) { return tog(names[k], s.topics[k], 'topic:' + k, s.topics[k] && on.length === 1); }).join('') + '</div></div>' +
       '<div class="p-group"><small>Alerts</small><div class="p-rows">' + tog('Top story alerts', s.notify, 'notify') +
       '<button type="button" class="p-row" data-act="hour"><span>Morning brief</span><span class="v">' + hourLabel(BRIEF_HOURS[s.briefHour]) + P.updown + '</span></button>' +
@@ -523,7 +527,8 @@
       '<button type="button" class="p-row" data-act="hidden"><span>Hidden stories' + (s.hidden.length ? ' (' + s.hidden.length + ')' : '') + '</span><span class="v">' + P.chevR + '</span></button></div>' +
       '<p>Off: only stories confirmed by trusted sources (an official source, or 3+ independent outlets). Swipe a story left to hide it; bring it back from Hidden stories.</p></div>' +
       '<div class="p-group"><small>Appearance &amp; feel</small><div class="p-rows"><button type="button" class="p-row" data-act="appearance"><span>Appearance</span><span class="v">' + { system: 'System', light: 'Light', dark: 'Dark' }[s.appearance] + P.updown + '</span></button>' + tog('Haptics', true, 'noop') + '</div></div>' +
-      '<div class="p-group"><small>About</small><p style="margin-top:0">FreshBit checks 51 trusted sources every 30 minutes and scores each story on who published it, whether an official source confirms it, and how many independent outlets report it. Rumours are never marked Confirmed.</p></div>';
+      '<div class="p-group"><small>About</small><div class="p-rows">' +
+      '<a class="p-row apple" href="terms.html" target="_blank" rel="noopener">Terms of Use</a><a class="p-row apple" href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a><a class="p-row apple" href="sources.html" target="_blank" rel="noopener">Copyright &amp; Sources</a></div><p>FreshBit checks 51 trusted sources every 30 minutes and scores each story on who published it, whether an official source confirms it, and how many independent outlets report it. Rumours are never marked Confirmed.</p></div>';
     this.view('settings').innerHTML = h;
   };
   Phone.prototype.view = function (v) { return this.scr.querySelector('[data-v=' + v + ']'); };
@@ -782,6 +787,16 @@
   };
 
   d.querySelectorAll('[data-phone]').forEach(function (el) { new Phone(el); });
+  // a light/dark switch for a group of phones: <div data-scheme-switch="#target"> with buttons data-set="light|dark"
+  d.querySelectorAll('[data-scheme-switch]').forEach(function (sw) {
+    var group = d.querySelector(sw.getAttribute('data-scheme-switch'));
+    sw.addEventListener('click', function (e) {
+      var b = e.target.closest('button[data-set]'); if (!b || !group) return;
+      sw.querySelectorAll('button[data-set]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      group.querySelectorAll('[data-phone]').forEach(function (el) { if (el._fb) { el._fb.opts.scheme = b.getAttribute('data-set'); el._fb.applyScheme(); } });
+      group.setAttribute('data-set', b.getAttribute('data-set'));
+    });
+  });
 
   /* motion demos on the case-study page */
   d.querySelectorAll('[data-motion]').forEach(function (box) {

@@ -815,3 +815,50 @@ html.has-mac [data-mac-fallback]{display:none!important}
 .p-lock .clock{margin-bottom:22px}
 .wd .wh{gap:6px}.wd-s .wh em{font-size:8px}
 .wd .wh em{white-space:nowrap}.wd-s .wh b{font-size:9px}
+
+/* design page: the system, running (live phones) */
+.sheet{border:1px solid var(--border);border-radius:26px;background:var(--surface);padding:clamp(14px,2.4vw,24px);margin:30px 0;box-shadow:var(--shadow)}
+.sheet-head{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+.sheet-head b{display:block;font:700 17px/1.2 var(--body)}
+.sheet-head span:not(.seg){display:block;font-size:14px;color:var(--text2);margin-top:3px}
+.sheet-phones{--s:.56;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding:22px 14px 16px;border-radius:18px;background:#EEF2E8;transition:background .35s}
+.sheet-phones[data-set=dark]{background:#0B120D}
+.sheet-phones figure{margin:0;display:grid;justify-items:center;gap:12px}
+.sheet-phones figcaption{font:600 12px/1 var(--mono);letter-spacing:.04em;color:#4B5A50}
+.sheet-phones[data-set=dark] figcaption{color:#A3B2A7}
+.mini{width:calc(320px * var(--s));height:calc(693px * var(--s));flex:none}
+.mini .phone{transform:scale(var(--s));transform-origin:0 0;box-shadow:0 30px 50px -30px rgba(14,26,18,.5),inset 0 0 0 2px #2b3a30,inset 0 0 0 4px #0E1A12}
+@media (max-width:1180px){.sheet-phones{--s:.5}}
+@media (max-width:1040px){.sheet-phones{--s:.46}}
+@media (max-width:960px){.sheet-phones{--s:.56}}
+@media (max-width:760px){.sheet-phones{grid-template-columns:repeat(2,minmax(0,1fr));--s:.44;row-gap:22px}}
+@media (max-width:360px){.sheet-phones{--s:.4}}
+/* the app icon in its four appearances, drawn from its layers */
+.icons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,2.4vw,28px);padding:clamp(18px,3vw,32px);border-radius:26px;margin:26px 0 16px;
+  background:radial-gradient(80% 120% at 50% 0%,#5d7c63,#1d2a20);box-shadow:inset 0 0 0 1px rgba(238,245,234,.08)}
+.icons .ic{margin:0;display:grid;gap:12px;justify-items:center}
+.icons svg{width:100%;max-width:150px;height:auto;filter:drop-shadow(0 18px 24px rgba(0,0,0,.35))}
+.icons figcaption{font:600 12px/1 var(--mono);letter-spacing:.04em;color:#EEF5EA}
+@media (max-width:560px){.icons{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.mini .phone{max-width:none;width:320px;height:693px}
+.phone.is-dark .p-event{background:#1C2720;color:#EEF5EA;box-shadow:inset 0 0 0 1px rgba(238,245,234,.08)}
+a.p-row{text-decoration:none}
+
+/* press kit: rendered screens */
+.hero-shot{margin:22px 0;border-radius:20px;overflow:hidden;border:1px solid var(--border);background:var(--surface)}
+.hero-shot img{width:100%;height:auto}
+.hero-shot figcaption{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;font:500 13px/1.3 var(--mono);color:var(--text2);border-top:1px solid var(--border)}
+.hero-shot figcaption a{font:600 14px/1 var(--body)}
+.shots-head{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:40px}
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+.shot{margin:0;border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--surface)}
+.shot-art{background:#EEF2E8;padding:22px 18px 6px;display:grid;place-items:center;transition:background .3s}
+.shots[data-set=dark] .shot-art{background:#0B120D}
+.shot-art img{width:min(100%,220px);height:auto}
+.shot figcaption{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-top:1px solid var(--border)}
+.shot figcaption b{display:block;font:700 15px/1.2 var(--body);color:var(--text)}
+.shot figcaption span{display:block;font-size:13px;color:var(--text2);margin-top:2px}
+.shot figcaption a{flex:none;font:600 13px/1 var(--mono);padding:8px 10px;border-radius:999px;background:var(--surface2);text-decoration:none;color:var(--text)}
+.shots[data-set=light] .d:not(.l),.shots[data-set=dark] .l:not(.d){display:none!important}
+@media (max-width:900px){.shots{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.shots{grid-template-columns:1fr 1fr;gap:10px}.shot-art{padding:14px 10px 4px}.shot figcaption{flex-direction:column;align-items:flex-start;padding:10px 12px}.shot figcaption span{display:none}}

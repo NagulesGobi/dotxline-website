@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>FreshBit press composition</title>
+<!-- Renders the press images from the site's own working demos (tools/press/render.sh).
+     ?set=light|dark  &shot=showcase|single  &screen=today|story|explore|widgets|alerts|settings|brief -->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/fb.css">
+<style>
+  html,body{margin:0;background:transparent!important;overflow:hidden}
+  /* render the final state of every screen: no transitions or animations */
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .p-note{opacity:1!important;transform:none!important}
+  .js .rv{opacity:1;transform:none}
+  /* showcase: 1600 x 900 */
+  .canvas{position:relative;width:1600px;height:900px;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:44px;padding-bottom:56px;box-sizing:border-box}
+  .canvas.light{background:radial-gradient(70% 90% at 50% 0%,#DDFB86 0%,#C8F550 55%,#B4E43C 100%)}
+  .canvas.dark{background:radial-gradient(60% 80% at 50% 0%,#1E3322 0%,#0B120D 60%,#070C09 100%)}
+  .canvas .bigleaf{position:absolute;width:1300px;left:50%;top:50%;translate:-50% -46%;rotate:-8deg;opacity:.07;pointer-events:none}
+  .canvas.light .bigleaf path{fill:#0E1A12}
+  .canvas.dark .bigleaf{opacity:.09}.canvas.dark .bigleaf path{fill:#C8F550}
+  .canvas .phone{box-shadow:0 50px 90px -40px rgba(14,26,18,.55),0 18px 40px -20px rgba(14,26,18,.35),inset 0 0 0 2px #2b3a30,inset 0 0 0 4px #0E1A12}
+  .canvas.dark .phone{box-shadow:0 50px 90px -40px rgba(0,0,0,.9),0 0 0 1px rgba(200,245,80,.12),inset 0 0 0 2px #3a4a3f,inset 0 0 0 4px #0E1A12}
+  .canvas .phone:nth-child(odd){translate:0 22px}
+  .canvas .phone:nth-child(even){translate:0 -22px}
+  .mark{position:absolute;left:48px;bottom:34px;display:flex;align-items:center;gap:10px;font:800 24px/1 var(--display);letter-spacing:-.02em}
+  .canvas.light .mark{color:#0E1A12}.canvas.dark .mark{color:#EEF5EA}
+  .mark .tile{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;rotate:-8deg}
+  .canvas.light .mark .tile{background:#0E1A12}.canvas.light .mark .tile path{fill:#C8F550}
+  .canvas.dark .mark .tile{background:#C8F550}.canvas.dark .mark .tile path{fill:#0E1A12}
+  .mark .tile svg{width:23px;height:23px}
+  .tag{position:absolute;right:48px;bottom:42px;font:600 14px/1 var(--mono);letter-spacing:.04em}
+  .canvas.light .tag{color:rgba(14,26,18,.7)}.canvas.dark .tag{color:#A3B2A7}
+  /* single: one phone on a transparent background, 380 x 760 */
+  .single{width:380px;height:760px;display:grid;place-items:center}
+  .single .phone{box-shadow:0 26px 40px -24px rgba(0,0,0,.45),inset 0 0 0 2px #2b3a30,inset 0 0 0 4px #0E1A12}
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script>
+  // Build the markup before fb.js (deferred) turns every [data-phone] into a working app screen.
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var set = q.get('set') === 'dark' ? 'dark' : 'light';
+    var shot = q.get('shot') || 'showcase';
+    var LEAF = 'M50 20H80V50C80 66.6 66.6 80 50 80H20V50C20 33.4 33.4 20 50 20ZM34.5 61.5L61.5 34.5L66.5 39.5L39.5 66.5Z';
+    document.documentElement.setAttribute('data-theme', set);
+    function phone(screen) {
+      var extra = screen === 'story' ? ' data-story="547"' : '';
+      var scheme = screen === 'alerts' ? 'dark' : set;
+      var scr = screen === 'widgets' ? 'home' : screen === 'alerts' ? 'lock' : screen;
+      return '<div class="phone static" data-phone data-screen="' + scr + '" data-scheme="' + scheme + '"' + extra + '></div>';
+    }
+    var html;
+    if (shot === 'single') {
+      html = '<div class="single">' + phone(q.get('screen') || 'today') + '</div>';
+    } else {
+      html = '<div class="canvas ' + set + '"><svg class="bigleaf" viewBox="15 15 70 70" aria-hidden="true"><path fill-rule="evenodd" d="' + LEAF + '"/></svg>' +
+        '<span class="mark"><span class="tile"><svg viewBox="15 15 70 70"><path fill-rule="evenodd" d="' + LEAF + '"/></svg></span>FreshBit</span>' +
+        '<span class="tag">CONFIRMED NEWS FOR DESIGNERS AND DEVELOPERS</span>' +
+        ['today', 'story', 'explore', 'widgets'].map(phone).join('') + '</div>';
+    }
+    document.getElementById('stage').innerHTML = html;
+  })();
+</script>
+<script src="../../assets/fb.js" defer></script>
+</body>
+</html>
