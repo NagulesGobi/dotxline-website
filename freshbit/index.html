@@ -18,8 +18,8 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/fb.css?v=8">
-<script src="assets/fb.js?v=8" defer></script>
+<link rel="stylesheet" href="assets/fb.css?v=11">
+<script src="assets/fb.js?v=11" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"FreshBit","operatingSystem":"iOS","applicationCategory":"NewsApplication","description":"Confirmed news for designers and developers: design, UX/UI, AI and dev stories scored for credibility.","publisher":{"@type":"Organization","name":"dotXline LTD","url":"https://dotxline.com"}}</script>
 </head>
 <body>
@@ -36,7 +36,7 @@
     </nav>
     <button class="icon-btn theme-btn" type="button" aria-label="Switch colour theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg></button>
     <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg></button>
-    <a class="btn lime small" href="#test">Join the test</a>
+    <a class="mac-btn sm" href="https://github.com/NagulesGobi/freshbit-website/releases/latest/download/FreshBit.dmg" data-mac data-mac-href aria-label="Download FreshBit for Mac"><span class="apple"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.9-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.7zM14.1 5.6c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.7-1.3z"/></svg></span><span class="t"><b>Download for Mac</b></span></a><a data-mac-fallback class="btn lime small" href="#test">Join the test</a>
   </div>
 </header>
 
@@ -44,13 +44,16 @@
 <section class="hero">
   <div class="wrap">
     <div>
-      <span class="status"><span class="pulse" aria-hidden="true"></span>In testing on TestFlight · iPhone</span>
+      <span class="status" data-mac-fallback><span class="pulse" aria-hidden="true"></span>In testing on TestFlight · iPhone</span><span class="status" data-mac><span class="pulse" aria-hidden="true"></span>Now on Mac · iPhone in TestFlight testing</span>
       <h1><span class="hl">Confirmed</span> news for designers and developers.</h1>
       <p class="lede">FreshBit reads 51 trusted sources every 30 minutes, groups the articles about the same event and scores each story out of 100. You see what actually happened in design, UX/UI, AI and dev, and how sure it is.</p>
       <div class="btn-row">
-        <a class="btn lime" href="#test">Join the TestFlight test</a>
-        <a class="btn ghost" href="#how">See how scoring works</a>
+        <a class="mac-btn" href="https://github.com/NagulesGobi/freshbit-website/releases/latest/download/FreshBit.dmg" data-mac data-mac-href aria-label="Download FreshBit for Mac"><span class="apple"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.9-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.7zM14.1 5.6c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.7-1.3z"/></svg></span><span class="t"><b>Download for Mac</b><small data-mac-short>Version 1.0.0</small></span><svg class="dl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v13M6 12l6 6 6-6M5 21h14"/></svg></a>
+        <a class="btn lime" href="#test" data-mac-fallback>Join the TestFlight test</a>
+        <a class="btn ghost" href="#test" data-mac>iPhone: join the test</a>
+        <a class="btn ghost" href="#how" data-mac-fallback>See how scoring works</a>
       </div>
+      <p class="mac-meta" data-mac data-mac-meta>macOS 26 or later · Apple silicon</p>
       <div class="hero-note">
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>No account needed</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>No ads or analytics</span>
@@ -298,6 +301,37 @@
   </div>
 </section>
 
+<!-- MAC -->
+<section class="section" id="mac" data-mac style="padding-bottom:0">
+  <div class="wrap">
+    <div class="macsec rv">
+      <div>
+        <p class="eyebrow"><b>New</b><i>/</i>FreshBit for Mac</p>
+        <h2>Now on your Mac.</h2>
+        <p>The same confirmed feed in a native Mac app, with today’s top stories one click away in the menu bar.</p>
+        <ul class="ticks" style="margin-bottom:28px">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>In the menu bar:</b> the most-confirmed stories right now, ranked.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>Your Brief and My List</b> in a full window, with the credibility score on every story.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>Sign in with Apple</b> keeps FreshBit in step across your devices. Optional.</span></li>
+        </ul>
+        <a class="mac-btn" href="https://github.com/NagulesGobi/freshbit-website/releases/latest/download/FreshBit.dmg" data-mac data-mac-href aria-label="Download FreshBit for Mac"><span class="apple"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.9-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.7zM14.1 5.6c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.7-1.3z"/></svg></span><span class="t"><b>Download for Mac</b><small data-mac-short>Version 1.0.0</small></span><svg class="dl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v13M6 12l6 6 6-6M5 21h14"/></svg></a>
+        <p class="req"><span data-mac-meta>macOS 26 or later · Apple silicon</span><br>Open the download and drag FreshBit to Applications.</p>
+      </div>
+      <div class="mbar" role="img" aria-label="The FreshBit menu in the Mac menu bar, listing today’s most-confirmed stories.">
+        <div class="menubar"><span class="lf"><b>FreshBit</b><span>File</span><span>Edit</span><span>View</span></span><span class="mi"><svg viewBox="15 15 70 70"><path fill-rule="evenodd" d="M50 20H80V50C80 66.6 66.6 80 50 80H20V50C20 33.4 33.4 20 50 20ZM34.5 61.5L61.5 34.5L66.5 39.5L39.5 66.5Z"/></svg></span><span>Thu 12 Nov 09:41</span></div>
+        <div class="drop">
+          <header>FreshBit<small>48 confirmed today</small></header>
+          <div class="row"><i>#1</i><div>Introducing Gemini 4 Hydrogen<span>Google DeepMind · 3 sources</span></div></div>
+          <div class="row"><i>#2</i><div>Google Search gets a major upgrade with Gemini 4 Hydrogen<span>Google AI</span></div></div>
+          <div class="row"><i>#3</i><div>Introducing Expo Simulators: cloud simulators built for agents<span>Expo Blog</span></div></div>
+          <div class="row"><i>#4</i><div>Gilbert + Tobin rethinks the business of law with AI<span>OpenAI</span></div></div>
+          <footer><span>Open FreshBit</span><span>Quit</span></footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- TESTFLIGHT -->
 <section class="section" id="test">
   <div class="wrap">
@@ -305,7 +339,7 @@
       <div class="test-main rv">
         <svg class="mark" viewBox="15 15 70 70" aria-hidden="true"><path fill="#0E1A12" fill-rule="evenodd" d="M50 20H80V50C80 66.6 66.6 80 50 80H20V50C20 33.4 33.4 20 50 20ZM34.5 61.5L61.5 34.5L66.5 39.5L39.5 66.5Z"/></svg>
         <p class="eyebrow" style="color:#0E1A12;margin:0"><b>05</b>/ In testing</p>
-        <h2>FreshBit is in TestFlight testing.</h2>
+        <h2>FreshBit for iPhone is in TestFlight testing.</h2>
         <p>It isn’t on the App Store yet. To try the test build on your iPhone, ask for an invite and we’ll send a TestFlight link.</p>
         <div class="btn-row"><a class="btn ink" href="mailto:hello@dotxline.com?subject=FreshBit%20TestFlight%20invite&amp;body=Hi%2C%20I%27d%20like%20to%20test%20FreshBit%20on%20my%20iPhone.">Ask for a TestFlight invite</a></div>
         <ol class="how">
@@ -334,6 +368,7 @@
   <div class="wrap faq">
     <div class="rv"><p class="eyebrow"><b>06</b><i>/</i>FAQ</p><h2>Questions</h2><p class="muted" style="margin-top:16px">Anything else? <a href="support.html">Support</a> or <a href="mailto:hello@dotxline.com">hello@dotxline.com</a>.</p></div>
     <div class="faq-list rv">
+      <details data-mac><summary>Is there a Mac app?<span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div><p>Yes. <a href="https://github.com/NagulesGobi/freshbit-website/releases/latest/download/FreshBit.dmg" data-mac-href>Download FreshBit for Mac</a>, open the file and drag FreshBit to Applications. It needs <span data-mac-meta>macOS 26 or later on Apple silicon</span>.</p></div></details>
       <details><summary>Is FreshBit on the App Store?<span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div><p>Not yet. It’s in testing through TestFlight. The latest build is build 11, from 12 November 2026.</p></div></details>
       <details><summary>What does “Confirmed” mean?<span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div><p>A story is Confirmed when it scores 75 or more. In practice that means an official source published it, such as a company blog, changelog or release notes, or three or more independent outlets report it.</p><p>Reported means 50 or more, and Developing means 40 or more. Anything lower is held back and checked again on the next run.</p></div></details>
       <details><summary>Can a rumour be marked Confirmed?<span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div><p>No. Stories with words like “rumour”, “leaked” or “reportedly” lose points and can never be Confirmed. Stories from community sites alone are never shown.</p></div></details>
@@ -353,7 +388,7 @@
       <a class="brand" href="./" aria-label="FreshBit home"><span class="tile"><svg viewBox="15 15 70 70" aria-hidden="true"><path fill="#0E1A12" fill-rule="evenodd" d="M50 20H80V50C80 66.6 66.6 80 50 80H20V50C20 33.4 33.4 20 50 20ZM34.5 61.5L61.5 34.5L66.5 39.5L39.5 66.5Z"/></svg></span>FreshBit</a>
       <p>Confirmed news for designers and developers. An app by <a href="https://dotxline.com/" style="display:inline;padding:0;text-decoration:underline">dotXline</a>.</p>
     </div>
-    <div><h4>FreshBit</h4><a href="#how">How it works</a><a href="#features">Features</a><a href="design.html">Design process</a><a href="#faq">FAQ</a></div>
+    <div><h4>FreshBit</h4><a href="#how">How it works</a><a href="#features">Features</a><a href="design.html">Design process</a><a href="#faq">FAQ</a><a href="https://github.com/NagulesGobi/freshbit-website/releases/latest/download/FreshBit.dmg" data-mac data-mac-href>Download for Mac</a></div>
     <div><h4>Help</h4><a href="support.html">Support</a><a href="privacy.html">Privacy policy</a><a href="press.html">Press kit</a></div>
     <div><h4>dotXline</h4><a href="https://dotxline.com/">dotxline.com</a><a href="https://dotxline.com/xpense.html">Xpense</a><a href="https://dotxline.com/tockbee.html">Tockbee</a><a href="mailto:hello@dotxline.com">hello@dotxline.com</a></div>
     <div class="legal"><span>© 2026 dotXline LTD · Cardiff, United Kingdom</span><span>Headlines in the demos are from the app on 12 November 2026 and belong to their publishers.</span></div>

@@ -159,10 +159,20 @@
   d.querySelectorAll('.theme-btn').forEach(function (b) {
     b.addEventListener('click', function () {
       var next = siteDark() ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      try { localStorage.setItem('fb-theme', next); } catch (e) {}
-      b.setAttribute('aria-label', next === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-      themeChanged();
+      var apply = function () {
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('fb-theme', next); } catch (e) {}
+        b.setAttribute('aria-label', next === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+        themeChanged();
+      };
+      if (!d.startViewTransition || RM.matches) return apply();
+      // the new theme grows out of the button as a circle, like nagulesgobi.com
+      var r = b.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2;
+      var end = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+      d.startViewTransition(apply).ready.then(function () {
+        root.animate({ clipPath: ['circle(0px at ' + x + 'px ' + y + 'px)', 'circle(' + end + 'px at ' + x + 'px ' + y + 'px)'] },
+          { duration: 750, easing: 'cubic-bezier(.76,0,.24,1)', pseudoElement: '::view-transition-new(root)' });
+      }).catch(function () { /* skipped (e.g. tab in the background): the theme still changes */ });
     });
   });
   var menuBtn = d.querySelector('.menu-btn'), nav = d.getElementById('nav');
@@ -219,6 +229,22 @@
     if (d.fonts && d.fonts.ready) d.fonts.ready.then(measure);
     window.addEventListener('load', measure);
   })();
+
+  // FreshBit for Mac. tools/release-mac.sh writes mac.json when a notarized build is published,
+  // so the version shown here changes at the same moment as the app. Until then every
+  // [data-mac] element stays hidden and the TestFlight call to action shows instead.
+  if (window.fetch) fetch('mac.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (m) {
+    if (!m || !m.version || !m.url) return;
+    var mb = m.size ? (m.size / 1048576).toFixed(1).replace(/\.0$/, '') + ' MB' : '';
+    var os = 'macOS ' + String(m.minimumOS || '26').replace(/\.0$/, '') + ' or later';
+    d.querySelectorAll('a[data-mac-href]').forEach(function (a) { a.href = m.url; });
+    d.querySelectorAll('[data-mac-version]').forEach(function (e) { e.textContent = m.version; });
+    d.querySelectorAll('[data-mac-short]').forEach(function (e) { e.textContent = 'Version ' + m.version + (mb ? ' · ' + mb : ''); });
+    d.querySelectorAll('[data-mac-meta]').forEach(function (e) { e.textContent = 'Version ' + m.version + ' · ' + os + ' · ' + (m.arch || 'Apple silicon') + (mb ? ' · ' + mb : ''); });
+    root.classList.add('has-mac');
+    if (top) window.dispatchEvent(new Event('resize'));
+  }).catch(function () {});
+
   // reveal on scroll
   if ('IntersectionObserver' in window && !RM.matches) {
     var io = new IntersectionObserver(function (es) {

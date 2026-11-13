@@ -42,6 +42,23 @@ domain per repo, so the subdomain is served from its own small repo. `CNAME` alr
 
 Until then the site also works as it is at `https://dotxline.com/freshbit/`.
 
+## FreshBit for Mac downloads
+
+The site's "Download for Mac" buttons (dock, hero, the Mac section, FAQ, footer, support, press)
+stay hidden until `mac.json` exists. They always link to the latest GitHub release:
+`https://github.com/NagulesGobi/freshbit-website/releases/latest/download/FreshBit.dmg`.
+
+To publish a new Mac version, raise `MARKETING_VERSION` (and `CURRENT_PROJECT_VERSION`) in the
+Mac project's `project.yml`, then run:
+
+    tools/release-mac.sh
+
+It builds a Release, signs it with Developer ID, packages and notarizes `FreshBit.dmg`, publishes
+GitHub release `mac-v<version>`, and writes `mac.json` (version, size, date) to both copies of the
+site and pushes them. So the version on the website changes in the same step as the app.
+One-time setup (Developer ID certificate and a notarization profile) is described at the top of
+the script.
+
 ## Copy rules
 
 Copy comes only from the FreshBit project files and app screenshots. FreshBit is in TestFlight
