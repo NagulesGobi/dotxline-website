@@ -303,7 +303,7 @@
 
   // quick search: / or Ctrl/Cmd+K
   const NAV = [
-    ['Home', 'index.html', 'Page'], ['Xpense', 'xpense.html', 'App'], ['Tockbee', 'tockbee.html', 'App'], ['FreshBit', 'freshbit/', 'App'],
+    ['Home', 'index.html', 'Page'], ['Xpense', 'https://xpense.dotxline.com/', 'App'], ['Tockbee', 'https://tockbee.dotxline.com/', 'App'], ['FreshBit', 'freshbit/', 'App'],
     ['About dotXline', 'about.html', 'Page'], ['Support and FAQ', 'support.html', 'Page'], ['Press kit', 'press.html', 'Page'],
     ['What’s new', 'whats-new.html', 'Page'], ['Privacy policy', 'privacy.html', 'Legal'], ['Terms of use', 'terms.html', 'Legal']
   ];
