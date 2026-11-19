@@ -903,3 +903,4 @@ a.p-row{text-decoration:none}
 
 .p-tile b{display:flex;align-items:center;gap:6px}.p-tile b::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--a);flex:none}
 .p-tile small{color:var(--p-text2);opacity:1}
+.p-tile{transition:border-color .2s,transform .15s}.p-tile:hover{border-color:var(--p-text2)}
