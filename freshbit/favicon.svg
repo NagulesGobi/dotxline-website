@@ -13,6 +13,7 @@
     <rect width="1024" height="1024" fill="#0A0A0C"/>
     <rect width="1024" height="1024" fill="url(#g1)"/>
     <rect width="1024" height="1024" fill="url(#g2)"/>
+    <rect x="5" y="5" width="1014" height="1014" rx="315" fill="none" stroke="#fff" stroke-opacity=".1" stroke-width="10"/>
   </g>
   <path fill="#C8F550" fill-rule="evenodd" d="M512 205H819V512C819 682 682 819 512 819H205V512C205 342 342 205 512 205ZM353 630L630 353L681 404L404 681Z"/>
   <path transform="translate(18 -18)" filter="url(#s)" d="M392 642L642 392" fill="none" stroke="#0A0A0C" stroke-width="54" stroke-linecap="round"/>
