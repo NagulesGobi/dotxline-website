@@ -1,7 +1,7 @@
 {
  "page": "/Users/nagulesgobi/Apps/dotxline-website/freshbit/index.html",
  "url": "http://127.0.0.1:5200/index.html",
- "at": "2026-11-19T15:30:02.969Z",
+ "at": "2026-11-19T15:50:32.034Z",
  "out": "/Users/nagulesgobi/Apps/dotxline-website/freshbit/.taste-skill/consistency",
  "widths": [
   {
@@ -68,7 +68,7 @@
      "text": "Brief Own words Google DeepMind announced Gemini",
      "msg": "runs 159px past the bottom edge of the panel it sits on (div.p-screen.push > div.p-view:nth-of-type(3) > div.p-feed > button.p-card.hero)",
      "stop": 6,
-     "crop": "1440-67-spill.jpg",
+     "crop": "1440-66-spill.jpg",
      "fix": "keep the box inside the panel it starts on: shrink it, or grow the panel to hold it"
     },
     {
@@ -78,7 +78,7 @@
      "text": "Read on Google DeepMind",
      "msg": "runs 18px past the bottom edge of the panel it sits on (div.p-view:nth-of-type(3) > div.p-feed > div.p-swipe:nth-of-type(1) > button.p-card.row)",
      "stop": 6,
-     "crop": "1440-68-spill.jpg",
+     "crop": "1440-67-spill.jpg",
      "fix": "keep the box inside the panel it starts on: shrink it, or grow the panel to hold it"
     },
     {
@@ -88,7 +88,7 @@
      "text": "09:41 Explore Topics Design 25 stories UX/UI 6 s",
      "msg": "runs 25px past the top edge of the panel it sits on (article#explore > div.visual.rv > div.pad)",
      "stop": 6,
-     "crop": "1440-69-spill.jpg",
+     "crop": "1440-68-spill.jpg",
      "fix": "keep the box inside the panel it starts on: shrink it, or grow the panel to hold it"
     },
     {
@@ -98,7 +98,7 @@
      "text": "Adobe MAX 2026 7 stories",
      "msg": "runs 15px past the bottom edge of the panel it sits on (article#explore > div.visual.rv > div.pad) (and 1 more like it: div.p-event:nth-of-type(2))",
      "stop": 7,
-     "crop": "1440-78-spill.jpg",
+     "crop": "1440-77-spill.jpg",
      "fix": "keep the box inside the panel it starts on: shrink it, or grow the panel to hold it"
     },
     {
@@ -200,7 +200,7 @@
      "text": "OpenAI Google DeepMind Figma NN/g Apple Develope",
      "msg": "lies over the text \"Opera One brings Data Saver to iOS and c\" (span > h4) (and 17 more like it: \"credibility score on eve\", \"Most news apps show ever\", \"STEP 3 / Credibility Sco\", \"TRY IT / SCORE LAB Build\", ...)",
      "stop": 1,
-     "crop": "1440-21-overlap-text.jpg",
+     "crop": "1440-20-overlap-text.jpg",
      "fix": "move the box off the text (or the text off the box)"
     },
     {
@@ -210,7 +210,7 @@
      "text": "4",
      "msg": "lies over the text \"Gemini 4 Hydrogen\" (div.thumb.cover > b) (and 4 more like it: \"Dev 41 stories\", \"gemini 4\", \"Trending today counts ta\", \"Followed stories: one al\")",
      "stop": 1,
-     "crop": "1440-22-overlap-text.jpg",
+     "crop": "1440-21-overlap-text.jpg",
      "fix": "move the box off the text (or the text off the box)"
     },
     {
@@ -280,7 +280,7 @@
      "text": "09:41 Explore Topics Design 25 stories UX/UI 6 s",
      "msg": "lies over the text \"Reported\" (span.meta-l > span.badge.rep) (and 1 more like it: \"Thu 12 · FreshBit · 48 c\")",
      "stop": 6,
-     "crop": "1440-70-overlap-text.jpg",
+     "crop": "1440-69-overlap-text.jpg",
      "fix": "move the box off the text (or the text off the box)"
     },
     {
@@ -290,7 +290,7 @@
      "text": "Explore",
      "msg": "lies over the text \"Dev\" (span.meta-l > span.cat.d-dev)",
      "stop": 6,
-     "crop": "1440-71-overlap-text.jpg",
+     "crop": "1440-70-overlap-text.jpg",
      "fix": "move the box off the text (or the text off the box)"
     },
     {
@@ -300,7 +300,7 @@
      "text": "Design 25 stories",
      "msg": "lies over the text \"Design\" (span.meta-l > span.cat.d-design)",
      "stop": 6,
-     "crop": "1440-72-overlap-text.jpg",
+     "crop": "1440-71-overlap-text.jpg",
      "fix": "move the box off the text (or the text off the box)"
     },
     {
@@ -310,7 +310,7 @@
      "text": "Trending today",
      "msg": "lies over the text \"AI\" (span.meta-l > span.cat.d-ai)",
      "stop": 6,
-     "crop": "1440-73-overlap-text.jpg",
+     "crop": "1440-72-overlap-text.jpg",
      "fix": "move the box off the text (or the text off the box)"
     },
     {
@@ -320,7 +320,7 @@
      "text": "Today Explore Saved Settings",
      "msg": "lies over the text \"Adobe MAX 2026\" (div.p-event:nth-of-type(1) > b)",
      "stop": 7,
-     "crop": "1440-79-overlap-text.jpg",
+     "crop": "1440-78-overlap-text.jpg",
      "fix": "move the box off the text (or the text off the box)"
     },
     {
@@ -388,7 +388,7 @@
      "text": "Adobe MAX 2026",
      "msg": "cut 7px at the bottom by the overflow of article#explore > div.visual.rv > div.phone.small > div.p-screen (and 1 more like it: \"Disrupt conference\")",
      "stop": 7,
-     "crop": "1440-80-cut-text.jpg",
+     "crop": "1440-79-cut-text.jpg",
      "fix": "give the text room: no overflow clipping a line, no line past its box"
     },
     {
@@ -408,6 +408,16 @@
      "msg": "cut 11px at the bottom by the overflow of div.compare.rv > div.compare-stage > div.phone.static:nth-of-type(1) > div.p-screen (and 1 more like it: \"Coding agents evolve to \")",
      "stop": 12,
      "fix": "give the text room: no overflow clipping a line, no line past its box"
+    },
+    {
+     "check": "marquee",
+     "sev": "FAIL",
+     "sel": "main#main > div.ticker > div.ticker-row",
+     "text": "OpenAI Google DeepMind Figma NN/g Apple Develope",
+     "msg": "a running line of text, cut mid-word at the edge of the screen in every still",
+     "stop": 1,
+     "crop": "1440-22-marquee.jpg",
+     "fix": "drop the running line, or set it as full words that fit the screen"
     },
     {
      "check": "scroll-reveal",
@@ -552,7 +562,7 @@
      "text": "EXPLORE / DISCOVER See what the day is about. To",
      "msg": "starts \"opacity\" (0.7 s) the moment it is scrolled into view (an IntersectionObserver)",
      "stop": 6,
-     "crop": "1440-74-scroll-reveal.jpg",
+     "crop": "1440-73-scroll-reveal.jpg",
      "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view"
     },
     {
@@ -562,7 +572,7 @@
      "text": "09:41 Explore Topics Design 25 stories UX/UI 6 s",
      "msg": "starts \"opacity\" (0.7 s) the moment it is scrolled into view (an IntersectionObserver)",
      "stop": 6,
-     "crop": "1440-75-scroll-reveal.jpg",
+     "crop": "1440-74-scroll-reveal.jpg",
      "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view"
     },
     {
@@ -572,6 +582,7 @@
      "text": "ALERTS / FEW AND EARNED Only told when it matter",
      "msg": "starts \"opacity\" (0.7 s) the moment it is scrolled into view (an IntersectionObserver)",
      "stop": 7,
+     "crop": "1440-80-scroll-reveal.jpg",
      "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view"
     },
     {
@@ -697,7 +708,7 @@
      "sel": "main#main > div.ticker > div.ticker-row",
      "text": "OpenAI Google DeepMind Figma NN/g Apple Develope",
      "stop": 28,
-     "msg": "still moving 6 s after it came on screen (14.2% of it changed in 2.6 s), with no pause button",
+     "msg": "still moving 6 s after it came on screen (14.4% of it changed in 2.6 s), with no pause button",
      "fix": "add a pause button to the visual, or stop the loop on its finished picture within 5 s"
     },
     {
@@ -874,15 +885,6 @@
      "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels"
     },
     {
-     "check": "text-contrast",
-     "sev": "FAIL",
-     "sel": "div.test > div.test-main.rv > p.eyebrow > b",
-     "text": "05",
-     "stop": 13,
-     "msg": "a caption, label or muted line in #f5f5f7 on #c8f550 reads 1.16:1 (needs 4.5:1)",
-     "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels"
-    },
-    {
      "check": "section-gaps",
      "sev": "FAIL",
      "sel": "main#main > section.hero / main#main > div.ticker",
@@ -903,44 +905,6 @@
      "fix": "use one gap between sections (all within 25% of each other)"
     },
     {
-     "check": "a11y-name",
-     "sev": "FAIL",
-     "sel": "div.stage:nth-of-type(2) > div.phone > div.p-screen > button.p-cta:nth-of-type(2)",
-     "text": "",
-     "msg": "a button with no accessible name: a screen reader says only \"link\" or \"button\"",
-     "stop": 0,
-     "crop": "1440-10-a11y-name.jpg",
-     "fix": "give the control words: its text, or an aria-label in the page's language for an icon-only button"
-    },
-    {
-     "check": "a11y-name",
-     "sev": "FAIL",
-     "sel": "div.demo-stack:nth-of-type(2) > div.phone.small > div.p-screen > button.p-cta:nth-of-type(2)",
-     "text": "",
-     "msg": "a button with no accessible name: a screen reader says only \"link\" or \"button\"",
-     "stop": 5,
-     "crop": "1440-62-a11y-name.jpg",
-     "fix": "give the control words: its text, or an aria-label in the page's language for an icon-only button"
-    },
-    {
-     "check": "a11y-name",
-     "sev": "FAIL",
-     "sel": "div.visual.rv:nth-of-type(2) > div.phone.small:nth-of-type(2) > div.p-screen > button.p-cta:nth-of-type(2)",
-     "text": "",
-     "msg": "a button with no accessible name: a screen reader says only \"link\" or \"button\"",
-     "stop": 7,
-     "fix": "give the control words: its text, or an aria-label in the page's language for an icon-only button"
-    },
-    {
-     "check": "a11y-name",
-     "sev": "FAIL",
-     "sel": "div.visual.rv:nth-of-type(2) > div.phone.small:nth-of-type(2) > div.p-screen.push > button.p-cta:nth-of-type(2)",
-     "text": "",
-     "msg": "a button with no accessible name: a screen reader says only \"link\" or \"button\"",
-     "stop": 10,
-     "fix": "give the control words: its text, or an aria-label in the page's language for an icon-only button"
-    },
-    {
      "check": "field-label",
      "sev": "FAIL",
      "sel": "section#modes > div.wrap > div.compare.rv:nth-of-type(2) > input",
@@ -956,7 +920,7 @@
      "text": "Today",
      "msg": "\"Today\" is an h3 after an h1: a level is skipped",
      "stop": 0,
-     "crop": "1440-11-heading-order.jpg",
+     "crop": "1440-10-heading-order.jpg",
      "fix": "step down one level at a time (h1, h2, h3): change the tag, not the look; a footer's column heads are h3"
     },
     {
@@ -966,7 +930,7 @@
      "text": "BriefOwn words",
      "msg": "\"BriefOwn words\" is an h5 after an h3: a level is skipped",
      "stop": 5,
-     "crop": "1440-63-heading-order.jpg",
+     "crop": "1440-62-heading-order.jpg",
      "fix": "step down one level at a time (h1, h2, h3): change the tag, not the look; a footer's column heads are h3"
     },
     {
@@ -981,19 +945,10 @@
     {
      "check": "focus-visible",
      "sev": "FAIL",
-     "sel": "header.top.ready > div.wrap > button.dock-dot:nth-of-type(3)",
-     "text": "Open the menu",
-     "stop": 24,
-     "msg": "Tab stop 10, button \"Open the menu\": the focus lands on something you cannot see",
-     "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus"
-    },
-    {
-     "check": "focus-visible",
-     "sev": "FAIL",
      "sel": "div.p-screen.folded > div.p-bar:nth-of-type(8) > div.row1:nth-of-type(1) > button.m.p-ib",
      "text": "Open your brief",
-     "stop": 25,
-     "msg": "Tab stop 34, button \"Open your brief\": the focus lands on something you cannot see",
+     "stop": 24,
+     "msg": "Tab stop 33, button \"Open your brief\": the focus lands on something you cannot see",
      "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus"
     },
     {
@@ -1001,8 +956,8 @@
      "sev": "FAIL",
      "sel": "div.p-bar:nth-of-type(8) > div.row1:nth-of-type(1) > div.btns:nth-of-type(2) > button:nth-of-type(1)",
      "text": "Search stories",
-     "stop": 26,
-     "msg": "Tab stop 35, button \"Search stories\": the focus lands on something you cannot see",
+     "stop": 25,
+     "msg": "Tab stop 34, button \"Search stories\": the focus lands on something you cannot see",
      "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus"
     },
     {
@@ -1010,8 +965,17 @@
      "sev": "FAIL",
      "sel": "div.p-bar:nth-of-type(8) > div.row1:nth-of-type(1) > div.btns:nth-of-type(2) > button:nth-of-type(2)",
      "text": "Fold the bar back into the mark",
+     "stop": 26,
+     "msg": "Tab stop 35, button \"Fold the bar back into the mark\": the focus lands on something you cannot see",
+     "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus"
+    },
+    {
+     "check": "focus-visible",
+     "sev": "FAIL",
+     "sel": "div.p-screen.folded > div.p-bar:nth-of-type(8) > div.p-chips:nth-of-type(2) > button.p-chip:nth-of-type(1)",
+     "text": "All",
      "stop": 27,
-     "msg": "Tab stop 36, button \"Fold the bar back into the mark\": the focus lands on something you cannot see",
+     "msg": "Tab stop 36, button \"All\": the focus lands on something you cannot see",
      "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus"
     },
     {
@@ -1051,7 +1015,7 @@
      "text": "Today",
      "msg": "sits across the edge of a panel behind it (and 3 more like it: \"Today\", \"AI\", \"Gemini 4 Hydrogen\")",
      "stop": 0,
-     "crop": "1440-12-cut-text.jpg",
+     "crop": "1440-11-cut-text.jpg",
      "fix": "give the text room: no overflow clipping a line, no line past its box"
     },
     {
@@ -1090,7 +1054,7 @@
      "text": "Design 25 stories",
      "msg": "\"Design 25 stories\" does not start with a verb (book, buy, try, start, get, see...) (and 3 more like it: \"UX/UI 6 stories\", \"AI 78 stories\", \"Dev 41 stories\")",
      "stop": 6,
-     "crop": "1440-76-copy-buttons.jpg",
+     "crop": "1440-75-copy-buttons.jpg",
      "fix": "label buttons with a verb and what the visitor gets (\"Book a room\", \"Start free trial\")"
     },
     {
@@ -1100,7 +1064,7 @@
      "text": "Join the test",
      "msg": "2 labels for one target /index.html#test: \"Join the test\", \"Join the TestFlight test\"",
      "stop": 0,
-     "crop": "1440-13-copy-actions.jpg",
+     "crop": "1440-12-copy-actions.jpg",
      "fix": "few actions, one wording: at most 2 in the hero, the main action word for word in nav, hero and close"
     },
     {
@@ -1166,7 +1130,7 @@
      "text": "Gemini 4 Hydrogen",
      "stop": 5,
      "msg": "large text over a effect reads at 1.3:1 at its worst tenth (needs 3:1), on a busy ground",
-     "crop": "1440-64-contrast.jpg",
+     "crop": "1440-63-contrast.jpg",
      "fix": "put the text on a calm part of the picture, or on a solid panel"
     },
     {
@@ -1222,7 +1186,7 @@
      "text": "",
      "stop": 0,
      "msg": "the nav's links come in 2 sizes (15, 17px)",
-     "crop": "1440-14-nav-family.jpg",
+     "crop": "1440-13-nav-family.jpg",
      "fix": "keep one nav on every screen: the same bar, fill, links and type"
     },
     {
@@ -1232,7 +1196,7 @@
      "text": "",
      "stop": 5,
      "msg": "the nav changes form as the page scrolls: header.top.ready gives way to div.p-navbar",
-     "crop": "1440-65-nav-family.jpg",
+     "crop": "1440-64-nav-family.jpg",
      "fix": "keep one nav on every screen: the same bar, fill, links and type"
     },
     {
@@ -1242,7 +1206,7 @@
      "text": "How it works",
      "msg": "\"How it works\" opens a section headed \"Read. Match. Score. Then publish.\"",
      "stop": 0,
-     "crop": "1440-15-nav-labels.jpg",
+     "crop": "1440-14-nav-labels.jpg",
      "fix": "name each nav link after the heading of the section it opens"
     },
     {
@@ -1252,7 +1216,7 @@
      "text": "Features",
      "msg": "\"Features\" opens a section headed \"Calm to read. Quick to trust.\"",
      "stop": 0,
-     "crop": "1440-16-nav-labels.jpg",
+     "crop": "1440-15-nav-labels.jpg",
      "fix": "name each nav link after the heading of the section it opens"
     },
     {
@@ -1262,7 +1226,7 @@
      "text": "Design 25 stories",
      "msg": "its label sits 31px off-centre (11px of room at the left, 42px at the right) (and 3 more like it: \"UX/UI 6 stories\", \"AI 78 stories\", \"Dev 41 stories\")",
      "stop": 6,
-     "crop": "1440-77-label-centre.jpg",
+     "crop": "1440-76-label-centre.jpg",
      "fix": "centre the label in its button, or fill the empty side with an icon"
     },
     {
@@ -1272,7 +1236,7 @@
      "text": "Google DeepMind introduces Gemini 4 Hydrogen mod",
      "stop": 5,
      "msg": "a line of button.p-card.hero fades out under its edge (\"Google DeepMind introd\"): drawn at a fraction of #f5f5f7 on #141418, half-erased",
-     "crop": "1440-66-fade-cut.jpg",
+     "crop": "1440-65-fade-cut.jpg",
      "fix": "fit the mock's rows inside its panel (fewer rows, a taller panel), or end the fade below the last whole row: no row half-erased"
     },
     {
@@ -1291,7 +1255,7 @@
      "text": "Confirmed news for designers and developers.",
      "msg": "a headline of 6 words on 4 lines at 78px: a paragraph set in display type",
      "stop": 0,
-     "crop": "1440-17-copy-length.jpg",
+     "crop": "1440-16-copy-length.jpg",
      "fix": "cut the heading to one short line (2 to 12 words) and move the rest into the text under it"
     },
     {
@@ -1311,7 +1275,7 @@
      "msg": "the splits sit two ways: 2 to the top of the taller side (\"In testing on TestFlig\", \"Build a story, watch i\"); 2 to the middle of the taller side (\"Only told when it matt\", \"The top stories, witho\")",
      "fix": "set every split one way: the text to the top of its visual, or every one centred on it",
      "stop": 0,
-     "crop": "1440-18-split-align.jpg"
+     "crop": "1440-17-split-align.jpg"
     },
     {
      "check": "hover",
@@ -1330,7 +1294,7 @@
      "msg": "the hero does not enter on load: no data-enter on the hero and no head line setting html.m-enter (motion.md, The hero's entrance)",
      "fix": "put data-enter on the hero <section> and keep the head line from starter.html that sets html.m-enter",
      "stop": 0,
-     "crop": "1440-20-hero-enter.jpg"
+     "crop": "1440-19-hero-enter.jpg"
     },
     {
      "check": "moment-none",
@@ -3063,7 +3027,7 @@
      "sel": "div.p-swipe:nth-of-type(9) > button.p-card.row > span > h4",
      "text": "Law firm adopts machine learning for business op",
      "stop": 10,
-     "msg": "a caption, label or muted line in #f5f5f7 on #c8f550 reads 1.16:1 (needs 4.5:1); 2 like it, like \"05\"",
+     "msg": "a caption, label or muted line in #f5f5f7 on #c8f550 reads 1.16:1 (needs 4.5:1)",
      "crop": "390-69-text-contrast.jpg",
      "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels"
     },
@@ -4219,7 +4183,7 @@
   ]
  },
  "counts": {
-  "FAIL": 357,
+  "FAIL": 353,
   "WARN": 79
  },
  "checks": {
@@ -4348,7 +4312,7 @@
   "loop-cycle": "PASS",
   "section-tile": "PASS",
   "empty-area": "PASS",
-  "a11y-name": "FAIL",
+  "a11y-name": "PASS",
   "img-alt": "PASS",
   "field-label": "FAIL",
   "heading-order": "FAIL",

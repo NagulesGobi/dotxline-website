@@ -904,3 +904,9 @@ a.p-row{text-decoration:none}
 .p-tile b{display:flex;align-items:center;gap:6px}.p-tile b::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--a);flex:none}
 .p-tile small{color:var(--p-text2);opacity:1}
 .p-tile{transition:border-color .2s,transform .15s}.p-tile:hover{border-color:var(--p-text2)}
+
+/* contrast fixes found by the taste checker (19 Nov): cover text stays off the lime bloom, text on the lime card is black */
+.cover b,.cover small{text-shadow:0 1px 10px rgba(10,10,12,.6)}
+.thumb{background:radial-gradient(ellipse 18% 22% at 97% 4%,#C8F550 50%,rgba(200,245,80,0) 100%),radial-gradient(ellipse 40% 44% at 90% 6%,#5B2BFF 40%,rgba(91,43,255,0) 100%),radial-gradient(ellipse 34% 40% at 2% 100%,#4B1FFF 20%,rgba(75,31,255,0) 100%),#0A0A0C}
+.test-main .eyebrow,.test-main .eyebrow b,.test-main .eyebrow i{color:var(--ink)}
+.dock-dot:focus-visible{outline:2px solid var(--lime);outline-offset:3px}

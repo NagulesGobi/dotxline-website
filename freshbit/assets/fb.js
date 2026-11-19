@@ -209,7 +209,7 @@
   if (top) (function () {
     var wrap = top.querySelector('.wrap');
     var dot = d.createElement('button');
-    dot.className = 'dock-dot'; dot.type = 'button';
+    dot.className = 'dock-dot'; dot.type = 'button'; dot.tabIndex = -1;
     dot.setAttribute('aria-label', 'Open the menu'); dot.setAttribute('aria-expanded', 'false');
     dot.innerHTML = '<svg viewBox="15 15 70 70" aria-hidden="true"><path fill-rule="evenodd" d="' + LEAF + '"/></svg>';
     wrap.appendChild(dot);
@@ -222,7 +222,7 @@
     }
     function setCollapsed(c) {
       if (c === top.classList.contains('collapsed')) return;
-      top.classList.toggle('collapsed', c);
+      top.classList.toggle('collapsed', c); dot.tabIndex = c ? 0 : -1;
       dot.setAttribute('aria-expanded', String(!c));
       parts().forEach(function (p) { if (c) p.setAttribute('inert', ''); else p.removeAttribute('inert'); });
     }
@@ -398,7 +398,7 @@
         '<button class="p-glassmark" type="button" aria-label="Show the Today bar">' + leafSvg() + '</button>' +
         '<div class="p-bar"></div>' +
         '<div class="p-push" data-push="1" aria-hidden="true"></div><div class="p-push" data-push="2" aria-hidden="true"></div>' +
-        '<button class="p-cta" type="button" tabindex="-1"></button>' +
+        '<button class="p-cta" type="button" tabindex="-1" aria-label="Read the story on the publisher’s site"></button>' +
         '<nav class="p-tabs" role="tablist" aria-label="App tabs">' + this.tabsHTML() + '</nav>' +
         '<div class="p-dim"></div><div class="p-sheet" role="dialog" aria-modal="false" aria-label="Credibility details"></div>' +
         '<div class="p-toast" role="status" aria-live="polite"></div>') +
