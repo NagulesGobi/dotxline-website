@@ -13,7 +13,7 @@
   var LEAF = 'M50 20H80V50C80 66.6 66.6 80 50 80H20V50C20 33.4 33.4 20 50 20ZM34.5 61.5L61.5 34.5L66.5 39.5L39.5 66.5Z';
   var P = {
     leaf: '<svg viewBox="15 15 70 70" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="' + LEAF + '"/></svg>',
-    leafInk: '<svg viewBox="15 15 70 70" aria-hidden="true"><path fill="#0E1A12" fill-rule="evenodd" d="' + LEAF + '"/></svg>',
+    leafInk: '<svg viewBox="15 15 70 70" aria-hidden="true"><path fill="#0A0A0C" fill-rule="evenodd" d="' + LEAF + '"/></svg>',
     search: s('<circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/>'),
     chevUp: s('<path d="m6 15 6-6 6 6"/>'),
     back: s('<path d="m15 5-7 7 7 7"/>'),
@@ -58,7 +58,7 @@
 
   /* ---------------- data: the app on Thursday 12 November 2026 ---------------- */
   var CAT = { design: 'Design', ux: 'UX/UI', ai: 'AI', dev: 'Dev' };
-  var COL = { design: '#7C5CFF', ux: '#E8578A', ai: '#2F7BF6', dev: '#F2802F' };
+  var COL = { design: '#14B8A6', ux: '#E8578A', ai: '#2F7BF6', dev: '#F2802F' };
   var TIER = ['', 'Official source', 'Established outlet', 'Community'];
   var SOURCES = {
     1: ['OpenAI', 'Google DeepMind', 'Google AI', 'Hugging Face', 'GitHub Changelog', 'GitHub Blog', 'Vercel', 'React', 'Next.js', 'Expo Blog', 'Expo Changelog', 'Apple Developer', 'Android Developers', 'Chrome for Developers', 'web.dev', 'Mozilla Hacks', 'Deno', 'Node.js', 'TypeScript', 'Figma', 'Figma Release Notes', 'Material Design', 'Linear Changelog', 'WebKit', 'Tailwind CSS', 'Svelte', 'Astro', 'Bun', 'Cloudflare Blog', 'JetBrains'],
@@ -337,7 +337,7 @@
         })(t0);
       }
       out.bar.style.width = target + '%';
-      out.bar.style.background = r.status === 'verified' ? '#C8F550' : r.status === 'reported' ? '#F2B53A' : r.status === 'developing' ? '#A3B2A7' : '#5b6b60';
+      out.bar.style.background = r.status === 'verified' ? '#C8F550' : r.status === 'reported' ? '#F2B53A' : r.status === 'developing' ? '#A5A5B0' : '#5b6b60';
       var msg = { verified: 'Shows in the feed as Confirmed.', reported: 'Shows when “Show Reported and Developing stories” is on.', developing: 'Shows when “Show Reported and Developing stories” is on.', held: 'Held back and checked again on the next run.' }[r.status];
       out.verdict.innerHTML = badge(r.status);
       out.msg.textContent = msg;
@@ -439,8 +439,8 @@
     list.forEach(function (x) { var r = x.n * 20 + x.score; if (!lead || r > lead.n * 20 + lead.score) lead = x; });
     return lead ? [lead].concat(list.filter(function (x) { return x !== lead; })) : list;
   };
-  // No allowed image: the app's designed cover, the topic colour fading to lime, with the story's
-  // subject in the brand font and a large faint leaf (components/ui.tsx Placeholder).
+  // No allowed image: the app's FreshBit painting cover (violet layers on black, lime on top), with the
+  // story's subject in white Montserrat ExtraBold (components/ui.tsx Placeholder).
   function thumb(x, big) {
     return '<div class="' + (big ? 'art' : 'thumb') + ' cover" style="--a:' + COL[x.cat] + '"><svg class="wm" viewBox="15 15 70 70" aria-hidden="true"><path fill-rule="evenodd" d="' + LEAF + '"/></svg>' +
       (big ? '<small>' + CAT[x.cat].toUpperCase() + '</small>' : '') + '<b>' + esc(subjectOf(x)) + '</b></div>';
