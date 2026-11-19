@@ -12,6 +12,8 @@
 <link rel="stylesheet" href="../../assets/fb.css">
 <style>
   html,body{margin:0;background:transparent!important;overflow:hidden}
+  /* the site's page-wide atmosphere must not paint into the transparent press renders */
+  body::before{display:none!important}
   /* render the final state of every screen: no transitions or animations */
   *,*::before,*::after{transition:none!important;animation:none!important}
   .p-note{opacity:1!important;transform:none!important}
@@ -60,7 +62,7 @@
       html = '<div class="single">' + phone(q.get('screen') || 'today') + '</div>';
     } else {
       html = '<div class="canvas ' + set + '"><svg class="bigleaf" viewBox="15 15 70 70" aria-hidden="true"><path fill-rule="evenodd" d="' + LEAF + '"/></svg>' +
-        '<span class="mark"><span class="tile"><svg viewBox="15 15 70 70"><path fill-rule="evenodd" d="' + LEAF + '"/></svg></span>FreshBit</span>' +
+        '<span class="mark"><span class="tile"><svg viewBox="15 15 70 70"><path fill-rule="evenodd" d="' + LEAF + '"/><path class="bit" d="M38.28 62.7L62.7 38.28" transform="translate(1.76 -1.76)" fill="none" stroke="#0A0A0C" stroke-width="5.27" stroke-linecap="round"/></svg></span>FreshBit</span>' +
         '<span class="tag">CONFIRMED NEWS FOR DESIGNERS AND DEVELOPERS</span>' +
         ['today', 'story', 'explore', 'widgets'].map(phone).join('') + '</div>';
     }
