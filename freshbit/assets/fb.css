@@ -910,3 +910,13 @@ a.p-row{text-decoration:none}
 .thumb{background:radial-gradient(ellipse 18% 22% at 97% 4%,#C8F550 50%,rgba(200,245,80,0) 100%),radial-gradient(ellipse 40% 44% at 90% 6%,#5B2BFF 40%,rgba(91,43,255,0) 100%),radial-gradient(ellipse 34% 40% at 2% 100%,#4B1FFF 20%,rgba(75,31,255,0) 100%),#0A0A0C}
 .test-main .eyebrow,.test-main .eyebrow b,.test-main .eyebrow i{color:var(--ink)}
 .dock-dot:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+
+/* ===== the FreshBit atmosphere behind every page (19 Nov): violet on black with a lime bloom, fixed while you scroll ===== */
+html{background:var(--bg)}
+body{background:transparent}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(70% 90% at 108% 42%,rgba(91,43,255,.17),transparent 72%),radial-gradient(34% 42% at 104% 16%,rgba(200,245,80,.45),rgba(200,245,80,0) 74%),radial-gradient(60% 50% at 80% 108%,rgba(91,43,255,.12),transparent 70%)}
+:root[data-theme=dark] body::before{background:radial-gradient(75% 95% at 108% 44%,rgba(91,43,255,.66),transparent 72%),radial-gradient(34% 42% at 104% 18%,rgba(200,245,80,.34),rgba(200,245,80,0) 74%),radial-gradient(65% 55% at 78% 110%,rgba(75,31,255,.55),transparent 70%),radial-gradient(50% 60% at -12% 100%,rgba(75,31,255,.28),transparent 70%)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) body::before{background:radial-gradient(75% 95% at 108% 44%,rgba(91,43,255,.66),transparent 72%),radial-gradient(34% 42% at 104% 18%,rgba(200,245,80,.34),rgba(200,245,80,0) 74%),radial-gradient(65% 55% at 78% 110%,rgba(75,31,255,.55),transparent 70%),radial-gradient(50% 60% at -12% 100%,rgba(75,31,255,.28),transparent 70%)}}
+/* the hero no longer needs its own glow: the page has one */
+.hero:not(.p-card)::before{display:none}
