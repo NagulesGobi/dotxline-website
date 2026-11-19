@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>FreshBit for Mac</title>
+    <item>
+      <title>FreshBit 1.0.4</title>
+      <pubDate>Thu, 19 Nov 2026 22:43:36 +0000</pubDate>
+      <sparkle:version>5</sparkle:version>
+      <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/NagulesGobi/freshbit-website/releases/download/mac-v1.0.4/FreshBit.dmg" type="application/octet-stream" sparkle:edSignature="9pon/7sI5eP37hvHnBxUcFh264oPveTcsnXMNeSp98stvQ/PHdct99oTqM4FqmCKbggaxwJbfPBysqwdnXX4CQ==" length="4783108" />
+    </item>
+  </channel>
+</rss>
