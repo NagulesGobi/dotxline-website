@@ -929,3 +929,25 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .p-lock{background:radial-gradient(90% 55% at 88% 0%,rgba(91,43,255,.75),transparent 70%),radial-gradient(40% 30% at 100% 0%,rgba(200,245,80,.28),rgba(200,245,80,0) 72%),radial-gradient(70% 40% at 0% 100%,rgba(75,31,255,.4),transparent 70%),#0A0A0C}
 .p-lock .clock,.lk-rect{color:#F5F5F7}
 .mbar{background:radial-gradient(70% 90% at 100% 110%,rgba(91,43,255,.6),transparent 70%),radial-gradient(34% 40% at 100% 0%,rgba(200,245,80,.2),transparent 72%),#0A0A0C}
+
+/* App Store, coming soon: sits beside the Mac download, same shape, not a link */
+.store-soon{display:inline-flex;align-items:center;gap:14px;min-height:64px;padding:8px 24px 8px 8px;border-radius:999px;background:#0A0A0C;color:#F5F5F7;border:1px solid rgba(255,255,255,.14);cursor:default;user-select:none}
+.store-soon .apple{flex:none;width:48px;height:48px;border-radius:50%;background:#5B2BFF;display:grid;place-items:center}
+.store-soon .apple svg{width:21px;height:21px;color:#fff;margin-top:-2px}
+.store-soon .t{display:grid;gap:5px;text-align:left}
+.store-soon .t small{font:500 11.5px/1 var(--mono);letter-spacing:.01em;color:rgba(245,245,247,.7)}
+.store-soon .t b{font:800 18px/1 var(--display);letter-spacing:-.015em}
+@media (max-width:520px){.store-soon,.mac-btn{width:100%}}
+
+/* ===== Light mode = the app's light mode (19 Nov): white page with lime washes; violet takes lime's job on controls ===== */
+:root[data-theme=light]{--bg:#FFFFFF;--surface2:#F2F7E4;--border:#E3EAD2}
+:root[data-theme=light] body::before{background:radial-gradient(70% 80% at 100% 0%,rgba(200,245,80,.55),rgba(200,245,80,.22) 40%,rgba(200,245,80,0) 72%),radial-gradient(60% 70% at 0% 100%,rgba(200,245,80,.38),rgba(200,245,80,0) 70%),#FFFFFF}
+:root[data-theme=light] .btn.lime,:root[data-theme=light] .mac-btn{background:#5B2BFF;color:#fff;box-shadow:inset 0 -3px 0 rgba(10,10,12,.18),inset 0 1px 0 rgba(255,255,255,.35),0 18px 34px -16px rgba(91,43,255,.8)}
+:root[data-theme=light] .mac-btn .t small{color:rgba(255,255,255,.8)}
+:root[data-theme=light] .mac-btn:hover{box-shadow:inset 0 -3px 0 rgba(10,10,12,.18),inset 0 1px 0 rgba(255,255,255,.35),0 22px 40px -16px rgba(91,43,255,.95)}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme=dark]){--bg:#FFFFFF;--surface2:#F2F7E4;--border:#E3EAD2}
+  :root:not([data-theme=dark]) body::before{background:radial-gradient(70% 80% at 100% 0%,rgba(200,245,80,.55),rgba(200,245,80,.22) 40%,rgba(200,245,80,0) 72%),radial-gradient(60% 70% at 0% 100%,rgba(200,245,80,.38),rgba(200,245,80,0) 70%),#FFFFFF}
+  :root:not([data-theme=dark]) .btn.lime,:root:not([data-theme=dark]) .mac-btn{background:#5B2BFF;color:#fff;box-shadow:inset 0 -3px 0 rgba(10,10,12,.18),inset 0 1px 0 rgba(255,255,255,.35),0 18px 34px -16px rgba(91,43,255,.8)}
+  :root:not([data-theme=dark]) .mac-btn .t small{color:rgba(255,255,255,.8)}
+}
