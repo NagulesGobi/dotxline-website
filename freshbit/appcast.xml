@@ -3,12 +3,12 @@
   <channel>
     <title>FreshBit for Mac</title>
     <item>
-      <title>FreshBit 1.0.5</title>
-      <pubDate>Thu, 19 Nov 2026 22:46:59 +0000</pubDate>
-      <sparkle:version>6</sparkle:version>
-      <sparkle:shortVersionString>1.0.5</sparkle:shortVersionString>
+      <title>FreshBit 1.0.6</title>
+      <pubDate>Mon, 23 Nov 2026 21:57:36 +0000</pubDate>
+      <sparkle:version>7</sparkle:version>
+      <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-      <enclosure url="https://github.com/NagulesGobi/freshbit-website/releases/download/mac-v1.0.5/FreshBit.dmg" type="application/octet-stream" sparkle:edSignature="FvXMhW81pSRT/Pm1/wv0nrc+a9ClsTyLR708AX1GPIJv2TJj6Nppvq5r/G7vTh5CVo/NFDJQcWwTKztnDK3ZDw==" length="4783462" />
+      <enclosure url="https://github.com/NagulesGobi/freshbit-website/releases/download/mac-v1.0.6/FreshBit.dmg" type="application/octet-stream" sparkle:edSignature="JAo9vLPgMiYXCYhShGPe8/ynIbNXA69GWM3IaawhyuMGN/veNDifYNcGLfiEbo4fsL27CtjcPAAib1iJnMeECw==" length="4781042" />
     </item>
   </channel>
 </rss>
