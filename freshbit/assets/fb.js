@@ -811,3 +811,16 @@
     });
   });
 })();
+
+/* WCAG 2.2.2: the scrolling sources ticker runs for more than five seconds, so it gets a visible pause control.
+   The label swaps between Pause and Play (no aria-pressed, which would announce a "pressed Play"). */
+(function () {
+  var btn = document.querySelector('.ticker-pause');
+  if (!btn) return;
+  var ticker = btn.closest('.ticker');
+  btn.addEventListener('click', function () {
+    var paused = ticker.classList.toggle('paused');
+    btn.textContent = paused ? 'Play' : 'Pause';
+    btn.setAttribute('aria-label', paused ? 'Play the scrolling sources' : 'Pause the scrolling sources');
+  });
+})();

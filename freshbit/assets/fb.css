@@ -1003,3 +1003,22 @@ body::before{background:
 /* the demo widget: white (light) or black (dark) with violet, like the app's widget */
 .wd{--wbg:#FFFFFF;--wink:#0A0A0C;--wsub:#55555F;--wacc:#5B2BFF}
 .phone.is-dark .wd{--wacc:#A996FF}
+
+/* ===== modern-web-guidance audit (23 Nov 2026) ===== */
+/* web fonts swap in without shifting text: fallbacks are scaled to the web font's x-height */
+body{font-size-adjust:from-font}
+
+/* sources ticker: a visible pause control (WCAG 2.2.2), and it also pauses while hovered or focused */
+.ticker{position:relative}
+.ticker-pause{position:absolute;right:12px;top:50%;translate:0 -50%;z-index:2;border:1px solid var(--border);background:var(--bg);color:var(--text);
+  font:600 12px/1 var(--body);padding:7px 11px;border-radius:999px;cursor:pointer}
+.ticker-pause:focus-visible{outline:2px solid var(--v);outline-offset:2px}
+.ticker.paused .ticker-row,.ticker:hover .ticker-row,.ticker:focus-within .ticker-row{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.ticker-pause{display:none}}
+
+/* FAQ: answers open and close smoothly with the native details animation; instant when motion is reduced */
+@media (prefers-reduced-motion:no-preference){
+  .faq details{interpolate-size:allow-keywords}
+  .faq details::details-content{block-size:0;overflow:clip;transition:block-size .3s var(--ease),content-visibility .3s allow-discrete}
+  .faq details[open]::details-content{block-size:auto}
+}
