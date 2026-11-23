@@ -13,7 +13,7 @@
 <link rel="icon" href="favicon.ico" sizes="48x48"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/fb.css?v=32">
+<link rel="stylesheet" href="assets/fb.css?v=33">
 <script src="assets/fb.js?v=23d" defer></script>
 </head>
 <body>
@@ -112,19 +112,19 @@
 
     <section class="chapter prose" id="system">
       <p class="eyebrow"><b>04</b><i>/</i>Design system</p>
-      <h2>Black, electric violet and lime, layered.</h2>
-      <p>Content first: system type on a calm page, with three colours used together and never one alone. Black is the stage, electric violet is the atmosphere, and lime is the signal on every main control. Every text pair passes WCAG AA in light and dark.</p>
+      <h2>Electric violet, with a lime accent.</h2>
+      <p>Content first: system type on a calm page, with one colour leading. Electric violet is every button, chip, pill and link; black and white carry the page; lime is a small bright accent for the Confirmed badge, the leaf and a glint of light. Every text pair passes WCAG AA in light and dark.</p>
       <div class="tokens">
-        <div class="token"><i><u style="background:#0A0A0C"></u></i><div><b>Ink black</b>#0A0A0C<br>The stage. Text on lime</div></div>
+        <div class="token"><i><u style="background:#0A0A0C"></u></i><div><b>Ink black</b>#0A0A0C<br>Dark page, text on light</div></div>
         <div class="token"><i><u style="background:#5B2BFF"></u><u style="background:#4B1FFF"></u></i><div><b>Electric violet</b>#5B2BFF<br>Layers, glows, links on light</div></div>
-        <div class="token"><i><u style="background:#C8F550"></u></i><div><b>Lime</b>#C8F550<br>Every main control. 15.7:1 with black</div></div>
+        <div class="token"><i><u style="background:#C8F550"></u></i><div><b>Lime</b>#C8F550<br>Accent only: Confirmed, the leaf. 15.7:1 with black</div></div>
         <div class="token"><i><u style="background:#F5F5F7"></u><u style="background:#0A0A0C"></u></i><div><b>Page</b>#F5F5F7 / #0A0A0C</div></div>
         <div class="token"><i><u style="background:#55555F"></u><u style="background:#A5A5B0"></u></i><div><b>Text 2</b>6.8:1 / 8.1:1</div></div>
         <div class="token"><i><u style="background:#FFE9B8"></u><u style="background:#3A2D0F"></u></i><div><b>Reported</b>7.1:1 / 9.4:1</div></div>
         <div class="token"><i><u style="background:#14B8A6"></u><u style="background:#E8578A"></u><u style="background:#2F7BF6"></u><u style="background:#F2802F"></u></i><div><b>Topics</b>Design · UX/UI · AI · Dev</div></div>
       </div>
       <h3>The FreshBit layers</h3>
-      <p>Covers, the icon, the welcome screens and hero areas share one stack: black underneath, violet on it as soft shapes, and a solid lime shape on top whose edge softens into the violet. Text on the layers is white Montserrat ExtraBold.</p>
+      <p>Covers, the icon, the welcome screens and hero areas share one stack: black underneath, violet on it as soft glowing shapes, and at most a small glint of lime in one corner. Text on the layers is white Montserrat ExtraBold.</p>
       <h3>Type</h3>
       <div class="type-scale">
         <div><small>Screen title<br>Montserrat 40/800</small><span style="font:800 34px/1 var(--display);letter-spacing:-.03em">Today</span></div>
@@ -143,9 +143,9 @@
       </ul>
       <h3>Three rules</h3>
       <ul>
+        <li>Never use lime for buttons, chips or page washes: violet does every control, lime is the accent.</li>
         <li>Never use lime as text or thin lines on a light background (1.3:1). On lime, text is always black.</li>
-        <li>Never flood an area with violet without black beneath it and lime on top.</li>
-        <li>Never fade lime straight into black: it blends into the violet first.</li>
+        <li>Never let lime cover more than a small glint of any cover, backdrop or panel.</li>
         <li>Never show a credibility state with colour alone: always an icon and a label.</li>
         <li>No emoji as icons. SF Symbols only.</li>
       </ul>
@@ -164,10 +164,10 @@
       <p>Pill, 12 pt semibold, symbol plus label. Tapping a badge in the app opens the reasons for its score.</p>
       <h3>Category chips</h3>
       <div class="gallery"><div class="p-chips" style="margin:0;padding:0;flex-wrap:wrap"><button type="button" class="p-chip" aria-pressed="true">All</button><button type="button" class="p-chip" style="--dot:#14B8A6" aria-pressed="false"><i></i>Design</button><button type="button" class="p-chip" style="--dot:#E8578A" aria-pressed="false"><i></i>UX/UI</button><button type="button" class="p-chip" style="--dot:#2F7BF6" aria-pressed="false"><i></i>AI</button><button type="button" class="p-chip" style="--dot:#F2802F" aria-pressed="false"><i></i>Dev</button></div></div>
-      <p>The dot is never alone: it always sits next to the topic name. The selected chip turns lime with black text.</p>
+      <p>The dot is never alone: it always sits next to the topic name. The selected chip turns violet with white text.</p>
       <h3>Story cards and states</h3>
       <div class="gallery" data-gal="cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))"></div>
-      <p>Compact card, the same card after it’s been read (dimmed), and the credibility meter from the story screen. Stories without an image get the FreshBit painting cover: violet layers on black with lime on top and the story’s subject in white Montserrat ExtraBold, never a broken box.</p>
+      <p>Compact card, the same card after it’s been read (dimmed), and the credibility meter from the story screen. Stories without an image get the FreshBit painting cover: violet layers on black with a small lime glint and the story’s subject in white Montserrat ExtraBold, never a broken box.</p>
       <h3>Feed markers</h3>
       <div class="gallery" style="display:grid;gap:14px">
         <div class="p-caught" style="width:100%"><span data-ico="checkCircle">You’re caught up · earlier stories</span></div>
@@ -185,8 +185,8 @@
         <figure><div class="art"><img src="assets/img/concept-3.svg" alt="" width="100" height="100"></div><div class="sizes"><img src="assets/img/concept-3.svg" alt="" width="40" height="40"><img src="assets/img/concept-3.svg" alt="" width="40" height="40"><img src="assets/img/concept-3.svg" alt="" width="40" height="40"></div><figcaption><b>The f</b>A lowercase f whose crossbar ends in a separate square.</figcaption></figure>
         <figure><div class="art"><img src="assets/img/concept-4.svg" alt="" width="100" height="100"></div><div class="sizes"><img src="assets/img/concept-4.svg" alt="" width="40" height="40"><img src="assets/img/concept-4.svg" alt="" width="40" height="40"><img src="assets/img/concept-4.svg" alt="" width="40" height="40"></div><figcaption><b>Rising Dots</b>Three dots growing toward the newest story.</figcaption></figure>
       </div>
-      <p>Leaf Bit looked most like an app icon and stayed clear at the smallest sizes. It was rebuilt as a layered icon in Apple’s Icon Composer, a leaf layer plus a bit layer, so iOS 26 renders it with Liquid Glass. The tile is violet glowing into black, and the leaf is always lime with a black bit.</p>
-      <div class="icons"><figure class="ic"><img src="assets/press/freshbit-app-icon-light-1024.png?v=3" alt="FreshBit app icon: a lime leaf on a violet-to-black tile" width="220" height="220" loading="lazy"><figcaption>Default</figcaption></figure><figure class="ic"><img src="assets/press/freshbit-app-icon-dark-1024.png" alt="FreshBit app icon, dark appearance" width="220" height="220" loading="lazy"><figcaption>Dark</figcaption></figure></div>
+      <p>Leaf Bit looked most like an app icon and stayed clear at the smallest sizes. It was rebuilt as a layered icon in Apple’s Icon Composer, a leaf layer plus a bit layer, so iOS 26 renders it with Liquid Glass. In dark mode the leaf is lime on a black tile with a violet glow; in light mode it is a violet leaf on white with soft lime and violet glows. Both keep the black bit.</p>
+      <div class="icons"><figure class="ic"><img src="assets/press/freshbit-app-icon-light-1024.png?v=3" alt="FreshBit app icon, light: a violet leaf on white with soft lime and violet glows" width="220" height="220" loading="lazy"><figcaption>Default</figcaption></figure><figure class="ic"><img src="assets/press/freshbit-app-icon-dark-1024.png" alt="FreshBit app icon, dark appearance" width="220" height="220" loading="lazy"><figcaption>Dark</figcaption></figure></div>
       <p class="muted" style="font-size:14px;margin-top:-6px">The real icon renders, from the two Icon Composer layers: the leaf with its vein cut, and the bit that sits in it.</p>
     </section>
 
@@ -211,6 +211,7 @@
         <li><b>Settings rows line up like iOS Settings.</b><span>Pickers were moved to SwiftUI’s own labelled rows: label on the left, choice on the right.</span></li>
         <li><b>“Verified” became “Confirmed by trusted sources”.</b><span>To be precise about what the app can and can’t promise.</span></li>
         <li><b>Lime stopped being text on glass.</b><span>Lime on the light tab bar measured about 1.2:1. Light mode now tints the selected tab in electric violet (6.5:1).</span></li>
+        <li><b>Then lime stepped back.</b><span>Lime was taking over every screen, so on 23 November electric violet became every control and lime became a small accent: the Confirmed badge, the leaf and a glint of light.</span></li>
         <li><b>Own words, by design.</b><span>In the UK even a headline can be protected by copyright, and photos are not covered by the news-reporting exception. So FreshBit now writes every headline, summary and brief itself, shows only images a publisher offers in its feed or that carry an open licence, with a credit, and otherwise draws its own cover with the story’s subject in the brand font.</span></li>
         <li><b>Widgets and a Mac app.</b><span>A Home Screen and Lock Screen widget with the most-confirmed stories, and a native Mac app with the top stories in the menu bar.</span></li>
       </ol>
