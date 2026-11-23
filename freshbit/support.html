@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>try{var t=localStorage.getItem("fb-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem("fb-theme");if(t==="light"||t==="dark"){document.documentElement.dataset.theme=t;document.querySelector('meta[name="color-scheme"]').content=t}}catch(e){}</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Support · FreshBit</title>
 <meta name="description" content="Help with FreshBit: the feed, topics, sources, alerts and your account.">
@@ -12,8 +13,8 @@
 <link rel="icon" href="favicon.ico" sizes="48x48"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/fb.css?v=30">
-<script src="assets/fb.js?v=23b" defer></script>
+<link rel="stylesheet" href="assets/fb.css?v=31">
+<script src="assets/fb.js?v=23c" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>

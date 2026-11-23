@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>try{var t=localStorage.getItem("fb-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem("fb-theme");if(t==="light"||t==="dark"){document.documentElement.dataset.theme=t;document.querySelector('meta[name="color-scheme"]').content=t}}catch(e){}</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>FreshBit · Confirmed news for designers and developers</title>
 <meta name="description" content="FreshBit is an iPhone app for design, UX/UI, AI and dev news. It reads 51 trusted sources every 30 minutes and scores every story out of 100 before it reaches your feed. Now on Mac. iPhone coming soon to the App Store.">
@@ -18,8 +19,8 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/fb.css?v=30">
-<script src="assets/fb.js?v=23b" defer></script>
+<link rel="stylesheet" href="assets/fb.css?v=31">
+<script src="assets/fb.js?v=23c" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"FreshBit","operatingSystem":"iOS","applicationCategory":"NewsApplication","description":"Confirmed news for designers and developers: design, UX/UI, AI and dev stories scored for credibility.","publisher":{"@type":"Organization","name":"dotXline LTD","url":"https://dotxline.com"}}</script>
 </head>
 <body>
@@ -131,7 +132,7 @@
         </div>
         <div class="ctl">
           <label for="lab-off">An official source published it</label>
-          <span class="switch"><input id="lab-off" type="checkbox" role="switch" data-k="official" checked><span></span></span>
+          <span class="switch"><input id="lab-off" type="checkbox" switch role="switch" data-k="official" checked><span></span></span>
           <small>A company blog, changelog or release notes. Worth 45 points plus a 20-point bonus.</small>
         </div>
         <div class="ctl">
@@ -150,7 +151,7 @@
         </div>
         <div class="ctl">
           <label for="lab-rum">Headline says “leaked” or “reportedly”</label>
-          <span class="switch"><input id="lab-rum" type="checkbox" role="switch" data-k="rumour"><span></span></span>
+          <span class="switch"><input id="lab-rum" type="checkbox" switch role="switch" data-k="rumour"><span></span></span>
         </div>
       </div>
       <div class="lab-out">

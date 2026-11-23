@@ -181,6 +181,7 @@
       var next = siteDark() ? 'light' : 'dark';
       var apply = function () {
         root.setAttribute('data-theme', next);
+        var cs = d.querySelector('meta[name="color-scheme"]'); if (cs) cs.content = next; // keeps native controls and light-dark() in step
         try { localStorage.setItem('fb-theme', next); } catch (e) {}
         b.setAttribute('aria-label', next === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
         themeChanged();

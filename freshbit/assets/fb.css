@@ -15,7 +15,7 @@
   --sys:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter",system-ui,sans-serif;
   --r:20px;--wrap:1180px;--gutter:clamp(16px,4vw,40px);
   --ease:cubic-bezier(.2,.8,.2,1);
-  color-scheme:light;
+  color-scheme:light dark;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){
   --bg:#0A0A0C;--surface:#141418;--surface2:#1C1C22;--border:#2A2A33;
@@ -143,7 +143,7 @@ p{margin:0;text-wrap:pretty}
 .hero-note svg{width:16px;height:16px;color:var(--link)}
 .stage{position:relative;display:grid;justify-items:center;gap:18px;min-height:700px}
 .stage .leaf{position:absolute;width:min(620px,130%);aspect-ratio:1;left:56%;top:46%;translate:-50% -50%;rotate:-8deg;pointer-events:none}
-.stage .leaf path{fill:var(--lime)}
+.stage .leaf path{fill:var(--v)}
 .stage .hint{position:relative;font:500 12px/1.3 var(--mono);color:var(--text2);text-align:center;background:var(--bg);padding:6px 12px;border-radius:999px;border:1px solid var(--border)}
 
 /* source ticker */
@@ -915,9 +915,6 @@ html{background:var(--bg)}
 body{background:transparent}
 body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:radial-gradient(75% 95% at 108% 44%,rgba(91,43,255,.66),transparent 72%),radial-gradient(34% 42% at 104% 18%,rgba(200,245,80,.55),rgba(200,245,80,0) 74%),radial-gradient(65% 55% at 78% 110%,rgba(75,31,255,.55),transparent 70%),radial-gradient(50% 60% at -12% 100%,rgba(91,43,255,.28),transparent 70%)}
-@media (max-width:700px){body::before{background:radial-gradient(75% 95% at 108% 44%,rgba(91,43,255,.52),transparent 72%),radial-gradient(34% 42% at 104% 18%,rgba(200,245,80,.55),rgba(200,245,80,0) 74%),radial-gradient(65% 55% at 78% 110%,rgba(75,31,255,.46),transparent 70%),radial-gradient(50% 60% at -12% 100%,rgba(91,43,255,.22),transparent 70%)}}
-:root[data-theme=dark] body::before{background:radial-gradient(75% 95% at 108% 44%,rgba(91,43,255,.66),transparent 72%),radial-gradient(34% 42% at 104% 18%,rgba(200,245,80,.34),rgba(200,245,80,0) 74%),radial-gradient(65% 55% at 78% 110%,rgba(75,31,255,.55),transparent 70%),radial-gradient(50% 60% at -12% 100%,rgba(75,31,255,.28),transparent 70%)}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]) body::before{background:radial-gradient(75% 95% at 108% 44%,rgba(91,43,255,.66),transparent 72%),radial-gradient(34% 42% at 104% 18%,rgba(200,245,80,.34),rgba(200,245,80,0) 74%),radial-gradient(65% 55% at 78% 110%,rgba(75,31,255,.55),transparent 70%),radial-gradient(50% 60% at -12% 100%,rgba(75,31,255,.28),transparent 70%)}}
 /* the hero no longer needs its own glow: the page has one */
 .hero:not(.p-card)::before{display:none}
 
@@ -939,19 +936,6 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .store-soon .t b{font:800 18px/1 var(--display);letter-spacing:-.015em}
 @media (max-width:520px){.store-soon,.mac-btn{width:100%}}
 
-/* ===== Light mode = the app's light mode (19 Nov): white page with lime washes; violet takes lime's job on controls ===== */
-:root[data-theme=light]{--bg:#FFFFFF;--surface2:#F2F7E4;--border:#E3EAD2}
-:root[data-theme=light] body::before{background:radial-gradient(70% 80% at 100% 0%,rgba(200,245,80,.55),rgba(200,245,80,.22) 40%,rgba(200,245,80,0) 72%),radial-gradient(60% 70% at 0% 100%,rgba(200,245,80,.38),rgba(200,245,80,0) 70%),#FFFFFF}
-:root[data-theme=light] .btn.lime,:root[data-theme=light] .mac-btn{background:#5B2BFF;color:#fff;box-shadow:inset 0 -3px 0 rgba(10,10,12,.18),inset 0 1px 0 rgba(255,255,255,.35),0 18px 34px -16px rgba(91,43,255,.8)}
-:root[data-theme=light] .mac-btn .t small{color:rgba(255,255,255,.8)}
-:root[data-theme=light] .mac-btn:hover{box-shadow:inset 0 -3px 0 rgba(10,10,12,.18),inset 0 1px 0 rgba(255,255,255,.35),0 22px 40px -16px rgba(91,43,255,.95)}
-@media (prefers-color-scheme:light){
-  :root:not([data-theme=dark]){--bg:#FFFFFF;--surface2:#F2F7E4;--border:#E3EAD2}
-  :root:not([data-theme=dark]) body::before{background:radial-gradient(70% 80% at 100% 0%,rgba(200,245,80,.55),rgba(200,245,80,.22) 40%,rgba(200,245,80,0) 72%),radial-gradient(60% 70% at 0% 100%,rgba(200,245,80,.38),rgba(200,245,80,0) 70%),#FFFFFF}
-  :root:not([data-theme=dark]) .btn.lime,:root:not([data-theme=dark]) .mac-btn{background:#5B2BFF;color:#fff;box-shadow:inset 0 -3px 0 rgba(10,10,12,.18),inset 0 1px 0 rgba(255,255,255,.35),0 18px 34px -16px rgba(91,43,255,.8)}
-  :root:not([data-theme=dark]) .mac-btn .t small{color:rgba(255,255,255,.8)}
-}
-
 /* ===== Touch devices (20 Nov): iPhone Safari blanked the demo phone to black while scrolling. The phone stacks five
    live backdrop blurs inside a scrolling view, over a full-screen fixed background, which runs Safari out of graphics
    memory mid-scroll. On touch screens: solid frosted fills instead of live blur, the phone on its own layer, and the page
@@ -966,3 +950,56 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   body::before{position:absolute;height:100%;min-height:100vh}
   body{position:relative}
 }
+
+
+/* ===== Brand v3 (23 Nov 2026), docs/brand-guidelines.md: electric violet leads and is every control; black and
+   white carry the page; lime is a small accent (Confirmed badges, the leaf, dots). Colours use light-dark(), which
+   follows color-scheme: the system by default, or the pinned theme from the toggle. ===== */
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+:root{
+  --v:light-dark(#5B2BFF,#6E45FF);          /* control fill, white text: 6.5:1 / 5.3:1 */
+  --v-text:light-dark(#5B2BFF,#A996FF);     /* links and accents on the page: 6.5:1 / 8:1 */
+  --v-glow:rgba(91,43,255,.55);
+  --bg:light-dark(#FFFFFF,#0A0A0C);
+  --surface2:light-dark(#F4F3FA,#1C1C22);
+  --border:light-dark(#E6E4F0,#2A2A33);
+  --link:var(--v-text);
+}
+body::before{background:
+  radial-gradient(18% 22% at 100% 0%,light-dark(rgba(200,245,80,.22),rgba(200,245,80,.14)),transparent 70%),
+  radial-gradient(75% 95% at 108% 30%,light-dark(rgba(91,43,255,.14),rgba(91,43,255,.62)),transparent 72%),
+  radial-gradient(60% 60% at -10% 100%,light-dark(rgba(91,43,255,.07),rgba(75,31,255,.4)),transparent 70%),
+  var(--bg)}
+
+/* controls: violet with white text in both modes */
+.btn.lime,.mac-btn,.p-chip[aria-pressed=true],.p-follow[aria-pressed=true],.p-cta,.p-newpill,.p-datepill,.p-toptag,
+.chiplet.t1,.ia-root,.names span.pick,.faq details[open] summary .pm,.skip{background:var(--v);border-color:var(--v);color:#fff}
+.btn.lime{box-shadow:inset 0 -2px 0 rgba(10,10,12,.18)}
+.btn.lime:hover{box-shadow:inset 0 -2px 0 rgba(10,10,12,.18),0 10px 26px -10px var(--v-glow)}
+.mac-btn{box-shadow:inset 0 -3px 0 rgba(10,10,12,.2),inset 0 1px 0 rgba(255,255,255,.3),0 18px 34px -16px var(--v-glow)}
+.mac-btn:hover{box-shadow:inset 0 -3px 0 rgba(10,10,12,.2),inset 0 1px 0 rgba(255,255,255,.3),0 22px 40px -16px var(--v-glow)}
+.mac-btn .t small{color:rgba(255,255,255,.8)}
+.p-mark{background:var(--v)}.p-mark path{fill:#fff}
+.hl{background:var(--v);color:#fff}
+
+/* the big "coming soon" panel: violet layers on black instead of a lime slab */
+.test-main{background:radial-gradient(70% 90% at 100% 0%,rgba(91,43,255,.7),transparent 70%),radial-gradient(14% 20% at 98% 2%,rgba(200,245,80,.35),transparent 70%),#0A0A0C;color:#F5F5F7}
+.test-main .eyebrow,.test-main .eyebrow b,.test-main .eyebrow i{color:#A996FF}
+.test-main .mark path{fill:#C8F550}
+.test-main .btn.ink{background:var(--v);color:#fff}
+.how li::before{background:#6E45FF;color:#fff}
+
+/* accents that read as text use violet; lime stays for marks and dots */
+.band a,.macsec .req a{color:#A996FF}
+.band .eyebrow i,.macsec .eyebrow i,.pcard svg,.macsec .ticks svg{color:#A996FF}
+.toc a.on{border-left-color:var(--v)}
+.callout{border-left-color:var(--v)}
+.compare-line,.compare-line::after{background-color:var(--v)}
+.meter i{background:var(--v)}
+.feature .visual .pad.lime{background:var(--v)}
+.thumb,.art{background:radial-gradient(ellipse 12% 16% at 96% 6%,rgba(200,245,80,.8),transparent 100%),radial-gradient(ellipse 45% 50% at 88% 8%,#5B2BFF 40%,transparent 100%),radial-gradient(ellipse 34% 40% at 2% 100%,#4B1FFF 20%,transparent 100%),#0A0A0C}
+
+/* the demo widget: white (light) or black (dark) with violet, like the app's widget */
+.wd{--wbg:#FFFFFF;--wink:#0A0A0C;--wsub:#55555F;--wacc:#5B2BFF}
+.phone.is-dark .wd{--wacc:#A996FF}
