@@ -399,7 +399,7 @@
         '<button class="p-glassmark" type="button" aria-label="Show the Today bar">' + leafSvg() + '</button>' +
         '<div class="p-bar"></div>' +
         '<div class="p-push" data-push="1" aria-hidden="true"></div><div class="p-push" data-push="2" aria-hidden="true"></div>' +
-        '<button class="p-cta" type="button" tabindex="-1" aria-label="Read the story on the publisher’s site"></button>' +
+        '<button class="p-cta" type="button" tabindex="-1" aria-label="Read on the publisher’s site"></button>' +
         '<nav class="p-tabs" role="tablist" aria-label="App tabs">' + this.tabsHTML() + '</nav>' +
         '<div class="p-dim"></div><div class="p-sheet" role="dialog" aria-modal="false" aria-label="Credibility details"></div>' +
         '<div class="p-toast" role="status" aria-live="polite"></div>') +
@@ -451,14 +451,14 @@
     var src = esc(x.src) + ' · ' + x.ago + (x.n > 1 ? ' · ' + x.n + ' sources' : '');
     var label = esc(x.t) + '. ' + LABEL[x.st] + ', ' + CAT[x.cat] + '. ' + src;
     if (hero) {
-      return '<button type="button" class="p-card hero" data-open="' + x.id + '" aria-label="' + label + '">' +
+      return '<button type="button" class="p-card hero" data-open="' + x.id + '">' +
         '<span style="position:relative;display:block">' + thumb(x, true) + '</span>' +
         '<span class="p-toptag">' + P.bolt + 'TOP STORY</span>' +
-        '<span class="meta-l">' + badge(x.st) + cat(x.cat) + '</span><h4>' + esc(x.t) + '</h4><span class="p-src">' + src + '</span></button>';
+        '<span class="meta-l">' + badge(x.st) + cat(x.cat) + '</span><span class="ht">' + esc(x.t) + '</span><span class="p-src">' + src + '</span></button>';
     }
     return '<div class="p-swipe" data-sw="' + x.id + '"><div class="under" aria-hidden="true"><span class="s">' + (this.s.saved.indexOf(x.id) > -1 ? P.bmFill + 'Unsave' : P.bm + 'Save') + '</span><span class="h">' + P.eyeOff + 'Hide</span></div>' +
-      '<button type="button" class="p-card row' + (read ? ' read' : '') + '" data-open="' + x.id + '" aria-label="' + label + '">' +
-      '<span style="display:grid;gap:6px"><span class="meta-l">' + badge(x.st) + cat(x.cat) + '</span><h4>' + esc(x.t) + '</h4><span class="p-src">' + src + '</span></span>' + thumb(x) + '</button></div>';
+      '<button type="button" class="p-card row' + (read ? ' read' : '') + '" data-open="' + x.id + '">' +
+      '<span style="display:grid;gap:6px"><span class="meta-l">' + badge(x.st) + cat(x.cat) + '</span><span class="ht">' + esc(x.t) + '</span><span class="p-src">' + src + '</span></span>' + thumb(x) + '</button></div>';
   };
   Phone.prototype.chips = function () {
     var s = this.s, h = '<button type="button" class="p-chip" data-filter="all" aria-pressed="' + (s.filter === 'all') + '">All</button>';
@@ -469,7 +469,7 @@
   };
   Phone.prototype.renderToday = function () {
     var me = this, list = this.visible();
-    var h = '<div class="p-head"><div><div class="p-titlerow"><div><span class="p-datepill">THURSDAY 12 NOVEMBER</span><h3 class="p-title">Today</h3></div>' +
+    var h = '<div class="p-head"><div><div class="p-titlerow"><div><span class="p-datepill">THURSDAY 12 NOVEMBER</span><span class="p-title">Today</span></div>' +
       '<div class="p-acts"><button type="button" class="p-ib" data-act="toast" data-msg="Search: every story by headline, summary, event or author." aria-label="Search stories">' + P.search + '</button>' +
       '<button type="button" class="p-mark" data-act="brief" aria-label="Open your brief">' + P.leafInk + '</button></div></div>' +
       '<p class="p-pulse"><b>48 confirmed</b> · 150 stories from 30 sources</p></div>' + this.chips() + '</div><div class="p-feed">';
@@ -492,17 +492,17 @@
   };
   Phone.prototype.renderExplore = function () {
     var s = this.s, me = this;
-    var h = '<div class="p-head"><h3 class="p-title">Explore</h3></div><h4 class="p-h">Topics</h4><div class="p-tiles">';
+    var h = '<div class="p-head"><span class="p-title">Explore</span></div><span class="p-h">Topics</span><div class="p-tiles">';
     Object.keys(CAT).forEach(function (k) { if (s.topics[k]) h += '<button type="button" class="p-tile" style="--a:' + COL[k] + '" data-tile="' + k + '"><b>' + CAT[k] + '</b><small>' + COUNTS[k] + ' stories</small></button>'; });
-    h += '</div><h4 class="p-h">Trending today</h4><div class="p-trend">' + TRENDING.map(function (t) { return '<span>' + P.arrowUR + t[0] + ' <em>' + t[1] + '</em></span>'; }).join('') + '</div>';
-    h += '<h4 class="p-h">Events</h4><div class="p-events">' + EVENTS.map(function (e) { return '<div class="p-event">' + P.pin + '<b>' + e[0] + '</b><small>' + e[1] + (e[1] === 1 ? ' story' : ' stories') + '</small></div>'; }).join('') + '</div>';
+    h += '</div><span class="p-h">Trending today</span><div class="p-trend">' + TRENDING.map(function (t) { return '<span>' + P.arrowUR + t[0] + ' <em>' + t[1] + '</em></span>'; }).join('') + '</div>';
+    h += '<span class="p-h">Events</span><div class="p-events">' + EVENTS.map(function (e) { return '<div class="p-event">' + P.pin + '<b>' + e[0] + '</b><small>' + e[1] + (e[1] === 1 ? ' story' : ' stories') + '</small></div>'; }).join('') + '</div>';
     var week = STORIES.filter(function (x) { return x.st === 'verified' && s.topics[x.cat]; }).sort(function (a, b) { return b.n - a.n || b.score - a.score; });
-    h += '<h4 class="p-h">This week, most confirmed</h4><div class="p-feed" style="margin-top:0">' + week.map(function (x) { return me.card(x); }).join('') + '</div>';
+    h += '<span class="p-h">This week, most confirmed</span><div class="p-feed" style="margin-top:0">' + week.map(function (x) { return me.card(x); }).join('') + '</div>';
     this.view('explore').innerHTML = h;
   };
   Phone.prototype.renderSaved = function () {
     var me = this, list = this.s.saved.map(function (id) { return BY[id]; });
-    this.view('saved').innerHTML = '<div class="p-head"><h3 class="p-title">Saved</h3></div><div class="p-feed">' +
+    this.view('saved').innerHTML = '<div class="p-head"><span class="p-title">Saved</span></div><div class="p-feed">' +
       (list.length ? list.map(function (x) { return me.card(x); }).join('') : '<div class="p-empty">' + P.leaf + '<b>No saved stories</b>Tap the bookmark on a story to read it later.</div>') + '</div>';
   };
   function tog(label, on, key, disabled) {
@@ -512,7 +512,7 @@
   Phone.prototype.renderSettings = function () {
     var s = this.s, on = Object.keys(s.topics).filter(function (k) { return s.topics[k]; });
     var names = { design: 'Product design', ux: 'UX/UI design', ai: 'AI development', dev: 'Software, web & apps' };
-    var h = '<div class="p-head"><h3 class="p-title">Settings</h3></div>' +
+    var h = '<div class="p-head"><span class="p-title">Settings</span></div>' +
       '<div class="p-group"><small>Account</small><div class="p-rows"><div class="p-row" style="cursor:default">Signed in with Apple</div>' +
       '<button type="button" class="p-row apple" data-act="toast" data-msg="Synced. Saved stories and settings are backed up.">Sync now</button>' +
       '<button type="button" class="p-row apple" data-act="toast" data-msg="Sign out keeps your saved stories and settings on this device.">Sign out</button>' +
@@ -588,15 +588,15 @@
       '<div class="meta-l" style="display:flex;gap:7px;align-items:center"><button type="button" data-act="sheet" style="border:0;background:none;padding:0;cursor:pointer" aria-label="' + LABEL[x.st] + '. Show credibility details">' + badge(x.st) + '</button>' + cat(x.cat) + '</div>' +
       '<h3>' + esc(x.t) + '</h3><span class="src">' + esc(x.src) + ' · ' + x.ago + '</span>' +
       (canFollow ? '<button type="button" class="p-follow" data-act="follow" aria-pressed="' + follow + '">' + (follow ? P.bellFill + 'Following: you will get an alert when it is confirmed' : P.bell + 'Follow: alert me when trusted sources confirm it') + '</button>' : '') +
-      '<div class="p-box"><h5>Brief' + (x.brief ? '<span class="ondev">Own words</span>' : '') + '</h5>' +
+      '<div class="p-box"><span class="hh">Brief' + (x.brief ? '<span class="ondev">Own words</span>' : '') + '</span>' +
       (x.brief ? '<p>' + esc(x.brief) + '</p><div class="p-kf">' + x.facts.map(function (k) { return '<span>' + esc(k) + '</span>'; }).join('') + '</div>' : '<p style="color:var(--p-text2)">No details yet. FreshBit reads the full article shortly after a story is published.</p>') + '</div>' +
-      '<div class="p-box" style="gap:0"><h5 style="margin-bottom:6px">The facts</h5>' + facts + '</div>' +
-      '<button type="button" class="p-box p-cred" data-act="sheet" aria-label="Credibility ' + x.score + ' of 100. Show details"><h5>Credibility<span>' + x.score + ' / 100</span></h5><span class="bar"><i style="--w:' + x.score + '%;background:' + barCol + '"></i></span>' +
+      '<div class="p-box" style="gap:0"><span class="hh" style="margin-bottom:6px">The facts</span>' + facts + '</div>' +
+      '<button type="button" class="p-box p-cred" data-act="sheet" aria-label="Credibility ' + x.score + ' of 100. Show details"><span class="hh">Credibility<span>' + x.score + ' / 100</span></span><span class="bar"><i style="--w:' + x.score + '%;background:' + barCol + '"></i></span>' +
       x.sources.map(function (z) { return '<span class="srcrow"><span>' + esc(z.name) + '</span><span>' + TIER[z.tier] + '</span></span>'; }).join('') + '<span class="why">Why this score ›</span></button></div>';
     var cta = this.scr.querySelector('.p-cta');
-    cta.innerHTML = 'Read on ' + esc(x.src) + ' ' + P.arrowUR; cta.setAttribute('data-act', 'toast'); cta.setAttribute('data-msg', 'Opens the original article on ' + x.src + '.'); cta.tabIndex = 0;
+    cta.innerHTML = 'Read on ' + esc(x.src) + ' ' + P.arrowUR; cta.setAttribute('aria-label', 'Read on ' + x.src + ', the publisher’s site'); cta.setAttribute('data-act', 'toast'); cta.setAttribute('data-msg', 'Opens the original article on ' + x.src + '.'); cta.tabIndex = 0;
     var r = score({ best: x.best, established: x.established, all: x.n, articles: x.sources.length, agree: true, flags: 0, spec: false });
-    this.scr.querySelector('.p-sheet').innerHTML = '<span class="grab"></span><button type="button" class="x" data-act="unsheet" aria-label="Close">' + P.x + '</button><h5>' + LONG[x.st] + ' · ' + x.score + '/100</h5><ul>' +
+    this.scr.querySelector('.p-sheet').innerHTML = '<span class="grab"></span><button type="button" class="x" data-act="unsheet" aria-label="Close">' + P.x + '</button><span class="hh">' + LONG[x.st] + ' · ' + x.score + '/100</span><ul>' +
       r.reasons.map(function (z) { return '<li>' + esc(z) + '</li>'; }).join('') + '</ul>' +
       x.sources.map(function (z) { return '<p class="s">' + esc(z.name) + ' (' + TIER[z.tier] + ') · ' + z.ago + '</p>'; }).join('');
     var p = this.push(1, html, 'story');
@@ -606,7 +606,7 @@
   Phone.prototype.openBrief = function (instant) {
     var me = this, list = STORIES.filter(function (x) { return x.st === 'verified'; }).sort(function (a, b) { return b.n - a.n || b.score - a.score; });
     var html = navbar('') + '<div style="display:grid;gap:4px;margin:6px 0 12px"><span style="font:600 10.5px/1 var(--sys);letter-spacing:.06em;color:var(--p-text2)">THURSDAY 12 NOVEMBER</span>' +
-      '<h3 class="p-title" style="font-size:30px">Your brief</h3><p class="p-pulse">12 stories confirmed by trusted sources in the last 24 hours.</p></div><div class="p-feed">' +
+      '<span class="p-title" style="font-size:30px">Your brief</span><p class="p-pulse">12 stories confirmed by trusted sources in the last 24 hours.</p></div><div class="p-feed">' +
       list.map(function (x, i) { return me.card(x, i === 0); }).join('') + '<p class="p-pulse" style="text-align:center;margin-top:6px">This demo carries ' + list.length + ' of the 12.</p></div>';
     var p = this.push(1, html);
     if (instant) { p.style.transition = 'none'; p.classList.add('open'); p.offsetWidth; p.style.transition = ''; }
