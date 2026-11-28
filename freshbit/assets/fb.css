@@ -941,6 +941,11 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .store-soon .t{display:grid;gap:5px;text-align:left}
 .store-soon .t small{font:500 11.5px/1 var(--mono);letter-spacing:.01em;color:rgba(245,245,247,.7)}
 .store-soon .t b{font:800 18px/1 var(--display);letter-spacing:-.015em}
+.store-soon.store-live,.store-soon.store-live:hover{color:#F5F5F7}
+.store-live{cursor:pointer;text-decoration:none;transition:transform .18s ease,border-color .18s ease}
+.store-live:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.32)}
+.store-live:focus-visible{outline:3px solid #C8F550;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.store-live{transition:none}.store-live:hover{transform:none}}
 @media (max-width:520px){.store-soon,.mac-btn{width:100%}}
 
 /* ===== Touch devices (20 Nov): iPhone Safari blanked the demo phone to black while scrolling. The phone stacks five

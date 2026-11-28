@@ -61,5 +61,5 @@ the script.
 
 ## Copy rules
 
-Copy comes only from the FreshBit project files and app screenshots. FreshBit is in TestFlight
-testing: don't describe it as on the App Store until it is. Say "AI-assisted development".
+Copy comes only from the FreshBit project files and app screenshots. FreshBit for iPhone is on the
+App Store (https://apps.apple.com/app/id6833701874). Mac is a DMG download until the Mac App Store version is out. Say "AI-assisted development".
